@@ -1,0 +1,38 @@
+Tags Obras:
+--ISBN
+<tr>
+    <td>ISBN:</td>
+    <td class="font-medium">9781784752224</td>
+</tr>
+
+--Nome Autor
+<p class="authors">de Micheal Crichton</p>
+
+--Titulo
+<p class="title font-medium">Jurassic Park</p>
+
+--Editora
+ <tr>
+    <td>Editor:</td>
+    <td class="font-medium">RANDOM HOUSE UK</td>
+</tr>
+
+--Preço
+<span class="price text-black text-align-right">12,86€</span>
+
+--Quantide Paginas
+<tr>
+    <td>Páginas:</td>
+	<td class="font-medium">480</td>
+</tr>
+--Idioma
+<tr>
+	<td>Idioma:</td>
+    <td class="font-medium">Inglês</td>
+</tr>
+
+--Encadernação
+<tr>
+    <td>Encadernação:</td>
+    <td class="font-medium">Capa mole</td>
+</tr>
