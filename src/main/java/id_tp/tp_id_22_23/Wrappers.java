@@ -106,4 +106,22 @@ public class Wrappers {
 //        input.close();
 //        return null;
 //    }
+    
+    
+    
+    
+//TESTAR!!!    
+//String input = "<tr>\n" +
+//               "\t<td scope=\"row\" style=\"vertical-align: top; text-align: left; font-weight:bold;\">Cônjuge</td>\n" +
+//               "\t<td style=\"vertical-align: top; text-align: left;\">Micael Eid (1989-2015)</td>\n" +
+//               "</tr>";
+//               
+//Pattern pattern = Pattern.compile("<td[^>]*>[^<]*\\b([A-Z][a-z]+\\s+[A-Z][a-z]+)\\b[^<]*</td>");
+//Matcher matcher = pattern.matcher(input);
+//
+//if (matcher.find()) {
+//    String output = matcher.group(1);
+//    System.out.println(output);
+//}
+
 }
