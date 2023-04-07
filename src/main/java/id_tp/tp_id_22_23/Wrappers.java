@@ -42,12 +42,12 @@ public class Wrappers {
 //    }
     
     public static String obtem_titulo(String isbn) throws IOException{
-        String link = "https://www.bertrand.pt/pesquisa/";
+        String link = "https://www.wook.pt/pesquisa/";
         HttpRequestFunctions.httpRequest1(link, isbn, "livros.txt");
         String er ="data-product-name=\"([^\"]+)\"";
         Pattern p = Pattern.compile(er);
         Matcher m;
-        Scanner read = new Scanner(new FileInputStream("livros.txt"));
+        Scanner read = new Scanner(new FileInputStream("livros.txt")); //adicionar para.xml
         while(read.hasNextLine()){
             String linha = read.nextLine();
             m = p.matcher(linha);
@@ -61,12 +61,12 @@ public class Wrappers {
     }
     
     public static String obtem_autor(String isbn) throws IOException{
-        String link = "https://www.bertrand.pt/pesquisa/";
+        String link = "https://www.wook.pt/pesquisa/";
         HttpRequestFunctions.httpRequest1(link, isbn, "livros.txt");
         String er ="";
         Pattern p = Pattern.compile(er);
         Matcher m;
-        Scanner read = new Scanner(new FileInputStream("livros.txt"));
+        Scanner read = new Scanner(new FileInputStream("livros.txt")); //adicionar para.xml
         while(read.hasNextLine()){
             String linha = read.nextLine();
             m = p.matcher(linha);
