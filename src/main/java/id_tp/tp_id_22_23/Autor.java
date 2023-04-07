@@ -17,7 +17,7 @@ public class Autor {
     String genero_literario;
     String ocupacoes;
     String premios;
-    String infoMais;
+    String conjuge;
     //Fotografia
 
     public Autor(int id, String nome, String data_nasc, String data_morte, String nacionalidade, String genero_literario, String ocupacoes, String premios, String infoMais) {
@@ -29,7 +29,7 @@ public class Autor {
         this.genero_literario = genero_literario;
         this.ocupacoes = ocupacoes;
         this.premios = premios;
-        this.infoMais = infoMais;
+        this.conjuge = infoMais;
     }
 
     public void setId(int id) {
@@ -64,8 +64,8 @@ public class Autor {
         this.premios = premios;
     }
 
-    public void setInfoMais(String infoMais) {
-        this.infoMais = infoMais;
+    public void setConjuge(String conjuge) {
+        this.conjuge = conjuge;
     }
 
     public int getId() {
@@ -100,7 +100,7 @@ public class Autor {
         return premios;
     }
 
-    public String getInfoMais() {
-        return infoMais;
+    public String getConjuge() {
+        return conjuge;
     }
 }

@@ -36,3 +36,98 @@ Tags Obras:
     <td>Encadernação:</td>
     <td class="font-medium">Capa mole</td>
 </tr>
+
+
+
+
+Tags Autor
+--Nome
+<tr>
+	<td scope="row" style="vertical-align: top; text-align: left; font-weight:bold;">Nome completo</td>
+	<td style="vertical-align: top; text-align: left;">Nicholas Charles Sparks</td>
+</tr>
+
+--Data Nascimento
+
+<tr>
+	<td scope="row" style="vertical-align: top; text-align: left; font-weight:bold;">Nascimento</td>
+	<td style="vertical-align: top; text-align: left;">
+		<a href="/wiki/31_de_dezembro#Nascimentos" title="31 de dezembro">31 de dezembro</a>de 
+		<a href="/wiki/1965" title="1965">1965</a>&#160;(57&#160;anos)<br />
+		<a href="/wiki/Omaha_(Nebraska)" title="Omaha (Nebraska)">Omaha</a>, 
+		<a href="/wiki/Nebraska" title="Nebraska">Nebraska</a>
+	</td>
+</tr>
+
+--Data Morte (caso tiver)(Exemplo saramago)
+<li id="toc-Morte"class="vector-toc-list-item vector-toc-level-2">
+    <a class="vector-toc-link" href="#Morte">
+        <div class="vector-toc-text">
+			<span class="vector-toc-numb">1.2</span>Morte
+		</div>
+    </a>
+            
+    <ul id="toc-Morte-sublist" class="vector-toc-list"></ul>
+</li>
+
+--Nacionalidade
+<tr>
+	<td scope="row" style="vertical-align: top; text-align: left; font-weight:bold;">Nacionalidade</td>
+	<td style="vertical-align: top; text-align: left;">
+		<a href="/wiki/Povo_dos_Estados_Unidos" title="Povo dos Estados Unidos">norte-americano</a>
+	</td>
+</tr>
+
+--Fotografia
+<tr>
+	<td colspan="2" style="text-align:center;">
+		<div style="padding-bottom: 5px;">
+			<div class="center">
+				<div class="floatnone">
+					<a href="/wiki/Ficheiro:Nicholas-Sparks-Autograph-1-4-06.jpg" class="image" title="Nicholas Sparks">
+						<img alt="" src="//upload.wikimedia.org/wikipedia/commons/thumb/a/af/Nicholas-Sparks-Autograph-1-4-06.jpg/250px-Nicholas-Sparks-Autograph-1-4-06.jpg" decoding="async" width="250" height="357" srcset="//upload.wikimedia.org/wikipedia/commons/a/af/Nicholas-Sparks-Autograph-1-4-06.jpg 1.5x" data-file-width="286" data-file-height="408" />
+					</a>
+				</div>
+			</div>
+		</div>Sparks durante evento em 2006
+	</td>
+</tr>
+
+--Genero Literario
+<tr>
+	<td scope="row" style="vertical-align: top; text-align: left; font-weight:bold;">
+		<a href="/wiki/G%C3%AAnero_liter%C3%A1rio" title="Gênero literário">Gênero literário</a>
+	</td>
+	<td style="vertical-align: top; text-align: left;">
+		<a href="/wiki/Fantasia_(g%C3%AAnero)" title="Fantasia (gênero)">Fantasia</a>, .
+		<a href="/wiki/Drama" title="Drama">drama</a>, 
+		<a href="/wiki/Tragicom%C3%A9dia" title="Tragicomédia">tragicomédia</a>, 
+		<a href="/wiki/Romance_policial" title="Romance policial">romance policial</a>
+	</td>
+</tr>
+
+--Ocupações
+<tr>
+	<td scope="row" style="vertical-align: top; text-align: left; font-weight:bold;">Ocupação</td>
+	<td style="vertical-align: top; text-align: left;">
+		<a href="/wiki/Escritor" title="Escritor">Escritor</a>, 
+		<a href="/wiki/Roteirista" title="Roteirista">roteirista</a> e 
+		<a href="/wiki/Produtor_cinematogr%C3%A1fico" title="Produtor cinematográfico">produtor</a>
+	</td>
+</tr>
+--Premios
+<li id="toc-Prêmios_e_honras"class="vector-toc-list-item vector-toc-level-1">
+    <a class="vector-toc-link" href="#Prêmios_e_honras">
+        <div class="vector-toc-text">
+			<span class="vector-toc-numb">8</span>Prêmios e honras
+		</div>
+    </a>
+    <ul id="toc-Prêmios_e_honras-sublist" class="vector-toc-list">
+    </ul>
+</li>
+
+--Conjuge
+<tr>
+	<td scope="row" style="vertical-align: top; text-align: left; font-weight:bold;">Cônjuge</td>
+	<td style="vertical-align: top; text-align: left;">Cathy Sparks (1989-2015)</td>
+</tr>

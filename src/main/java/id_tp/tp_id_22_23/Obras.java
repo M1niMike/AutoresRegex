@@ -19,6 +19,9 @@ public class Obras {
     String quant_paginas;
     String idioma;
     String encadernacao;
+    
+    //String  foto_capa;
+
 
     public String getIsbn() {
         return isbn;
@@ -84,7 +87,6 @@ public class Obras {
         return encadernacao;
     }
             
-  //String  foto_capa;
 
     public Obras(String isbn, String nome_autor, String titulo, String editora, Double preco, String quant_paginas, String idioma, String encadernacao) {
         this.isbn = isbn;
