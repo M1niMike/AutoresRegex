@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE obras SYSTEM "obras.dtd">
+<obras>
+    <livro>
+        <isbn></isbn>
+        <titulo></titulo>
+        <autor></autor>
+        <editora></editora>
+        <preco></preco>
+        <quantidadePaginas></quantidadePaginas>
+        <idioma></idioma>
+        <encadernacao></encadernacao>
+    </livro>
+</obras>

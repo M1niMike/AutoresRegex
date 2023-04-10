@@ -1,0 +1,10 @@
+<!ELEMENT obras (livro)>
+<!ELEMENT livro (isbn,titulo,autor,editora,preco,quantidadePaginas,idioma,encadernacao)>
+<!ELEMENT isbn EMPTY>
+<!ELEMENT titulo EMPTY>
+<!ELEMENT autor EMPTY>
+<!ELEMENT editora EMPTY>
+<!ELEMENT preco EMPTY>
+<!ELEMENT quantidadePaginas EMPTY>
+<!ELEMENT idioma EMPTY>
+<!ELEMENT encadernacao EMPTY>

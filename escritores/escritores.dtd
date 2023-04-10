@@ -1,0 +1,10 @@
+<!ELEMENT escritores (nome)>
+<!ELEMENT nome (dataNascimento,dataMorte,nacionalidade,generoLiterario,ocupacoes,premios,conjuge)>
+<!ATTLIST nome id NMTOKEN #REQUIRED>
+<!ELEMENT dataNascimento EMPTY>
+<!ELEMENT dataMorte EMPTY>
+<!ELEMENT nacionalidade EMPTY>
+<!ELEMENT generoLiterario EMPTY>
+<!ELEMENT ocupacoes EMPTY>
+<!ELEMENT premios EMPTY>
+<!ELEMENT conjuge EMPTY>
