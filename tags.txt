@@ -1,42 +1,48 @@
 Tags Obras:
 --ISBN
-<tr>
-    <td>ISBN:</td>
-    <td class="font-medium">9781784752224</td>
-</tr>
+<span id='50278206JTLAOJCNOCPPXNPAYDPJ' class='col-xs-12'>ISBN: 
+	<span  class='info'>9781784752224</span>
+</span> 
 
 --Nome Autor
-<p class="authors">de Micheal Crichton</p>
+<div class="right-author" id="productPageSectionDetails-collapseDetalhes-content-author">de <a href="/autor/micheal-crichton/3344950">Micheal Crichton</a>&nbsp;</div>
 
 --Titulo
-<p class="title font-medium">Jurassic Park</p>
+<div class="right-title-details" id="productPageSectionDetails-collapseDetalhes-content-title">Jurassic Park</div>
 
 --Editora
- <tr>
-    <td>Editor:</td>
-    <td class="font-medium">RANDOM HOUSE UK</td>
-</tr>
+<span itemscope itemtype="https://schema.org/Organization" class="col-xs-12">Editor:
+	<span class="info">RANDOM HOUSE UK</span>
+</span>
 
 --Preço
-<span class="price text-black text-align-right">12,86€</span>
+<div class="current" id="productPageRightSectionTop-saleAction-price-current"> 12,86€</div>
 
---Quantide Paginas
-<tr>
-    <td>Páginas:</td>
-	<td class="font-medium">480</td>
-</tr>
+--Quantidade Paginas
+<span id="productPageSectionDetails-collapseDetalhes-content-nrPages" class="col-xs-12">Páginas: 
+	<span  class="info">480</span>
+</span>
+
 --Idioma
-<tr>
-	<td>Idioma:</td>
-    <td class="font-medium">Inglês</td>
-</tr>
+<span id="productPageSectionDetails-collapseDetalhes-content-language" class="col-xs-12">Idioma:  
+    <span  class="info">Inglês</span>
+</span>
 
 --Encadernação
-<tr>
-    <td>Encadernação:</td>
-    <td class="font-medium">Capa mole</td>
-</tr>
+<span id="productPageSectionDetails-collapseDetalhes-content-bookbinding" class="col-xs-12">Encadernação: 
+	<span class="info">Capa mole</span>
+</span>
 
+--Capa
+<img
+	sizes="(max-width: 688px) 75vw, 25vw"
+    data-srcset="https://img.bertrand.pt/images/jurassic-park-micheal-crichton/NDV8MTYyMTQzODl8MTE3OTM1MDN8MTU1MjA4NTc0NDAwMA==/300x"
+    srcset="https://img.bertrand.pt/images/jurassic-park-micheal-crichton/NDV8MTYyMTQzODl8MTE3OTM1MDN8MTU1MjA4NTc0NDAwMA==/100x"
+    src="https://img.bertrand.pt/images/jurassic-park-micheal-crichton/NDV8MTYyMTQzODl8MTE3OTM1MDN8MTU1MjA4NTc0NDAwMA==/100x"
+    alt="Bertrand.pt - Jurassic Park"
+    title="Bertrand.pt - Jurassic Park"
+    onclick=""
+    class="img-responsive lazyload">
 
 
 
