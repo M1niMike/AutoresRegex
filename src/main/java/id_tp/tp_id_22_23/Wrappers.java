@@ -22,6 +22,7 @@ import java.util.regex.Pattern;
  * @author mikae
  */
 public class Wrappers {
+<<<<<<< Updated upstream
 
     static ArrayList<String> matchIntoArrayList(ArrayList<String> arr, String regex, String fileIn) throws FileNotFoundException {
         try (Scanner reader = new Scanner(new FileInputStream(fileIn))) {
@@ -39,10 +40,45 @@ public class Wrappers {
             }
             if (count == 0) {
                 arr.add("empty");
+=======
+    
+//    static ArrayList procura_por_cidade(String procura) throws FileNotFoundException{
+//        ArrayList lista = new ArrayList();
+//        Scanner input = new Scanner(new FileInputStream("pessoas.html"));
+//        String er = ""
+//        Pattern p = Pattern.compile(er);
+//        Matcher m;
+//        String linha;
+//        while((input.hasNextLine())){
+//            linha = input.nextLine();
+//            m = p.matcher(linha);
+//            if(m.find()){
+//                lista.add(m.group(1));
+//            }
+//        }
+//        input.close();
+//        return lista;
+//    }
+    
+    public static String obtem_titulo(String nome) throws IOException{
+        String link = "https://www.wook.pt/pesquisa/";
+        HttpRequestFunctions.httpRequest1(link, nome, "obras.txt");
+        String er ="data-product-name=\"([^\"]+)\"";
+        Pattern p = Pattern.compile(er);
+        Matcher m;
+        Scanner read = new Scanner(new FileInputStream("livros.txt")); //adicionar para.xml
+        while(read.hasNextLine()){
+            String linha = read.nextLine();
+            m = p.matcher(linha);
+            if(m.find()){
+                read.close();
+                return m.group(1);
+>>>>>>> Stashed changes
             }
         }
         return arr;
     }
+<<<<<<< Updated upstream
 
     static String matchIntoString(String regex, String fileIn) throws FileNotFoundException {
         try (Scanner reader = new Scanner(new FileInputStream(fileIn))) {
@@ -56,6 +92,22 @@ public class Wrappers {
                     reader.close();
                     return m.group(1);
                 }
+=======
+    
+    public static String obtem_autor(String nome) throws IOException{
+        String link = "https://www.wook.pt/pesquisa/";
+        HttpRequestFunctions.httpRequest1(link, nome, "obras.txt");
+        String er ="";
+        Pattern p = Pattern.compile(er);
+        Matcher m;
+        Scanner read = new Scanner(new FileInputStream("livros.txt")); //adicionar para.xml
+        while(read.hasNextLine()){
+            String linha = read.nextLine();
+            m = p.matcher(linha);
+            if(m.find()){
+                read.close();
+                return m.group(1);
+>>>>>>> Stashed changes
             }
         }
         return "nullStr";
