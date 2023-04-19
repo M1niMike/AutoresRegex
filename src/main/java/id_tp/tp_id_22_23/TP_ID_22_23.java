@@ -33,10 +33,7 @@ public class TP_ID_22_23 {
         for(Obras itr: livs){
             itr.printLivro();  //ver a calsse livro
             System.out.println("");
-        }
-        
-        
-        
+        } 
     }
 }
 
