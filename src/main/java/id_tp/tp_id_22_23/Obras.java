@@ -19,7 +19,46 @@ public class Obras {
     String idioma;
     String encadernacao;    
     String Foto_capa;
+    
+    
+    
+      public Obras(String isbn, String nome_autor, String titulo, String editora, Double preco, String quant_paginas, String idioma, String encadernacao, String Foto_capa) {
+        this.isbn = isbn;
+        this.nome_autor = nome_autor;
+        this.titulo = titulo;
+        this.editora = editora;
+        this.preco = preco;
+        this.quant_paginas = quant_paginas;
+        this.idioma = idioma;
+        this.encadernacao = encadernacao;
+        this.Foto_capa = Foto_capa;
+    }
 
+     
+    //GETS
+    public String getIsbn() { return isbn; }
+    public String getNome_autor() { return nome_autor; }
+    public String getFoto_capa() { return Foto_capa; }
+    public String getTitulo() { return titulo; }
+    public String getEditora() { return editora; }
+    public Double getPreco() { return preco; }
+    public String getQuant_paginas() { return quant_paginas; }
+    public String getIdioma() { return idioma; }
+    public String getEncadernacao() { return encadernacao; }
+            
+    //SETS
+    public void setFoto_capa(String Foto_capa) { this.Foto_capa = Foto_capa; }
+    public void setIsbn(String isbn) { this.isbn = isbn; }
+    public void setNome_autor(String nome_autor) { this.nome_autor = nome_autor; }
+    public void setTitulo(String titulo) { this.titulo = titulo; }
+    public void setEditora(String editora) { this.editora = editora; }
+    public void setPreco(Double preco) { this.preco = preco; }
+    public void setQuant_paginas(String quant_paginas) { this.quant_paginas = quant_paginas; }
+    public void setIdioma(String idioma) { this.idioma = idioma; }
+    public void setEncadernacao(String encadernacao) { this.encadernacao = encadernacao; }
+
+    
+    //Func Aux
     public void printLivro() {
         System.out.println("isbn: " + this.getIsbn());
         System.out.println("titulo: " + this.getTitulo());
@@ -33,89 +72,7 @@ public class Obras {
         
     }
 
-    public String getIsbn() {
-        return isbn;
-    }
 
-    public String getNome_autor() {
-        return nome_autor;
-    }
-    
-    public String getFoto_capa() {
-        return Foto_capa;
-    }
-    
-    public void setFoto_capa(String Foto_capa) {
-        this.Foto_capa = Foto_capa;
-    }
-    
-    public void setIsbn(String isbn) {
-        this.isbn = isbn;
-    }
-
-    public void setNome_autor(String nome_autor) {
-        this.nome_autor = nome_autor;
-    }
-
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
-    }
-
-    public void setEditora(String editora) {
-        this.editora = editora;
-    }
-
-    public void setPreco(Double preco) {
-        this.preco = preco;
-    }
-
-    public void setQuant_paginas(String quant_paginas) {
-        this.quant_paginas = quant_paginas;
-    }
-
-    public void setIdioma(String idioma) {
-        this.idioma = idioma;
-    }
-
-    public void setEncadernacao(String encadernacao) {
-        this.encadernacao = encadernacao;
-    }
-
-    public String getTitulo() {
-        return titulo;
-    }
-
-    public String getEditora() {
-        return editora;
-    }
-
-    public Double getPreco() {
-        return preco;
-    }
-
-    public String getQuant_paginas() {
-        return quant_paginas;
-    }
-
-    public String getIdioma() {
-        return idioma;
-    }
-
-    public String getEncadernacao() {
-        return encadernacao;
-    }
-            
-
-    public Obras(String isbn, String nome_autor, String titulo, String editora, Double preco, String quant_paginas, String idioma, String encadernacao, String Foto_capa) {
-        this.isbn = isbn;
-        this.nome_autor = nome_autor;
-        this.titulo = titulo;
-        this.editora = editora;
-        this.preco = preco;
-        this.quant_paginas = quant_paginas;
-        this.idioma = idioma;
-        this.encadernacao = encadernacao;
-        this.Foto_capa = Foto_capa;
-    }
+  
     
 }
