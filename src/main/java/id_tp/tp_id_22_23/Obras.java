@@ -22,7 +22,7 @@ public class Obras {
     
     
     
-      public Obras(String isbn, String nome_autor, String titulo, String editora, Double preco, String quant_paginas, String idioma, String encadernacao, String Foto_capa) {
+    public Obras(String isbn, String nome_autor, String titulo, String editora, Double preco, String quant_paginas, String idioma, String encadernacao, String Foto_capa) {
         this.isbn = isbn;
         this.nome_autor = nome_autor;
         this.titulo = titulo;
@@ -66,8 +66,8 @@ public class Obras {
         System.out.println("preco: " + this.getPreco() + "€");
         System.out.println("editora: " + this.getEditora());
         System.out.println("paginas: " + this.getQuant_paginas());
-        System.out.println("paginas: " + this.getEncadernacao());
-        System.out.println("paginas: " + this.getIdioma());
+        System.out.println("encadernacao: " + this.getEncadernacao());
+        System.out.println("idioma: " + this.getIdioma());
         System.out.println("link capa: " + this.getFoto_capa());
         
     }
