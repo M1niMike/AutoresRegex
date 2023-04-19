@@ -15,13 +15,23 @@ public class Obras {
     String titulo; 
     String editora;
     Double preco;
-    //Adições a maisQ
     String quant_paginas;
     String idioma;
-    String encadernacao;
-    
-    //String  foto_capa;
+    String encadernacao;    
+    String Foto_capa;
 
+    public void printLivro() {
+        System.out.println("isbn: " + this.getIsbn());
+        System.out.println("titulo: " + this.getTitulo());
+        System.out.println("autor: " + this.getNome_autor());
+        System.out.println("preco: " + this.getPreco() + "€");
+        System.out.println("editora: " + this.getEditora());
+        System.out.println("paginas: " + this.getQuant_paginas());
+        System.out.println("paginas: " + this.getEncadernacao());
+        System.out.println("paginas: " + this.getIdioma());
+        System.out.println("link capa: " + this.getFoto_capa());
+        
+    }
 
     public String getIsbn() {
         return isbn;
@@ -30,7 +40,15 @@ public class Obras {
     public String getNome_autor() {
         return nome_autor;
     }
-
+    
+    public String getFoto_capa() {
+        return Foto_capa;
+    }
+    
+    public void setFoto_capa(String Foto_capa) {
+        this.Foto_capa = Foto_capa;
+    }
+    
     public void setIsbn(String isbn) {
         this.isbn = isbn;
     }
@@ -88,7 +106,7 @@ public class Obras {
     }
             
 
-    public Obras(String isbn, String nome_autor, String titulo, String editora, Double preco, String quant_paginas, String idioma, String encadernacao) {
+    public Obras(String isbn, String nome_autor, String titulo, String editora, Double preco, String quant_paginas, String idioma, String encadernacao, String Foto_capa) {
         this.isbn = isbn;
         this.nome_autor = nome_autor;
         this.titulo = titulo;
@@ -97,6 +115,7 @@ public class Obras {
         this.quant_paginas = quant_paginas;
         this.idioma = idioma;
         this.encadernacao = encadernacao;
+        this.Foto_capa = Foto_capa;
     }
     
 }

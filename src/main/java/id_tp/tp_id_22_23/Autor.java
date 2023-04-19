@@ -18,9 +18,9 @@ public class Autor {
     String ocupacoes;
     String premios;
     String conjuge;
-    //Fotografia
+    String fotografia;
 
-    public Autor(int id, String nome, String data_nasc, String data_morte, String nacionalidade, String genero_literario, String ocupacoes, String premios, String infoMais) {
+    public Autor(int id, String nome, String data_nasc, String data_morte, String nacionalidade, String genero_literario, String ocupacoes, String premios, String infoMais,String fotografia) {
         this.id = id;
         this.nome = nome;
         this.data_nasc = data_nasc;
@@ -30,6 +30,7 @@ public class Autor {
         this.ocupacoes = ocupacoes;
         this.premios = premios;
         this.conjuge = infoMais;
+        this.fotografia = fotografia;
     }
 
     public void setId(int id) {
@@ -38,6 +39,14 @@ public class Autor {
 
     public void setNome(String nome) {
         this.nome = nome;
+    }
+    
+    public void setFotografia(String fotografia) {
+        this.fotografia = fotografia;
+    }
+    
+    public String getFotografia() {
+        return fotografia;
     }
 
     public void setData_nasc(String data_nasc) {
