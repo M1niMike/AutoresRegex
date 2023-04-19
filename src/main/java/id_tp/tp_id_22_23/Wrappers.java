@@ -22,62 +22,46 @@ import java.util.regex.Pattern;
  * @author mikae
  */
 public class Wrappers {
-    
-//    static ArrayList procura_por_cidade(String procura) throws FileNotFoundException{
-//        ArrayList lista = new ArrayList();
-//        Scanner input = new Scanner(new FileInputStream("pessoas.html"));
-//        String er = ""
-//        Pattern p = Pattern.compile(er);
-//        Matcher m;
-//        String linha;
-//        while((input.hasNextLine())){
-//            linha = input.nextLine();
-//            m = p.matcher(linha);
-//            if(m.find()){
-//                lista.add(m.group(1));
-//            }
-//        }
-//        input.close();
-//        return lista;
-//    }
-    
-    public static String obtem_titulo(String isbn) throws IOException{
-        String link = "https://www.wook.pt/pesquisa/";
-        HttpRequestFunctions.httpRequest1(link, isbn, "livros.txt");
-        String er ="data-product-name=\"([^\"]+)\"";
-        Pattern p = Pattern.compile(er);
-        Matcher m;
-        Scanner read = new Scanner(new FileInputStream("livros.txt")); //adicionar para.xml
-        while(read.hasNextLine()){
-            String linha = read.nextLine();
-            m = p.matcher(linha);
-            if(m.find()){
-                read.close();
-                return m.group(1);
+
+    static ArrayList<String> matchIntoArrayList(ArrayList<String> arr, String regex, String fileIn) throws FileNotFoundException {
+        try (Scanner reader = new Scanner(new FileInputStream(fileIn))) {
+            Pattern p = Pattern.compile(regex);
+            
+            int count = 0;
+            String line;
+            while (reader.hasNextLine()) {
+                line = reader.nextLine();
+                Matcher m = p.matcher(line);
+                while (m.find()) {
+                    arr.add(m.group(1));
+                    count++;
+                }
+            }
+            if (count == 0) {
+                arr.add("empty");
             }
         }
-        read.close();
-        return null;
+        return arr;
     }
-    
-    public static String obtem_autor(String isbn) throws IOException{
-        String link = "https://www.wook.pt/pesquisa/";
-        HttpRequestFunctions.httpRequest1(link, isbn, "livros.txt");
-        String er ="";
-        Pattern p = Pattern.compile(er);
-        Matcher m;
-        Scanner read = new Scanner(new FileInputStream("livros.txt")); //adicionar para.xml
-        while(read.hasNextLine()){
-            String linha = read.nextLine();
-            m = p.matcher(linha);
-            if(m.find()){
-                read.close();
-                return m.group(1);
+
+    static String matchIntoString(String regex, String fileIn) throws FileNotFoundException {
+        try (Scanner reader = new Scanner(new FileInputStream(fileIn))) {
+            Pattern p = Pattern.compile(regex);
+
+            String line;
+            while (reader.hasNextLine()) {
+                line = reader.nextLine();
+                Matcher m = p.matcher(line);
+                if (m.find()) {
+                    reader.close();
+                    return m.group(1);
+                }
             }
         }
-        read.close();
-        return null;
+        return "nullStr";
     }
+    
+
 //    public static double obtem_preco(String isbn) throws IOException{
 //        String link = "https://www.bertrand.pt/pesquisa/";
 //        HttpRequestFunction.httpRequest1(link, isbn, "livros.txt");
