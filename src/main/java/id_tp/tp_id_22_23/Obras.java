@@ -15,14 +15,14 @@ public class Obras {
     String titulo; 
     String editora;
     Double preco;
-    String quant_paginas;
+    int quant_paginas;
     String idioma;
     String encadernacao;    
     String Foto_capa;
     
     
     
-    public Obras(String isbn, String nome_autor, String titulo, String editora, Double preco, String quant_paginas, String idioma, String encadernacao, String Foto_capa) {
+    public Obras(String isbn, String nome_autor, String titulo, String editora, Double preco, int quant_paginas, String idioma, String encadernacao, String Foto_capa) {
         this.isbn = isbn;
         this.nome_autor = nome_autor;
         this.titulo = titulo;
@@ -42,7 +42,7 @@ public class Obras {
     public String getTitulo() { return titulo; }
     public String getEditora() { return editora; }
     public Double getPreco() { return preco; }
-    public String getQuant_paginas() { return quant_paginas; }
+    public int getQuant_paginas() { return quant_paginas; }
     public String getIdioma() { return idioma; }
     public String getEncadernacao() { return encadernacao; }
             
@@ -53,7 +53,7 @@ public class Obras {
     public void setTitulo(String titulo) { this.titulo = titulo; }
     public void setEditora(String editora) { this.editora = editora; }
     public void setPreco(Double preco) { this.preco = preco; }
-    public void setQuant_paginas(String quant_paginas) { this.quant_paginas = quant_paginas; }
+    public void setQuant_paginas(int quant_paginas) { this.quant_paginas = quant_paginas; }
     public void setIdioma(String idioma) { this.idioma = idioma; }
     public void setEncadernacao(String encadernacao) { this.encadernacao = encadernacao; }
 
