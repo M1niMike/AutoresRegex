@@ -206,8 +206,8 @@ public class WrappersBertrand {
     }
        
        public static String obtem_editora(String nome_autor) throws IOException {
-            HttpRequestFunctions.httpRequest1("https://www.bertrand.pt/pesquisa/", nome_autor, "obras.txt");
-        String er1 = "Editor:\\s*<div class=\"info\">([A-Za-z\\s]+)</div>";
+        HttpRequestFunctions.httpRequest1("https://www.bertrand.pt/pesquisa/", nome_autor, "obras.txt");
+        String er1 = "data-brand=\"([^\"]+)\"";
 
         Scanner ler = new Scanner(new FileInputStream("obras.txt"));
         Pattern p1 = Pattern.compile(er1);
