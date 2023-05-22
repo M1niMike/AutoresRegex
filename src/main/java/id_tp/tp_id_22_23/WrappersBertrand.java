@@ -144,9 +144,8 @@ public class WrappersBertrand {
 
     }
     
-     public static int obtem_paginas(String nome_autor) throws IOException {
-        String link = obtem_link(nome_autor);
-        HttpRequestFunctions.httpRequest1(link, "", "obras.txt");
+ public static int obtem_paginas(String nome_autor) throws IOException {
+        HttpRequestFunctions.httpRequest1("https://www.bertrand.pt/pesquisa/", nome_autor, "obras.txt");
         String er = "Páginas: <span  class=\"info\">([0-9]+)</span";
         Scanner ler = new Scanner(new FileInputStream("obras.txt"));
         Pattern p = Pattern.compile(er);
@@ -162,9 +161,8 @@ public class WrappersBertrand {
         }
         ler.close();
         return -1;
-
-    }
-     
+        
+ }
       public static double obtem_preco(String nome_autor) throws FileNotFoundException, IOException {
         HttpRequestFunctions.httpRequest1("https://www.bertrand.pt/pesquisa/", nome_autor, "obras.txt");
         //String er = "data-price=\"([0-9\\.]+)\"";
@@ -208,9 +206,8 @@ public class WrappersBertrand {
     }
        
        public static String obtem_editora(String nome_autor) throws IOException {
-        String link = obtem_link(nome_autor);
-        HttpRequestFunctions.httpRequest1(link, "", "obras.txt");
-        String er1 = "Editor:\\s*<span class=\"info\">([^<]+)</span>";
+            HttpRequestFunctions.httpRequest1("https://www.bertrand.pt/pesquisa/", nome_autor, "obras.txt");
+        String er1 = "Editor:\\s*<div class=\"info\">([A-Za-z\\s]+)</div>";
 
         Scanner ler = new Scanner(new FileInputStream("obras.txt"));
         Pattern p1 = Pattern.compile(er1);
@@ -229,9 +226,8 @@ public class WrappersBertrand {
     }
        
         public static String obtem_isbn(String nome_autor) throws IOException {
-        String link = obtem_link(nome_autor);
-        HttpRequestFunctions.httpRequest1(link, "", "obras.txt");
-        String er1 = "ISBN:\\s*<span class=\"info\">([0-9]+)</span>";
+        HttpRequestFunctions.httpRequest1("https://www.bertrand.pt/pesquisa/", nome_autor, "obras.txt");
+        String er1 = "ISBN: <div class='info'>*</div>";
         Scanner ler = new Scanner(new FileInputStream("obras.txt"));
         Pattern p1 = Pattern.compile(er1);
         String linha;
@@ -248,6 +244,7 @@ public class WrappersBertrand {
         return null;
     }
         
+                //String er1 = "ISBN:\\s*<div class=\'info\'>([0-9-]+)</div>";
         public static String obtem_idioma(String nome_autor) throws IOException {
         String link = obtem_link(nome_autor);
         HttpRequestFunctions.httpRequest1(link, "", "obras.txt");

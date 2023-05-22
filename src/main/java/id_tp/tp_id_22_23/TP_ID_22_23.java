@@ -17,39 +17,19 @@ import java.util.Scanner;
 public class TP_ID_22_23 {
 
     public static void main(String[] args) throws IOException {
-        //Prototipo de chamada
+       Scanner dados = new Scanner(System.in) ;
+       String nome; 
         
-        ///
-        String fileIn = "escritores.txt";
-         ArrayList<String> nome_autor = new ArrayList<>();
-        
-        lerFicheiro(fileIn, nome_autor);
-        
-       for (String nome : nome_autor) {
-            System.out.println(nome);
-        }
+       System.out.println("Insira um nome de autor:");
+       nome = dados.nextLine(); 
        
-       //WrappersBertrand.criaObras("Nicholas Sparks");
-       
-        
        ArrayList<Obras> obs = new ArrayList<>(); 
-       obs.add(WrappersBertrand.criaObras("Nicholas+Sparks")); 
+       obs.add(WrappersBertrand.criaObras(nome)); 
         
        for(Obras itr: obs){
             itr.printLivro();  //ver a calsse livro
            System.out.println("");
        } 
-    }
-    
-    static void lerFicheiro(String nomeFicheiro, ArrayList<String> nomes_autor) throws FileNotFoundException {
-        Scanner input = new Scanner(new FileInputStream(nomeFicheiro));
-
-        while (input.hasNextLine()) {
-            String linha = input.nextLine();
-            nomes_autor.add(linha);
-        }
-
-        input.close();
     }
 }
 
