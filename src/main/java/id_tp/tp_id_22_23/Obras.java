@@ -16,20 +16,20 @@ public class Obras {
     String editora;
     Double preco;
     int quant_paginas;
-    String idioma;
+    String ano_edicao;
     String encadernacao;    
     String Foto_capa;
     
     
     
-    public Obras(String isbn, String nome_autor, String titulo, String editora, Double preco, int quant_paginas, String idioma, String encadernacao, String Foto_capa) {
+    public Obras(String isbn, String nome_autor, String titulo, String editora, Double preco, int quant_paginas, String ano_edi, String encadernacao, String Foto_capa) {
         this.isbn = isbn;
         this.nome_autor = nome_autor;
         this.titulo = titulo;
         this.editora = editora;
         this.preco = preco;
         this.quant_paginas = quant_paginas;
-        this.idioma = idioma;
+        this.ano_edicao = ano_edi;
         this.encadernacao = encadernacao;
         this.Foto_capa = Foto_capa;
     }
@@ -43,7 +43,7 @@ public class Obras {
     public String getEditora() { return editora; }
     public Double getPreco() { return preco; }
     public int getQuant_paginas() { return quant_paginas; }
-    public String getIdioma() { return idioma; }
+    public String getAno_edicao() { return ano_edicao; }
     public String getEncadernacao() { return encadernacao; }
             
     //SETS
@@ -54,7 +54,7 @@ public class Obras {
     public void setEditora(String editora) { this.editora = editora; }
     public void setPreco(Double preco) { this.preco = preco; }
     public void setQuant_paginas(int quant_paginas) { this.quant_paginas = quant_paginas; }
-    public void setIdioma(String idioma) { this.idioma = idioma; }
+    public void setAno_edicao(String ano_edicao) { this.ano_edicao = ano_edicao; }
     public void setEncadernacao(String encadernacao) { this.encadernacao = encadernacao; }
 
     
@@ -67,7 +67,7 @@ public class Obras {
         System.out.println("editora: " + this.getEditora());
         System.out.println("paginas: " + this.getQuant_paginas());
         System.out.println("encadernacao: " + this.getEncadernacao());
-        System.out.println("idioma: " + this.getIdioma());
+        System.out.println("ano de edicao: " + this.getAno_edicao());
         System.out.println("link capa: " + this.getFoto_capa());
         
     }

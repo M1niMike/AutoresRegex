@@ -1,7 +1,6 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  */
-
 package id_tp.tp_id_22_23;
 
 import java.io.FileInputStream;
@@ -17,23 +16,33 @@ import java.util.Scanner;
 public class TP_ID_22_23 {
 
     public static void main(String[] args) throws IOException {
-       Scanner dados = new Scanner(System.in) ;
-       String nome; 
+        Scanner dados = new Scanner(System.in);
+        String nome, quant;
+        int i = 0;
         
-       System.out.println("Insira um nome de autor:");
-       nome = dados.nextLine(); 
-       
-       ArrayList<Obras> obs = new ArrayList<>(); 
-       obs.add(WrappersBertrand.criaObras(nome)); 
-        
-       for(Obras itr: obs){
+        System.out.println("Insira um nome de autor:");
+        nome = dados.nextLine();
+
+        System.out.println("Quantas obras voce deseja procurar?:");
+        quant = dados.nextLine();
+        int number = Integer.parseInt(quant);
+
+        ArrayList<Obras> obs = new ArrayList<>();
+
+     
+
+        while (i < number) {
+            obs.add(WrappersBertrand.criaObras(nome));
+            i++;
+        }
+
+        for (Obras itr : obs) {
             itr.printLivro();  //ver a calsse livro
-           System.out.println("");
-       } 
+            System.out.println("");
+        }
+
     }
 }
-
-
 
 // try {
 //            String texto;
