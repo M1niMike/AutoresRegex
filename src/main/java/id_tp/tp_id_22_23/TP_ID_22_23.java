@@ -18,7 +18,7 @@ public class TP_ID_22_23 {
     public static void main(String[] args) throws IOException {
         Scanner dados = new Scanner(System.in);
         String nome, quant;
-        int i = 0;
+   
         
         System.out.println("Insira um nome de autor:");
         nome = dados.nextLine();
@@ -28,14 +28,13 @@ public class TP_ID_22_23 {
         int number = Integer.parseInt(quant);
 
         ArrayList<Obras> obs = new ArrayList<>();
-
-     
-
-        while (i < number) {
-            obs.add(WrappersBertrand.criaObras(nome));
-            i++;
+        ArrayList<String> linkObras = WrappersBertrand.obtem_link(nome, number);
+         
+        
+        for(int i = 0; i < linkObras.size(); i++){
+            obs.add(WrappersBertrand.criaObras(linkObras.get(i)));
         }
-
+        
         for (Obras itr : obs) {
             itr.printLivro();  //ver a calsse livro
             System.out.println("");
