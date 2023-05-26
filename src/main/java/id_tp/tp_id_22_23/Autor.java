@@ -32,84 +32,43 @@ public class Autor {
         this.conjuge = infoMais;
         this.fotografia = fotografia;
     }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
     
-    public void setFotografia(String fotografia) {
-        this.fotografia = fotografia;
-    }
+    //GETS
+    public int getId() {return id;}
+    public String getNome() {return nome;}
+    public String getData_nasc() {return data_nasc;}
+    public String getData_morte() {return data_morte;}
+    public String getNacionalidade() {return nacionalidade;}
+    public String getGenero_literario() {return genero_literario;}
+    public String getOcupacoes() {return ocupacoes;}
+    public String getPremios() {return premios;}
+    public String getConjuge() {return conjuge;}
+    public String getFotografia() {return fotografia;}
+
+    //SETS
+    public void setId(int id) {this.id = id;}
+    public void setNome(String nome) {this.nome = nome;}
+    public void setFotografia(String fotografia) {this.fotografia = fotografia;}
+    public void setData_nasc(String data_nasc) {this.data_nasc = data_nasc;}
+    public void setData_morte(String data_morte) {this.data_morte = data_morte;}
+    public void setNacionalidade(String nacionalidade) {this.nacionalidade = nacionalidade;}
+    public void setGenero_literario(String genero_literario) {this.genero_literario = genero_literario;}
+    public void setOcupacoes(String ocupacoes) {this.ocupacoes = ocupacoes;}
+    public void setPremios(String premios) {this.premios = premios;}
+    public void setConjuge(String conjuge) {this.conjuge = conjuge;}
     
-    public String getFotografia() {
-        return fotografia;
-    }
-
-    public void setData_nasc(String data_nasc) {
-        this.data_nasc = data_nasc;
-    }
-
-    public void setData_morte(String data_morte) {
-        this.data_morte = data_morte;
-    }
-
-    public void setNacionalidade(String nacionalidade) {
-        this.nacionalidade = nacionalidade;
-    }
-
-    public void setGenero_literario(String genero_literario) {
-        this.genero_literario = genero_literario;
-    }
-
-    public void setOcupacoes(String ocupacoes) {
-        this.ocupacoes = ocupacoes;
-    }
-
-    public void setPremios(String premios) {
-        this.premios = premios;
-    }
-
-    public void setConjuge(String conjuge) {
-        this.conjuge = conjuge;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public String getData_nasc() {
-        return data_nasc;
-    }
-
-    public String getData_morte() {
-        return data_morte;
-    }
-
-    public String getNacionalidade() {
-        return nacionalidade;
-    }
-
-    public String getGenero_literario() {
-        return genero_literario;
-    }
-
-    public String getOcupacoes() {
-        return ocupacoes;
-    }
-
-    public String getPremios() {
-        return premios;
-    }
-
-    public String getConjuge() {
-        return conjuge;
+    //Func Aux
+    public void printAutor() {
+        System.out.println("ID: " + this.getId());
+        System.out.println("Nome: " + this.getNome());
+        System.out.println("Data Nascimento: " + this.getData_nasc());
+        System.out.println("Data Morte: " + this.getData_morte() + "€");
+        System.out.println("Nacionalidade: " + this.getNacionalidade());
+        System.out.println("Genero literario: " + this.getGenero_literario());
+        System.out.println("Ocupacoes: " + this.getOcupacoes());
+        System.out.println("Premios: " + this.getPremios());
+        System.out.println("Conjuge: " + this.getConjuge());
+        System.out.println("Fotografia: " + this.getFotografia());
+        
     }
 }

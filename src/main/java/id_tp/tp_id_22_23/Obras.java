@@ -60,15 +60,15 @@ public class Obras {
     
     //Func Aux
     public void printLivro() {
-        System.out.println("isbn: " + this.getIsbn());
-        System.out.println("titulo: " + this.getTitulo());
-        System.out.println("autor: " + this.getNome_autor());
-        System.out.println("preco: " + this.getPreco() + "€");
-        System.out.println("editora: " + this.getEditora());
-        System.out.println("paginas: " + this.getQuant_paginas());
-        System.out.println("encadernacao: " + this.getEncadernacao());
-        System.out.println("ano de edicao: " + this.getAno_edicao());
-        System.out.println("link capa: " + this.getFoto_capa());
+        System.out.println("ISBN: " + this.getIsbn());
+        System.out.println("Titulo: " + this.getTitulo());
+        System.out.println("Autor: " + this.getNome_autor());
+        System.out.println("Preco: " + this.getPreco() + "€");
+        System.out.println("Editora: " + this.getEditora());
+        System.out.println("Paginas: " + this.getQuant_paginas());
+        System.out.println("Encadernacao: " + this.getEncadernacao());
+        System.out.println("Ano de edicao: " + this.getAno_edicao());
+        System.out.println("Link capa: " + this.getFoto_capa());
         
     }
 
