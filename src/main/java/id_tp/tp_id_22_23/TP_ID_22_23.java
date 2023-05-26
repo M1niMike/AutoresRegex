@@ -30,9 +30,13 @@ public class TP_ID_22_23 {
         
         String NomePrint = WrappersWikipedia.obtem_nome(nome);
         String DataNasc = WrappersWikipedia.obtem_dataNasc(nome);
+        String DataMorte = WrappersWikipedia.obtem_dataMorte(nome);
+        String Nacionalidade = WrappersWikipedia.obtem_nacionalidade(nome);
         
         System.out.println(NomePrint);
         System.out.println(DataNasc);
+        System.out.println(DataMorte);
+        System.out.println(Nacionalidade);
 //
 //        System.out.println("Quantas obras voce deseja procurar?:");
 //        quant = dados.nextLine();
