@@ -23,100 +23,299 @@ import java.util.regex.Pattern;
 public class WrappersWikipedia {
 
     public static String obtem_nome(String nome_autor) throws IOException {
-        //String link_sec = WrappersBertrand.obtem_link(nome_autor);
         HttpRequestFunctions.httpRequest2("https://pt.wikipedia.org/wiki/", nome_autor, "autores.txt");
-        String er = "<span\\s*class=\"mw-page-title-main\">([^<]+)</span>";
-        Pattern p = Pattern.compile(er);
-        Matcher m;
+
+        String er1 = "<td scope=\"row\" style=\"vertical-align: top; text-align: left; font-weight:bold;\">Nome completo";
+        String er2 = "<td style=\"vertical-align: top; text-align: left;\">([^<]+)";
+
+        Pattern p1 = Pattern.compile(er1);
+        Pattern p2 = Pattern.compile(er2);
+
+        Matcher m1;
+        Matcher m2;
+
         Scanner ler = new Scanner(new FileInputStream("autores.txt"));
+
         while (ler.hasNextLine()) {
             String linha = ler.nextLine();
-            m = p.matcher(linha);
-            if (m.find()) {
-                ler.close();
-                return m.group(1);
+
+            m1 = p1.matcher(linha);
+            m2 = p2.matcher(linha);
+
+            if (m1.find()) {
+                while (ler.hasNextLine()) {
+                    linha = ler.nextLine();
+
+                    m2 = p2.matcher(linha);
+
+                    if (m2.find()) {
+
+                        ler.close();
+                        return m2.group(1);
+                    }
+
+                }
 
             }
-
         }
         ler.close();
-        return null;
+        return "Sem informacao";
     }
 
     public static String obtem_dataNasc(String nome_autor) throws IOException {
         HttpRequestFunctions.httpRequest2("https://pt.wikipedia.org/wiki/", nome_autor, "autores.txt");
-        String er = "<a\\s*href=\"[^<]+#Nascimentos\"\\s*title=\"[^<]+\">([^<]+)</a>\\s*de\\s*<a\\s*href=\"/wiki/[0-9]+\"\\s*title=\"[0-9]+\">([0-9]+)</a>";
+        String er1 = "<td scope=\"row\" style=\"vertical-align: top; text-align: left; font-weight:bold;\">Nascimento";
+        String er2 = "<a\\s*href=\"/wiki/[^<]+#Nascimentos\"\\s*title=\"[^<]+\">([^<]+)</a>\\s*de\\s*<a\\s*href=\"/wiki/[0-9]+\"\\s*title=\"[0-9]+\">([0-9]+)</a>";
 
-        Pattern p = Pattern.compile(er);
-        Matcher m;
+        Pattern p1 = Pattern.compile(er1);
+        Pattern p2 = Pattern.compile(er2);
+
+        Matcher m1;
+        Matcher m2;
 
         String res = "";
 
         Scanner ler = new Scanner(new FileInputStream("autores.txt"));
+
         while (ler.hasNextLine()) {
             String linha = ler.nextLine();
-            m = p.matcher(linha);
 
-            if (m.find()) {
-                res = m.group(1) + " " + m.group(2);
-                ler.close();
-                return res;
+            m1 = p1.matcher(linha);
+            m2 = p2.matcher(linha);
+
+            if (m1.find()) {
+                while (ler.hasNextLine()) {
+                    linha = ler.nextLine();
+
+                    m2 = p2.matcher(linha);
+
+                    if (m2.find()) {
+                        res = m2.group(1) + " " + m2.group(2);
+                        ler.close();
+                        return res;
+                    }
+
+                }
 
             }
-
         }
         ler.close();
-        return null;
+        return "Sem informacao";
     }
-    
-    
-    
+
     public static String obtem_dataMorte(String nome_autor) throws IOException {
         HttpRequestFunctions.httpRequest2("https://pt.wikipedia.org/wiki/", nome_autor, "autores.txt");
-        String er= "<span style=\"white-space:nowrap;\"><a\\s*href=\"/wiki/[^<]+\"\\s*title=\"[^<]+\">([^<]+)</a>\\s*de\\s*<a\\s*href=\"/wiki/[0-9]+\"\\s*title=\"[0-9]+\">([0-9]+)</a>";
+        String er1 = "<td scope=\"row\" style=\"vertical-align: top; text-align: left; font-weight:bold;\">Morte";
+        String er2 = "<span style=\"white-space:nowrap;\"><a\\s*href=\"/wiki/[^<]+\"\\s*title=\"[^<]+\">([^<]+)</a>\\s*de\\s*<a\\s*href=\"/wiki/[0-9]+\"\\s*title=\"[0-9]+\">([0-9]+)</a>";
+        String er3 = "<a href=\"/wiki/[^<]+\" title=\"[^<]+o\">([^<]+)</a>\\s*de\\s*<a href=\"/wiki/[0-9]+\" title=\"[0-9]+\">([0-9]+)</a>";
 
-        Pattern p = Pattern.compile(er);
-        Matcher m;
+        Pattern p1 = Pattern.compile(er1);
+        Pattern p2 = Pattern.compile(er2);
+        Pattern p3 = Pattern.compile(er3);
+
+        Matcher m1;
+        Matcher m2;
+        Matcher m3;
 
         String res = "";
 
         Scanner ler = new Scanner(new FileInputStream("autores.txt"));
+
         while (ler.hasNextLine()) {
             String linha = ler.nextLine();
-            m = p.matcher(linha);
 
-            if (m.find()) {
-                res = m.group(1) + " " + m.group(2);
-                ler.close();
-                return res;
+            m1 = p1.matcher(linha);
+
+            if (m1.find()) {
+                while (ler.hasNextLine()) {
+                    linha = ler.nextLine();
+
+                    m2 = p2.matcher(linha);
+                    m3 = p3.matcher(linha);
+                    if (m2.find()) {
+                        res = m2.group(1) + " " + m2.group(2);
+                        ler.close();
+                        return res;
+                    } else if (m3.find()) {
+                        res = m3.group(1) + " " + m3.group(2);
+                        ler.close();
+                        return res;
+                    }
+
+                }
 
             }
-
         }
         ler.close();
         return "O Autor ainda esta vivo";
     }
-    
-    
+
     public static String obtem_nacionalidade(String nome_autor) throws IOException {
         //String link_sec = WrappersBertrand.obtem_link(nome_autor);
         HttpRequestFunctions.httpRequest2("https://pt.wikipedia.org/wiki/", nome_autor, "autores.txt");
-        String er = "Nacionalidade\\s*</td>\\s*<td\\s*style=\"[^<]+\"><a\\s*href=\"/wiki/[^<]+\"\\s*title=\"[^<]+\">([^<]+)</a>";
-        Pattern p = Pattern.compile(er);
-        Matcher m;
+
+        String er1 = "<td scope=\"row\" style=\"vertical-align: top; text-align: left; font-weight:bold;\">Nacionalidade";
+        String er2 = "<td\\s*style=\"[^<]+\"><a\\s*href=\"/wiki/[^<]+\"\\s*title=\"[^<]+\">([^<]+)</a>";
+
+        Pattern p1 = Pattern.compile(er1);
+        Pattern p2 = Pattern.compile(er2);
+
+        Matcher m1;
+        Matcher m2;
+
         Scanner ler = new Scanner(new FileInputStream("autores.txt"));
+
         while (ler.hasNextLine()) {
             String linha = ler.nextLine();
-            m = p.matcher(linha);
-            if (m.find()) {
-                ler.close();
-                return m.group(1);
+
+            m1 = p1.matcher(linha);
+            m2 = p2.matcher(linha);
+
+            if (m1.find()) {
+                while (ler.hasNextLine()) {
+                    linha = ler.nextLine();
+
+                    m2 = p2.matcher(linha);
+
+                    if (m2.find()) {
+
+                        ler.close();
+                        return m2.group(1);
+                    }
+
+                }
 
             }
-
         }
         ler.close();
-        return null;
+        return "Sem informacao";
+    }
+
+    public static String obtem_generoLiterario(String nome_autor) throws IOException {
+        HttpRequestFunctions.httpRequest2("https://pt.wikipedia.org/wiki/", nome_autor, "autores.txt");
+
+        String er1 = "<td scope=\"row\" style=\"vertical-align: top; text-align: left; font-weight:bold;\"><a href=\"/wiki/[^<]+\" title=\"[^<]+\">Gênero literário</a>";
+        String er2 = "<td style=\"vertical-align: top; text-align: left;\"><a href=\"/wiki/[^<]+\" title=\"[^<]+\">([^<]+)</a>, <a href=\"/wiki/[^<]+\" title=\"[^<]+\">([^<]+)</a>, <a href=\"/wiki/[^<]+\" title=\"[^<]+\">([^<]+)</a>, <a href=\"/wiki/[^<]+\" title=\"[^<]+\">([^<]+)</a>";
+
+        Pattern p1 = Pattern.compile(er1);
+        Pattern p2 = Pattern.compile(er2);
+
+        Matcher m1;
+        Matcher m2;
+
+        Scanner ler = new Scanner(new FileInputStream("autores.txt"));
+
+        String res = "";
+
+        while (ler.hasNextLine()) {
+            String linha = ler.nextLine();
+
+            m1 = p1.matcher(linha);
+            m2 = p2.matcher(linha);
+
+            if (m1.find()) {
+                while (ler.hasNextLine()) {
+                    linha = ler.nextLine();
+
+                    m2 = p2.matcher(linha);
+
+                    if (m2.find()) {
+                        res = m2.group(1) + " " + m2.group(2) + " " + m2.group(3);
+                        ler.close();
+                        return res;
+                    }
+
+                }
+
+            }
+        }
+        ler.close();
+        return "Sem informacao";
+    }
+
+    public static String obtem_conjuge(String nome_autor) throws IOException {
+        HttpRequestFunctions.httpRequest2("https://pt.wikipedia.org/wiki/", nome_autor, "autores.txt");
+
+        String er1 = "<td scope=\"row\" style=\"vertical-align: top; text-align: left; font-weight:bold;\">Cônjuge";
+        String er2 = "<a href=\"/wiki/[^<]+\" title=\"[^<]+\">([^<]+)</a>";
+        String er3 = "<td style=\"vertical-align: top; text-align: left;\">([^<]+)";
+        String er4 = "<td style=\"vertical-align: top; text-align: left;\">[^<]+ <span style=\"font-size:[0-9]+%;\">[0-9()]+</span><br />([^<]+) <span style=\"font-size:[0-9]+%;\">([a-zA-Z0-9()]+)</span>";
+
+        Pattern p1 = Pattern.compile(er1);
+        Pattern p2 = Pattern.compile(er2);
+        Pattern p3 = Pattern.compile(er3);
+        Pattern p4 = Pattern.compile(er4);
+
+        Matcher m1;
+        Matcher m2;
+        Matcher m3;
+        Matcher m4;
+
+        Scanner ler = new Scanner(new FileInputStream("autores.txt"));
+
+        while (ler.hasNextLine()) {
+            String linha = ler.nextLine();
+
+            m1 = p1.matcher(linha);
+
+            if (m1.find()) {
+                while (ler.hasNextLine()) {
+                    linha = ler.nextLine();
+
+                    m2 = p2.matcher(linha);
+                    m3 = p3.matcher(linha);
+                    m4 = p4.matcher(linha);
+
+                    if (m2.find()) {
+
+                        ler.close();
+                        return m2.group(1);
+                    } else if (m3.find()) {
+                        ler.close();
+                        return m3.group(1);
+                    } else if (m4.find()) {
+                        ler.close();
+                        return m4.group(1);
+                    }
+
+                }
+
+            }
+        }
+        ler.close();
+        return "Sem informacao";
+    }
+
+    public static String obtem_linkFoto(String nome_autor) throws IOException {
+        HttpRequestFunctions.httpRequest2("https://pt.wikipedia.org/wiki/", nome_autor, "autores.txt");
+
+        String er2 = "<meta property=\"og:image\" content=\"([^<]+.png)\">";
+        String er3 = "<meta property=\"og:image\" content=\"([^<]+.jpg)\">";
+
+        Pattern p2 = Pattern.compile(er2);
+        Pattern p3 = Pattern.compile(er3);
+
+        Matcher m2;
+        Matcher m3;
+
+        Scanner ler = new Scanner(new FileInputStream("autores.txt"));
+
+        while (ler.hasNextLine()) {
+            String linha = ler.nextLine();
+
+            m2 = p2.matcher(linha);
+            m3 = p3.matcher(linha);
+            if (m2.find()) {
+                ler.close();
+                return m2.group(1);
+
+            } else if (m3.find()) {
+                ler.close();
+                return m3.group(1);
+            }
+        }
+        ler.close();
+        return "Sem informacao";
     }
 
 }
