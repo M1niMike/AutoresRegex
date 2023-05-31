@@ -317,5 +317,22 @@ public class WrappersWikipedia {
         ler.close();
         return "Sem informacao";
     }
+    
+    
+     public static Autor criaAutor(String nome_autor) throws IOException {
+
+        String nome = WrappersWikipedia.obtem_nome(nome_autor);
+        String data_Nasc = WrappersWikipedia.obtem_dataNasc(nome_autor);
+        String dataMorte = WrappersWikipedia.obtem_dataMorte(nome_autor);
+        String nacionalidade = WrappersWikipedia.obtem_nacionalidade(nome_autor);
+        String generoLit = WrappersWikipedia.obtem_generoLiterario(nome_autor);
+        //String ocupa = WrappersBertrand.obtem_paginas(linkObras);
+       // String premios = WrappersBertrand.obtem_anoEdicao(linkObras);
+        String conjuge = WrappersWikipedia.obtem_conjuge(nome_autor);
+        String link_foto = WrappersWikipedia.obtem_linkFoto(nome_autor);
+
+        Autor a = new Autor (nome, data_Nasc, dataMorte, nacionalidade, generoLit, conjuge, link_foto);
+        return a;
+    }
 
 }

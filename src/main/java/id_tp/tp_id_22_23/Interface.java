@@ -8,6 +8,8 @@ import java.awt.Frame;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+import org.jdom2.Document;
 
 /**
  *
@@ -38,15 +40,17 @@ public class Interface extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         jTextArea2 = new javax.swing.JTextArea();
         jLabel2 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        jMenuItem3 = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
-        jMenuItem4 = new javax.swing.JMenuItem();
-        jMenuItem12 = new javax.swing.JMenuItem();
-        jMenuItem5 = new javax.swing.JMenuItem();
+        Inicio = new javax.swing.JMenu();
+        Relatorio = new javax.swing.JMenuItem();
+        Autores = new javax.swing.JMenuItem();
+        Sair = new javax.swing.JMenuItem();
+        Menu_XML = new javax.swing.JMenu();
+        Autores_XML = new javax.swing.JMenuItem();
+        Obras_XML = new javax.swing.JMenuItem();
+        Adicionar_Autor = new javax.swing.JMenuItem();
         jMenuItem10 = new javax.swing.JMenuItem();
         jMenuItem6 = new javax.swing.JMenuItem();
         jMenuItem7 = new javax.swing.JMenuItem();
@@ -85,61 +89,95 @@ public class Interface extends javax.swing.JFrame {
 
         jLabel2.setText("Warnings");
 
-        jMenu1.setText("Inicio");
-        jMenu1.addActionListener(new java.awt.event.ActionListener() {
+        jTextField1.setText("jTextField1");
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenu1ActionPerformed(evt);
+                jTextField1ActionPerformed(evt);
             }
         });
 
-        jMenuItem1.setText("Relatorio");
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+        jLabel3.setText("Inserir o nome do autor:");
+
+        Inicio.setText("Inicio");
+        Inicio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
+                InicioActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem1);
 
-        jMenuItem2.setText("Autores");
-        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+        Relatorio.setText("Relatorio");
+        Relatorio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem2ActionPerformed(evt);
+                RelatorioActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem2);
+        Inicio.add(Relatorio);
 
-        jMenuItem3.setText("Sair");
-        jMenu1.add(jMenuItem3);
+        Autores.setText("Autores");
+        Autores.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AutoresActionPerformed(evt);
+            }
+        });
+        Inicio.add(Autores);
 
-        jMenuBar1.add(jMenu1);
+        Sair.setText("Sair");
+        Sair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SairActionPerformed(evt);
+            }
+        });
+        Inicio.add(Sair);
 
-        jMenu2.setText("XML");
+        jMenuBar1.add(Inicio);
 
-        jMenuItem4.setText("Autores.XML");
-        jMenu2.add(jMenuItem4);
+        Menu_XML.setText("XML");
+        Menu_XML.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Menu_XMLActionPerformed(evt);
+            }
+        });
 
-        jMenuItem12.setText("Obras.XML");
-        jMenu2.add(jMenuItem12);
+        Autores_XML.setText("Autores.XML");
+        Autores_XML.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Autores_XMLActionPerformed(evt);
+            }
+        });
+        Menu_XML.add(Autores_XML);
 
-        jMenuItem5.setText("Adicionar autor");
-        jMenu2.add(jMenuItem5);
+        Obras_XML.setText("Obras.XML");
+        Obras_XML.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Obras_XMLActionPerformed(evt);
+            }
+        });
+        Menu_XML.add(Obras_XML);
+
+        Adicionar_Autor.setText("Adicionar autor");
+        Adicionar_Autor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Adicionar_AutorActionPerformed(evt);
+            }
+        });
+        Menu_XML.add(Adicionar_Autor);
 
         jMenuItem10.setText("Eliminar autor");
-        jMenu2.add(jMenuItem10);
+        Menu_XML.add(jMenuItem10);
 
         jMenuItem6.setText("Alterar data de nascimento");
-        jMenu2.add(jMenuItem6);
+        Menu_XML.add(jMenuItem6);
 
         jMenuItem7.setText("Alterar nacionalidade");
-        jMenu2.add(jMenuItem7);
+        Menu_XML.add(jMenuItem7);
 
         jMenuItem8.setText("Acrescentar prêmio");
-        jMenu2.add(jMenuItem8);
+        Menu_XML.add(jMenuItem8);
 
         jMenuItem9.setText("Eliminar prêmio");
-        jMenu2.add(jMenuItem9);
+        Menu_XML.add(jMenuItem9);
 
-        jMenuBar1.add(jMenu2);
+        jMenuBar1.add(Menu_XML);
 
         jMenu3.setText("XPath");
 
@@ -211,7 +249,9 @@ public class Interface extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2))
+                    .addComponent(jLabel2)
+                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -223,7 +263,12 @@ public class Interface extends javax.swing.JFrame {
                     .addComponent(jLabel2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel3)
+                        .addGap(5, 5, 5)
+                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 457, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(17, Short.MAX_VALUE))
         );
@@ -231,9 +276,9 @@ public class Interface extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+    private void RelatorioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RelatorioActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
+    }//GEN-LAST:event_RelatorioActionPerformed
 
     private void jMenuItem15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem15ActionPerformed
         try {
@@ -245,18 +290,60 @@ public class Interface extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jMenuItem15ActionPerformed
 
-    private void jMenu1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu1ActionPerformed
-       System.exit(0);
-    }//GEN-LAST:event_jMenu1ActionPerformed
+    private void InicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InicioActionPerformed
+      
+    }//GEN-LAST:event_InicioActionPerformed
 
-    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+    private void AutoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AutoresActionPerformed
 
         String nomeAux = ("Micael Eid - 2019112744"
                 + "\nBruno Oliveira - 2019136478");
         jTextArea1.setText(nomeAux);
 
 
-    }//GEN-LAST:event_jMenuItem2ActionPerformed
+    }//GEN-LAST:event_AutoresActionPerformed
+
+    private void Menu_XMLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menu_XMLActionPerformed
+        
+        
+    }//GEN-LAST:event_Menu_XMLActionPerformed
+
+    private void Autores_XMLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Autores_XMLActionPerformed
+       Document doc = XMLJDomFunctions.lerDocumentoXML("autores.xml");
+       String texto = XMLJDomFunctions.escreverDocumentoString(doc);
+        
+        jTextArea1.setText(texto);
+    }//GEN-LAST:event_Autores_XMLActionPerformed
+
+    private void Obras_XMLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Obras_XMLActionPerformed
+       Document doc = XMLJDomFunctions.lerDocumentoXML("obras.xml");
+       String texto = XMLJDomFunctions.escreverDocumentoString(doc);
+        
+        jTextArea1.setText(texto);
+    }//GEN-LAST:event_Obras_XMLActionPerformed
+
+    private void Adicionar_AutorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Adicionar_AutorActionPerformed
+        try {
+            Autor au = WrappersWikipedia.criaAutor(jTextField1.getText());
+            Document doc = XMLJDomFunctions.lerDocumentoXML("autores.xml");
+            
+            doc = ModeloXML.adicionaLivro(au, doc);
+            
+            XMLJDomFunctions.escreverDocumentoParaFicheiro(doc, "autores.xml");
+            
+            //jDialog1.setVisible(false);
+        } catch (IOException ex) {
+            Logger.getLogger(Interface.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_Adicionar_AutorActionPerformed
+
+    private void SairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SairActionPerformed
+       System.exit(0);
+    }//GEN-LAST:event_SairActionPerformed
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -294,20 +381,25 @@ public class Interface extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem Adicionar_Autor;
+    private javax.swing.JMenuItem Autores;
+    private javax.swing.JMenuItem Autores_XML;
+    private javax.swing.JMenu Inicio;
+    private javax.swing.JMenu Menu_XML;
+    private javax.swing.JMenuItem Obras_XML;
+    private javax.swing.JMenuItem Relatorio;
+    private javax.swing.JMenuItem Sair;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu5;
     private javax.swing.JMenu jMenu6;
     private javax.swing.JMenu jMenu7;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem10;
     private javax.swing.JMenuItem jMenuItem11;
-    private javax.swing.JMenuItem jMenuItem12;
     private javax.swing.JMenuItem jMenuItem13;
     private javax.swing.JMenuItem jMenuItem14;
     private javax.swing.JMenuItem jMenuItem15;
@@ -315,14 +407,10 @@ public class Interface extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem17;
     private javax.swing.JMenuItem jMenuItem18;
     private javax.swing.JMenuItem jMenuItem19;
-    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem20;
     private javax.swing.JMenuItem jMenuItem21;
     private javax.swing.JMenuItem jMenuItem22;
     private javax.swing.JMenuItem jMenuItem23;
-    private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
-    private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JMenuItem jMenuItem8;
@@ -331,5 +419,6 @@ public class Interface extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextArea jTextArea2;
+    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }

@@ -20,16 +20,16 @@ public class Autor {
     String conjuge;
     String fotografia;
 
-    public Autor(int id, String nome, String data_nasc, String data_morte, String nacionalidade, String genero_literario, String ocupacoes, String premios, String infoMais,String fotografia) {
+    public Autor(String nome, String data_nasc, String data_morte, String nacionalidade, String genero_literario, /*String ocupacoes, String premios,*/ String conjuge ,String fotografia) {
         this.id = id;
         this.nome = nome;
         this.data_nasc = data_nasc;
         this.data_morte = data_morte;
         this.nacionalidade = nacionalidade;
         this.genero_literario = genero_literario;
-        this.ocupacoes = ocupacoes;
-        this.premios = premios;
-        this.conjuge = infoMais;
+//        this.ocupacoes = ocupacoes;
+//        this.premios = premios;
+        this.conjuge = conjuge;
         this.fotografia = fotografia;
     }
     

@@ -1,4 +1,4 @@
-<!ELEMENT escritores (nome)>
+<!ELEMENT autores (nome)>
 <!ELEMENT nome (dataNascimento,dataMorte,nacionalidade,generoLiterario,ocupacoes,premios,conjuge)>
 <!ATTLIST nome id NMTOKEN #REQUIRED>
 <!ELEMENT dataNascimento EMPTY>

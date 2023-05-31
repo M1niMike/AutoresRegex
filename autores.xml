@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<autores>
+     <autor id="10">
+          <nome>José de Sousa Saramago</nome>
+          <dataNascimento>16 de novembro 1922</dataNascimento>
+          <dataMorte>18 de junho 2010</dataMorte>
+          <nacionalidade>português</nacionalidade>
+          <generoLiterario>Sem informacao</generoLiterario>
+          <conjuge>Ilda Reis</conjuge>
+          <linkFoto>https://upload.wikimedia.org/wikipedia/commons/5/5c/JSJoseSaramago.jpg</linkFoto>
+     </autor>
+</autores>

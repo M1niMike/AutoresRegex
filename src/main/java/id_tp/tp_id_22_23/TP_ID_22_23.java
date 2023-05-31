@@ -18,31 +18,31 @@ public class TP_ID_22_23 {
 
     public static void main(String[] args) throws IOException {
         
-//        Frame app = new Frame();
-//        app.setVisible(true);
+        Frame app = new Interface();
+        app.setVisible(true);
+        
+        
+//        Scanner dados = new Scanner(System.in);
+//        String nome, quant;
+////        
+//        System.out.println("Insira um nome de autor:");
+//        nome = dados.nextLine();
 //        
-        
-        Scanner dados = new Scanner(System.in);
-        String nome, quant;
+//        String NomePrint = WrappersWikipedia.obtem_nome(nome);
+//        String DataNasc = WrappersWikipedia.obtem_dataNasc(nome);
+//        String DataMorte = WrappersWikipedia.obtem_dataMorte(nome);
+//        String Nacionalidade = WrappersWikipedia.obtem_nacionalidade(nome);
+//        String Genero = WrappersWikipedia.obtem_generoLiterario(nome);
+//        String Conjuge = WrappersWikipedia.obtem_conjuge(nome);
+//        String linkFoto = WrappersWikipedia.obtem_linkFoto(nome);
 //        
-        System.out.println("Insira um nome de autor:");
-        nome = dados.nextLine();
-        
-        String NomePrint = WrappersWikipedia.obtem_nome(nome);
-        String DataNasc = WrappersWikipedia.obtem_dataNasc(nome);
-        String DataMorte = WrappersWikipedia.obtem_dataMorte(nome);
-        String Nacionalidade = WrappersWikipedia.obtem_nacionalidade(nome);
-        String Genero = WrappersWikipedia.obtem_generoLiterario(nome);
-        String Conjuge = WrappersWikipedia.obtem_conjuge(nome);
-        String linkFoto = WrappersWikipedia.obtem_linkFoto(nome);
-        
-        System.out.println(NomePrint);
-        System.out.println(DataNasc);
-        System.out.println(DataMorte);
-        System.out.println(Nacionalidade);
-        System.out.println(Genero);
-        System.out.println(Conjuge);
-        System.out.println(linkFoto);
+//        System.out.println(NomePrint);
+//        System.out.println(DataNasc);
+//        System.out.println(DataMorte);
+//        System.out.println(Nacionalidade);
+//        System.out.println(Genero);
+//        System.out.println(Conjuge);
+//        System.out.println(linkFoto);
 //
 //        System.out.println("Quantas obras voce deseja procurar?:");
 //        quant = dados.nextLine();
