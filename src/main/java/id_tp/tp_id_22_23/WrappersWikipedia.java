@@ -27,12 +27,15 @@ public class WrappersWikipedia {
 
         String er1 = "<td scope=\"row\" style=\"vertical-align: top; text-align: left; font-weight:bold;\">Nome completo";
         String er2 = "<td style=\"vertical-align: top; text-align: left;\">([^<]+)";
+        String er3 = "<span class=\"\">([^<]+)</span>";
 
         Pattern p1 = Pattern.compile(er1);
         Pattern p2 = Pattern.compile(er2);
+        Pattern p3 = Pattern.compile(er3);
 
         Matcher m1;
         Matcher m2;
+        Matcher m3;
 
         Scanner ler = new Scanner(new FileInputStream("autores.txt"));
 
@@ -40,7 +43,7 @@ public class WrappersWikipedia {
             String linha = ler.nextLine();
 
             m1 = p1.matcher(linha);
-            m2 = p2.matcher(linha);
+            m3 = p3.matcher(linha);
 
             if (m1.find()) {
                 while (ler.hasNextLine()) {
@@ -56,6 +59,9 @@ public class WrappersWikipedia {
 
                 }
 
+            } else if (m3.find()) {
+                ler.close();
+                return m3.group(1);
             }
         }
         ler.close();

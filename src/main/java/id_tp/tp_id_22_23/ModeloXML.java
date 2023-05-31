@@ -4,6 +4,8 @@
  */
 package id_tp.tp_id_22_23;
 
+import java.util.ArrayList;
+import java.util.List;
 import org.jdom2.Attribute;
 import org.jdom2.Document;
 import org.jdom2.Element;
@@ -14,18 +16,34 @@ import java.util.Random;
  * @author mikae
  */
 public class ModeloXML {
-    
-    public static int idGenerator(){
+
+    public static int idGenerator() {
         Random rand = new Random();
         int upperbound = 30;
-        
+
         int int_random = rand.nextInt(upperbound);
-        
+
         return int_random;
-        
+
     }
-    
-     public static Document adicionaLivro(Autor au, Document doc) {
+
+//    public static boolean AchaNome(String nomeAutor, Document doc) {
+//        Element raiz;
+//        raiz = doc.getRootElement();
+//        List todosAutores = raiz.getChildren("autor");
+//        boolean found = false;
+//        for (int i = 0; i < todosAutores.size(); i++) {
+//            Element autor = (Element) todosAutores.get(i); //obtem livro i da Lista 
+//            if (autor.getChild("nome").getText().contains(nomeAutor)) {
+//                found = true;
+//            }
+//        }
+//        if (!found) {
+//            return false;
+//        }
+//        return true;
+//    }
+    public static Document adicionaAutor(Autor au, Document doc) {
         Element raiz;
         if (doc == null) {
             raiz = new Element("autores"); //cria <catalogo>...</catalogo>
@@ -33,10 +51,10 @@ public class ModeloXML {
         } else {
             raiz = doc.getRootElement();
         }
+
         Element pai = new Element("autor");
         Attribute a = new Attribute("id", Integer.toString(idGenerator()));
         pai.setAttribute(a);
-        
 
         Element x = new Element("nome").addContent(au.getNome());
         pai.addContent(x);
@@ -52,20 +70,93 @@ public class ModeloXML {
 
         x = new Element("generoLiterario").addContent(au.getGenero_literario());
         pai.addContent(x);
-        
+
         x = new Element("conjuge").addContent(au.getConjuge());
         pai.addContent(x);
-        
+
         x = new Element("linkFoto").addContent(au.getFotografia());
         pai.addContent(x);
-        
+
 //        x = new Element("premios").addContent(au.getFotografia());
 //        pai.addContent(x);
 //        
 //        x = new Element("ocupacoes").addContent(au.getFotografia());
 //        pai.addContent(x);
-       
         raiz.addContent(pai);
+        return doc;
+
+    }
+
+    public static Document removeAutorNome(String nomeAutor, Document doc) {
+        Element raiz;
+        if (doc == null) {
+            return null;
+        } else {
+            raiz = doc.getRootElement();
+        }
+        List todosAutores = raiz.getChildren("autor");
+        boolean found = false;
+        for (int i = 0; i < todosAutores.size(); i++) {
+            Element autor = (Element) todosAutores.get(i); //obtem livro i da Lista 
+            if (autor.getChild("nome").getText().contains(nomeAutor)) {
+                autor.getParent().removeContent(autor);
+                found = true;
+            }
+        }
+        if (!found) {
+            return null;
+        }
+        return doc;
+    }
+
+    public static Document adicionaObra(ArrayList<Obras> o, Document doc) {
+
+        for (int i = 0; i < o.size(); i++) {
+
+            Element raiz;
+            if (doc == null) {
+                raiz = new Element("obras"); //cria <catalogo>...</catalogo>
+                doc = new Document(raiz);
+            } else {
+                raiz = doc.getRootElement();
+            }
+            Element pai = new Element("livro");
+
+            Element x = new Element("isbn").addContent(o.get(i).getIsbn());
+            pai.addContent(x);
+
+            x = new Element("titulo").addContent(o.get(i).getTitulo());
+            pai.addContent(x);
+
+            x = new Element("autor").addContent(o.get(i).getNome_autor());
+            pai.addContent(x);
+
+            x = new Element("editora").addContent(o.get(i).getEditora());
+            pai.addContent(x);
+
+            x = new Element("preco").addContent(Double.toString(o.get(i).getPreco()));
+            pai.addContent(x);
+
+            x = new Element("quantidadePaginas").addContent(Integer.toString(o.get(i).getQuant_paginas()));
+            pai.addContent(x);
+
+            x = new Element("anoEdicao").addContent(o.get(i).getAno_edicao());
+            pai.addContent(x);
+
+            x = new Element("encadernacao").addContent(o.get(i).getEncadernacao());
+            pai.addContent(x);
+
+            x = new Element("fotoCapa").addContent(o.get(i).getFoto_capa());
+            pai.addContent(x);
+
+//        x = new Element("premios").addContent(au.getFotografia());
+//        pai.addContent(x);
+//        
+//        x = new Element("ocupacoes").addContent(au.getFotografia());
+//        pai.addContent(x);
+            raiz.addContent(pai);
+        }
+
         return doc;
     }
 }

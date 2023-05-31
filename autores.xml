@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE autores SYSTEM "autores.dtd">
 <autores>
-     <autor id="10">
+     <autor>
+          <nome />
+          <titulo />
+          <dataNascimento />
+          <dataMorte />
+          <nacionalidade />
+          <generoLiterario />
+          <conjuge />
+          <linkFoto />
+     </autor>
+     <autor id="2">
           <nome>José de Sousa Saramago</nome>
           <dataNascimento>16 de novembro 1922</dataNascimento>
           <dataMorte>18 de junho 2010</dataMorte>

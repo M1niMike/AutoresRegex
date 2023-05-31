@@ -1,14 +1,26 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE obras SYSTEM "obras.dtd">
 <obras>
-    <livro>
-        <isbn></isbn>
-        <titulo></titulo>
-        <autor></autor>
-        <editora></editora>
-        <preco></preco>
-        <quantidadePaginas></quantidadePaginas>
-        <idioma></idioma>
-        <encadernacao></encadernacao>
-    </livro>
+     <livro>
+          <isbn />
+          <titulo />
+          <autor />
+          <editora />
+          <preco />
+          <quantidadePaginas />
+          <anoEdicao />
+          <encadernacao />
+          <fotoCapa />
+     </livro>
+     <livro>
+          <isbn>978-972-0-04671-0</isbn>
+          <titulo>Memorial do Convento</titulo>
+          <autor>José Saramago</autor>
+          <editora>Porto Editora</editora>
+          <preco>17.75</preco>
+          <quantidadePaginas>402</quantidadePaginas>
+          <anoEdicao />
+          <encadernacao>Capa mole</encadernacao>
+          <fotoCapa>https://img.bertrand.pt/images/memorial-do-convento-jose-saramago/NDV8MTU3NDc0NDR8MjM1NjIyNjF8MTY2MjA0MDgyMzAwMA==/500x</fotoCapa>
+     </livro>
 </obras>

@@ -19,6 +19,7 @@ public class Obras {
     String ano_edicao;
     String encadernacao;    
     String Foto_capa;
+ 
     
     
     

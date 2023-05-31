@@ -261,11 +261,11 @@ public class WrappersBertrand {
         String editora = WrappersBertrand.obtem_editora(linkObras);
         Double preco = WrappersBertrand.obtem_preco(linkObras);
         int quant_paginas = WrappersBertrand.obtem_paginas(linkObras);
-        String idioma = WrappersBertrand.obtem_anoEdicao(linkObras);
+        String ano_edicao = WrappersBertrand.obtem_anoEdicao(linkObras);
         String encadernacao = WrappersBertrand.obtem_encadernacao(linkObras);
         String capa = WrappersBertrand.obtem_capa(linkObras);
 
-        Obras o = new Obras(isbn, nome, titulo, editora, preco, quant_paginas, idioma, encadernacao, capa);
+        Obras o = new Obras(isbn, nome, titulo, editora, preco, quant_paginas, ano_edicao, encadernacao, capa);
         return o;
     }
 }

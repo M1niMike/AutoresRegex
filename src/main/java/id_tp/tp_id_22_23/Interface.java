@@ -6,10 +6,13 @@ package id_tp.tp_id_22_23;
 
 import java.awt.Frame;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import org.jdom2.Document;
+import org.jdom2.Element;
 
 /**
  *
@@ -23,6 +26,23 @@ public class Interface extends javax.swing.JFrame {
     public Interface() {
         initComponents();
     }
+    
+    public static boolean AchaNome(String nomeAutor, Document doc) {
+        Element raiz;
+        raiz = doc.getRootElement();
+        List todosAutores = raiz.getChildren("autor");
+        boolean found = false;
+        for (int i = 0; i < todosAutores.size(); i++) {
+            Element autor = (Element) todosAutores.get(i); //obtem livro i da Lista 
+            if (autor.getChild("nome").getText().contains(nomeAutor)) {
+                found = true;
+            }
+        }
+        if (!found) {
+            return false;
+        }
+        return true;
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -34,14 +54,16 @@ public class Interface extends javax.swing.JFrame {
     private void initComponents() {
 
         jMenuItem11 = new javax.swing.JMenuItem();
+        jDialog1 = new javax.swing.JDialog();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
         jLabel1 = new javax.swing.JLabel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jTextArea2 = new javax.swing.JTextArea();
-        jLabel2 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
+        ButtonAdd = new javax.swing.JButton();
+        ButtonEliminar = new javax.swing.JButton();
+        jTextField2 = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         Inicio = new javax.swing.JMenu();
         Relatorio = new javax.swing.JMenuItem();
@@ -50,7 +72,6 @@ public class Interface extends javax.swing.JFrame {
         Menu_XML = new javax.swing.JMenu();
         Autores_XML = new javax.swing.JMenuItem();
         Obras_XML = new javax.swing.JMenuItem();
-        Adicionar_Autor = new javax.swing.JMenuItem();
         jMenuItem10 = new javax.swing.JMenuItem();
         jMenuItem6 = new javax.swing.JMenuItem();
         jMenuItem7 = new javax.swing.JMenuItem();
@@ -75,6 +96,17 @@ public class Interface extends javax.swing.JFrame {
 
         jMenuItem11.setText("jMenuItem11");
 
+        javax.swing.GroupLayout jDialog1Layout = new javax.swing.GroupLayout(jDialog1.getContentPane());
+        jDialog1.getContentPane().setLayout(jDialog1Layout);
+        jDialog1Layout.setHorizontalGroup(
+            jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        jDialog1Layout.setVerticalGroup(
+            jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jTextArea1.setColumns(20);
@@ -83,13 +115,6 @@ public class Interface extends javax.swing.JFrame {
 
         jLabel1.setText("Outputs");
 
-        jTextArea2.setColumns(20);
-        jTextArea2.setRows(5);
-        jScrollPane2.setViewportView(jTextArea2);
-
-        jLabel2.setText("Warnings");
-
-        jTextField1.setText("jTextField1");
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
@@ -97,6 +122,22 @@ public class Interface extends javax.swing.JFrame {
         });
 
         jLabel3.setText("Inserir o nome do autor:");
+
+        ButtonAdd.setText("Adicionar");
+        ButtonAdd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonAddActionPerformed(evt);
+            }
+        });
+
+        ButtonEliminar.setText("Eliminar");
+        ButtonEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonEliminarActionPerformed(evt);
+            }
+        });
+
+        jLabel2.setText("Insira o numero de obras: (5 a 1)");
 
         Inicio.setText("Inicio");
         Inicio.addActionListener(new java.awt.event.ActionListener() {
@@ -153,14 +194,6 @@ public class Interface extends javax.swing.JFrame {
             }
         });
         Menu_XML.add(Obras_XML);
-
-        Adicionar_Autor.setText("Adicionar autor");
-        Adicionar_Autor.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Adicionar_AutorActionPerformed(evt);
-            }
-        });
-        Menu_XML.add(Adicionar_Autor);
 
         jMenuItem10.setText("Eliminar autor");
         Menu_XML.add(jMenuItem10);
@@ -246,29 +279,38 @@ public class Interface extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 484, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jLabel3)
+                        .addComponent(jTextField1)
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(ButtonAdd)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(ButtonEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jTextField2))
+                    .addComponent(jLabel2))
+                .addContainerGap(89, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel2))
+                .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
                         .addComponent(jLabel3)
                         .addGap(5, 5, 5)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel2)
+                        .addGap(5, 5, 5)
+                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(ButtonAdd)
+                            .addComponent(ButtonEliminar)))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 457, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(17, Short.MAX_VALUE))
         );
@@ -284,14 +326,14 @@ public class Interface extends javax.swing.JFrame {
         try {
             String textoAux = FuncAuxs.lerFicheiro("escritores.txt");
             jTextArea1.setText(textoAux);
-            
+
         } catch (IOException ex) {
             Logger.getLogger(Frame.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_jMenuItem15ActionPerformed
 
     private void InicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InicioActionPerformed
-      
+
     }//GEN-LAST:event_InicioActionPerformed
 
     private void AutoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AutoresActionPerformed
@@ -303,47 +345,147 @@ public class Interface extends javax.swing.JFrame {
 
     }//GEN-LAST:event_AutoresActionPerformed
 
-    private void Menu_XMLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menu_XMLActionPerformed
-        
-        
-    }//GEN-LAST:event_Menu_XMLActionPerformed
-
-    private void Autores_XMLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Autores_XMLActionPerformed
-       Document doc = XMLJDomFunctions.lerDocumentoXML("autores.xml");
-       String texto = XMLJDomFunctions.escreverDocumentoString(doc);
-        
-        jTextArea1.setText(texto);
-    }//GEN-LAST:event_Autores_XMLActionPerformed
-
-    private void Obras_XMLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Obras_XMLActionPerformed
-       Document doc = XMLJDomFunctions.lerDocumentoXML("obras.xml");
-       String texto = XMLJDomFunctions.escreverDocumentoString(doc);
-        
-        jTextArea1.setText(texto);
-    }//GEN-LAST:event_Obras_XMLActionPerformed
-
-    private void Adicionar_AutorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Adicionar_AutorActionPerformed
-        try {
-            Autor au = WrappersWikipedia.criaAutor(jTextField1.getText());
-            Document doc = XMLJDomFunctions.lerDocumentoXML("autores.xml");
-            
-            doc = ModeloXML.adicionaLivro(au, doc);
-            
-            XMLJDomFunctions.escreverDocumentoParaFicheiro(doc, "autores.xml");
-            
-            //jDialog1.setVisible(false);
-        } catch (IOException ex) {
-            Logger.getLogger(Interface.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_Adicionar_AutorActionPerformed
-
     private void SairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SairActionPerformed
-       System.exit(0);
+        System.exit(0);
     }//GEN-LAST:event_SairActionPerformed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void ButtonAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonAddActionPerformed
+        try {
+
+            String nome = jTextField1.getText();
+            String quant = jTextField2.getText();
+
+            if ("".equals(nome)) {
+                jDialog1.setVisible(false);
+                JOptionPane.showMessageDialog(this,
+                        "Insira um nome!",
+                        "Aviso",
+                        JOptionPane.INFORMATION_MESSAGE);
+            } else {
+
+                Autor au = WrappersWikipedia.criaAutor(nome);
+
+                Document doc = XMLJDomFunctions.lerDocumentoXML("autores.xml");
+                
+                
+                if(AchaNome(nome, doc)){
+                    jDialog1.setVisible(false);
+                    JOptionPane.showMessageDialog(this,
+                        "Autor ja existe",
+                        "Informação",
+                        JOptionPane.INFORMATION_MESSAGE);
+                    
+                    return;
+                }
+                
+                doc = ModeloXML.adicionaAutor(au, doc);
+
+                XMLJDomFunctions.escreverDocumentoParaFicheiro(doc, "autores.xml");
+
+                jDialog1.setVisible(false);
+                JOptionPane.showMessageDialog(this,
+                        "Autor adicionado com sucesso",
+                        "Informação",
+                        JOptionPane.INFORMATION_MESSAGE);
+
+                if (!"".equals(quant)) {
+                    ArrayList<Obras> obs = new ArrayList<>();
+                    ArrayList<String> linkObras = WrappersBertrand.obtem_link(nome, Integer.parseInt(quant));
+
+                    for (int i = 0; i < linkObras.size(); i++) {
+                        obs.add(WrappersBertrand.criaObras(linkObras.get(i)));
+                    }
+
+                    Document doc2 = XMLJDomFunctions.lerDocumentoXML("obras.xml");
+
+                    doc2 = ModeloXML.adicionaObra(obs, doc2);
+
+                    XMLJDomFunctions.escreverDocumentoParaFicheiro(doc2, "obras.xml");
+
+                    jDialog1.setVisible(false);
+                    JOptionPane.showMessageDialog(this,
+                            "Obra/as adicionada/as com sucesso",
+                            "Informação",
+                            JOptionPane.INFORMATION_MESSAGE);
+
+                }
+
+            }
+
+            //jDialog1.setVisible(false);
+        } catch (IOException ex) {
+            jDialog1.setVisible(false);
+            JOptionPane.showMessageDialog(this,
+                    "Erro ao Adicionar um autor",
+                    "Aviso",
+                    JOptionPane.ERROR_MESSAGE);
+            Logger.getLogger(Interface.class.getName()).log(Level.SEVERE, null, ex);
+
+        }
+    }//GEN-LAST:event_ButtonAddActionPerformed
+
+    private void Menu_XMLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Menu_XMLActionPerformed
+
+    }//GEN-LAST:event_Menu_XMLActionPerformed
+
+    private void Obras_XMLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Obras_XMLActionPerformed
+        Document doc = XMLJDomFunctions.lerDocumentoXML("obras.xml");
+        String texto = XMLJDomFunctions.escreverDocumentoString(doc);
+
+        jTextArea1.setText(texto);
+    }//GEN-LAST:event_Obras_XMLActionPerformed
+
+    private void Autores_XMLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Autores_XMLActionPerformed
+        Document doc = XMLJDomFunctions.lerDocumentoXML("autores.xml");
+        String texto = XMLJDomFunctions.escreverDocumentoString(doc);
+
+        jTextArea1.setText(texto);
+    }//GEN-LAST:event_Autores_XMLActionPerformed
+
+    private void ButtonEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonEliminarActionPerformed
+        String nome = jTextField1.getText();
+
+        if ("".equals(nome)) {
+            jDialog1.setVisible(false);
+            JOptionPane.showMessageDialog(this,
+                    "Insira um nome!",
+                    "Aviso",
+                    JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            Document doc = XMLJDomFunctions.lerDocumentoXML("autores.xml");
+
+            if (doc == null) {
+
+                jDialog1.setVisible(false);
+                JOptionPane.showMessageDialog(this,
+                        "Ficheiro nao encontrado",
+                        "Aviso",
+                        JOptionPane.ERROR_MESSAGE);
+
+            } else if (doc != null) {
+                doc = ModeloXML.removeAutorNome(nome, doc);
+                XMLJDomFunctions.escreverDocumentoParaFicheiro(doc, "autores.xml");
+
+                jDialog1.setVisible(false);
+                JOptionPane.showMessageDialog(this,
+                        "Autor removido com sucesso",
+                        "Informação",
+                        JOptionPane.INFORMATION_MESSAGE);
+            } else {
+                jDialog1.setVisible(false);
+                JOptionPane.showMessageDialog(this,
+                        "Nome invalido",
+                        "Aviso",
+                        JOptionPane.ERROR_MESSAGE);
+            }
+        }
+
+
+    }//GEN-LAST:event_ButtonEliminarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -381,14 +523,16 @@ public class Interface extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenuItem Adicionar_Autor;
     private javax.swing.JMenuItem Autores;
     private javax.swing.JMenuItem Autores_XML;
+    private javax.swing.JButton ButtonAdd;
+    private javax.swing.JButton ButtonEliminar;
     private javax.swing.JMenu Inicio;
     private javax.swing.JMenu Menu_XML;
     private javax.swing.JMenuItem Obras_XML;
     private javax.swing.JMenuItem Relatorio;
     private javax.swing.JMenuItem Sair;
+    private javax.swing.JDialog jDialog1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -416,9 +560,8 @@ public class Interface extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem8;
     private javax.swing.JMenuItem jMenuItem9;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextArea jTextArea2;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
     // End of variables declaration//GEN-END:variables
 }
