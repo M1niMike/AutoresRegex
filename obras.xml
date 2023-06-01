@@ -1,17 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE obras SYSTEM "obras.dtd">
-<obras>
-     <livro>
-          <isbn />
-          <titulo />
-          <autor />
-          <editora />
-          <preco />
-          <quantidadePaginas />
-          <anoEdicao />
-          <encadernacao />
-          <fotoCapa />
-     </livro>
+<obras xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="obras.xsd">
      <livro>
           <isbn>978-972-0-04671-0</isbn>
           <titulo>Memorial do Convento</titulo>

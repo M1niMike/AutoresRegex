@@ -53,8 +53,31 @@ public class Interface extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jMenuItem11 = new javax.swing.JMenuItem();
-        jDialog1 = new javax.swing.JDialog();
+        Warnings = new javax.swing.JDialog();
+        ADN = new javax.swing.JDialog();
+        ADN_TF1 = new javax.swing.JTextField();
+        ADN_TF2 = new javax.swing.JTextField();
+        ADN_B = new javax.swing.JButton();
+        ADN_Label1 = new javax.swing.JLabel();
+        ADN_Lebal2 = new javax.swing.JLabel();
+        ANC = new javax.swing.JDialog();
+        ANC_TF1 = new javax.swing.JTextField();
+        ANC_TF2 = new javax.swing.JTextField();
+        ANC_B1 = new javax.swing.JButton();
+        ANC_Label1 = new javax.swing.JLabel();
+        ANC_Label2 = new javax.swing.JLabel();
+        ACJ = new javax.swing.JDialog();
+        ACJ_TF1 = new javax.swing.JTextField();
+        ACJ_TF2 = new javax.swing.JTextField();
+        ACJ_B1 = new javax.swing.JButton();
+        ACJ_L1 = new javax.swing.JLabel();
+        ACJ_L2 = new javax.swing.JLabel();
+        AGL = new javax.swing.JDialog();
+        AGL_TF1 = new javax.swing.JTextField();
+        AGL_TF2 = new javax.swing.JTextField();
+        AGL_B1 = new javax.swing.JButton();
+        AGL_L1 = new javax.swing.JLabel();
+        AGL_L2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
         jLabel1 = new javax.swing.JLabel();
@@ -72,11 +95,13 @@ public class Interface extends javax.swing.JFrame {
         Menu_XML = new javax.swing.JMenu();
         Autores_XML = new javax.swing.JMenuItem();
         Obras_XML = new javax.swing.JMenuItem();
-        jMenuItem10 = new javax.swing.JMenuItem();
-        jMenuItem6 = new javax.swing.JMenuItem();
-        jMenuItem7 = new javax.swing.JMenuItem();
+        EliminarAutor = new javax.swing.JMenuItem();
+        AlterarDataNasc = new javax.swing.JMenuItem();
+        AlterarNacionalidade = new javax.swing.JMenuItem();
         jMenuItem8 = new javax.swing.JMenuItem();
         jMenuItem9 = new javax.swing.JMenuItem();
+        AlterarConjuge = new javax.swing.JMenuItem();
+        AlterarGeneroLit = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
         jMenuItem16 = new javax.swing.JMenuItem();
         jMenuItem17 = new javax.swing.JMenuItem();
@@ -87,24 +112,212 @@ public class Interface extends javax.swing.JFrame {
         jMenuItem22 = new javax.swing.JMenuItem();
         jMenuItem23 = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
-        jMenuItem13 = new javax.swing.JMenuItem();
-        jMenuItem14 = new javax.swing.JMenuItem();
+        DTD_Autores = new javax.swing.JMenuItem();
+        XSD_Autores = new javax.swing.JMenuItem();
+        DTD_Obras = new javax.swing.JMenuItem();
+        XSD_Obras = new javax.swing.JMenuItem();
         jMenu5 = new javax.swing.JMenu();
         jMenu6 = new javax.swing.JMenu();
         jMenu7 = new javax.swing.JMenu();
         jMenuItem15 = new javax.swing.JMenuItem();
 
-        jMenuItem11.setText("jMenuItem11");
-
-        javax.swing.GroupLayout jDialog1Layout = new javax.swing.GroupLayout(jDialog1.getContentPane());
-        jDialog1.getContentPane().setLayout(jDialog1Layout);
-        jDialog1Layout.setHorizontalGroup(
-            jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout WarningsLayout = new javax.swing.GroupLayout(Warnings.getContentPane());
+        Warnings.getContentPane().setLayout(WarningsLayout);
+        WarningsLayout.setHorizontalGroup(
+            WarningsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 400, Short.MAX_VALUE)
         );
-        jDialog1Layout.setVerticalGroup(
-            jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        WarningsLayout.setVerticalGroup(
+            WarningsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 300, Short.MAX_VALUE)
+        );
+
+        ADN_TF1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ADN_TF1ActionPerformed(evt);
+            }
+        });
+
+        ADN_B.setText("Alterar");
+        ADN_B.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ADN_BActionPerformed(evt);
+            }
+        });
+
+        ADN_Label1.setText("Nome do Autor");
+
+        ADN_Lebal2.setText("Nova data de nascimento:");
+
+        javax.swing.GroupLayout ADNLayout = new javax.swing.GroupLayout(ADN.getContentPane());
+        ADN.getContentPane().setLayout(ADNLayout);
+        ADNLayout.setHorizontalGroup(
+            ADNLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ADNLayout.createSequentialGroup()
+                .addGap(137, 137, 137)
+                .addGroup(ADNLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(ADN_B)
+                    .addComponent(ADN_Label1)
+                    .addComponent(ADN_Lebal2)
+                    .addComponent(ADN_TF1)
+                    .addComponent(ADN_TF2, javax.swing.GroupLayout.DEFAULT_SIZE, 139, Short.MAX_VALUE))
+                .addContainerGap(124, Short.MAX_VALUE))
+        );
+        ADNLayout.setVerticalGroup(
+            ADNLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ADNLayout.createSequentialGroup()
+                .addGap(49, 49, 49)
+                .addComponent(ADN_Label1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(ADN_TF1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(24, 24, 24)
+                .addComponent(ADN_Lebal2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(ADN_TF2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(29, 29, 29)
+                .addComponent(ADN_B)
+                .addContainerGap(87, Short.MAX_VALUE))
+        );
+
+        ANC_TF1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ANC_TF1ActionPerformed(evt);
+            }
+        });
+
+        ANC_B1.setText("Alterar");
+        ANC_B1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ANC_B1ActionPerformed(evt);
+            }
+        });
+
+        ANC_Label1.setText("Nome do Autor");
+
+        ANC_Label2.setText("Nova nacionalidade");
+
+        javax.swing.GroupLayout ANCLayout = new javax.swing.GroupLayout(ANC.getContentPane());
+        ANC.getContentPane().setLayout(ANCLayout);
+        ANCLayout.setHorizontalGroup(
+            ANCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ANCLayout.createSequentialGroup()
+                .addGap(137, 137, 137)
+                .addGroup(ANCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(ANC_B1)
+                    .addComponent(ANC_Label1)
+                    .addComponent(ANC_Label2)
+                    .addComponent(ANC_TF1)
+                    .addComponent(ANC_TF2, javax.swing.GroupLayout.DEFAULT_SIZE, 139, Short.MAX_VALUE))
+                .addContainerGap(124, Short.MAX_VALUE))
+        );
+        ANCLayout.setVerticalGroup(
+            ANCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ANCLayout.createSequentialGroup()
+                .addGap(49, 49, 49)
+                .addComponent(ANC_Label1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(ANC_TF1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(24, 24, 24)
+                .addComponent(ANC_Label2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(ANC_TF2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(29, 29, 29)
+                .addComponent(ANC_B1)
+                .addContainerGap(87, Short.MAX_VALUE))
+        );
+
+        ACJ_TF1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ACJ_TF1ActionPerformed(evt);
+            }
+        });
+
+        ACJ_B1.setText("Alterar");
+        ACJ_B1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ACJ_B1ActionPerformed(evt);
+            }
+        });
+
+        ACJ_L1.setText("Nome do Autor");
+
+        ACJ_L2.setText("Novo/a conjuge");
+
+        javax.swing.GroupLayout ACJLayout = new javax.swing.GroupLayout(ACJ.getContentPane());
+        ACJ.getContentPane().setLayout(ACJLayout);
+        ACJLayout.setHorizontalGroup(
+            ACJLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ACJLayout.createSequentialGroup()
+                .addGap(137, 137, 137)
+                .addGroup(ACJLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(ACJ_B1)
+                    .addComponent(ACJ_L1)
+                    .addComponent(ACJ_L2)
+                    .addComponent(ACJ_TF1)
+                    .addComponent(ACJ_TF2, javax.swing.GroupLayout.DEFAULT_SIZE, 139, Short.MAX_VALUE))
+                .addContainerGap(124, Short.MAX_VALUE))
+        );
+        ACJLayout.setVerticalGroup(
+            ACJLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ACJLayout.createSequentialGroup()
+                .addGap(49, 49, 49)
+                .addComponent(ACJ_L1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(ACJ_TF1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(24, 24, 24)
+                .addComponent(ACJ_L2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(ACJ_TF2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(29, 29, 29)
+                .addComponent(ACJ_B1)
+                .addContainerGap(87, Short.MAX_VALUE))
+        );
+
+        AGL_TF1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AGL_TF1ActionPerformed(evt);
+            }
+        });
+
+        AGL_B1.setText("Alterar");
+        AGL_B1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AGL_B1ActionPerformed(evt);
+            }
+        });
+
+        AGL_L1.setText("Nome do Autor");
+
+        AGL_L2.setText("Novo genero literario");
+
+        javax.swing.GroupLayout AGLLayout = new javax.swing.GroupLayout(AGL.getContentPane());
+        AGL.getContentPane().setLayout(AGLLayout);
+        AGLLayout.setHorizontalGroup(
+            AGLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(AGLLayout.createSequentialGroup()
+                .addGap(137, 137, 137)
+                .addGroup(AGLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(AGL_B1)
+                    .addComponent(AGL_L1)
+                    .addComponent(AGL_L2)
+                    .addComponent(AGL_TF1)
+                    .addComponent(AGL_TF2, javax.swing.GroupLayout.DEFAULT_SIZE, 139, Short.MAX_VALUE))
+                .addContainerGap(124, Short.MAX_VALUE))
+        );
+        AGLLayout.setVerticalGroup(
+            AGLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(AGLLayout.createSequentialGroup()
+                .addGap(49, 49, 49)
+                .addComponent(AGL_L1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(AGL_TF1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(24, 24, 24)
+                .addComponent(AGL_L2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(AGL_TF2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(29, 29, 29)
+                .addComponent(AGL_B1)
+                .addContainerGap(87, Short.MAX_VALUE))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -195,20 +408,46 @@ public class Interface extends javax.swing.JFrame {
         });
         Menu_XML.add(Obras_XML);
 
-        jMenuItem10.setText("Eliminar autor");
-        Menu_XML.add(jMenuItem10);
+        EliminarAutor.setText("Eliminar autor");
+        Menu_XML.add(EliminarAutor);
 
-        jMenuItem6.setText("Alterar data de nascimento");
-        Menu_XML.add(jMenuItem6);
+        AlterarDataNasc.setText("Alterar data de nascimento");
+        AlterarDataNasc.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AlterarDataNascActionPerformed(evt);
+            }
+        });
+        Menu_XML.add(AlterarDataNasc);
 
-        jMenuItem7.setText("Alterar nacionalidade");
-        Menu_XML.add(jMenuItem7);
+        AlterarNacionalidade.setText("Alterar nacionalidade");
+        AlterarNacionalidade.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AlterarNacionalidadeActionPerformed(evt);
+            }
+        });
+        Menu_XML.add(AlterarNacionalidade);
 
         jMenuItem8.setText("Acrescentar prêmio");
         Menu_XML.add(jMenuItem8);
 
         jMenuItem9.setText("Eliminar prêmio");
         Menu_XML.add(jMenuItem9);
+
+        AlterarConjuge.setText("Alterar conjuge");
+        AlterarConjuge.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AlterarConjugeActionPerformed(evt);
+            }
+        });
+        Menu_XML.add(AlterarConjuge);
+
+        AlterarGeneroLit.setText("Alterar genero literario");
+        AlterarGeneroLit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AlterarGeneroLitActionPerformed(evt);
+            }
+        });
+        Menu_XML.add(AlterarGeneroLit);
 
         jMenuBar1.add(Menu_XML);
 
@@ -242,11 +481,37 @@ public class Interface extends javax.swing.JFrame {
 
         jMenu4.setText("Validar");
 
-        jMenuItem13.setText("DTD");
-        jMenu4.add(jMenuItem13);
+        DTD_Autores.setText("DTD_Autores");
+        DTD_Autores.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DTD_AutoresActionPerformed(evt);
+            }
+        });
+        jMenu4.add(DTD_Autores);
 
-        jMenuItem14.setText("XSD");
-        jMenu4.add(jMenuItem14);
+        XSD_Autores.setText("XSD_Autores");
+        XSD_Autores.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                XSD_AutoresActionPerformed(evt);
+            }
+        });
+        jMenu4.add(XSD_Autores);
+
+        DTD_Obras.setText("DTD_Obras");
+        DTD_Obras.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DTD_ObrasActionPerformed(evt);
+            }
+        });
+        jMenu4.add(DTD_Obras);
+
+        XSD_Obras.setText("XSD_Obras");
+        XSD_Obras.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                XSD_ObrasActionPerformed(evt);
+            }
+        });
+        jMenu4.add(XSD_Obras);
 
         jMenuBar1.add(jMenu4);
 
@@ -360,7 +625,7 @@ public class Interface extends javax.swing.JFrame {
             String quant = jTextField2.getText();
 
             if ("".equals(nome)) {
-                jDialog1.setVisible(false);
+                Warnings.setVisible(false);
                 JOptionPane.showMessageDialog(this,
                         "Insira um nome!",
                         "Aviso",
@@ -373,7 +638,7 @@ public class Interface extends javax.swing.JFrame {
                 
                 
                 if(AchaNome(nome, doc)){
-                    jDialog1.setVisible(false);
+                    Warnings.setVisible(false);
                     JOptionPane.showMessageDialog(this,
                         "Autor ja existe",
                         "Informação",
@@ -386,7 +651,7 @@ public class Interface extends javax.swing.JFrame {
 
                 XMLJDomFunctions.escreverDocumentoParaFicheiro(doc, "autores.xml");
 
-                jDialog1.setVisible(false);
+                Warnings.setVisible(false);
                 JOptionPane.showMessageDialog(this,
                         "Autor adicionado com sucesso",
                         "Informação",
@@ -406,7 +671,7 @@ public class Interface extends javax.swing.JFrame {
 
                     XMLJDomFunctions.escreverDocumentoParaFicheiro(doc2, "obras.xml");
 
-                    jDialog1.setVisible(false);
+                    Warnings.setVisible(false);
                     JOptionPane.showMessageDialog(this,
                             "Obra/as adicionada/as com sucesso",
                             "Informação",
@@ -418,7 +683,7 @@ public class Interface extends javax.swing.JFrame {
 
             //jDialog1.setVisible(false);
         } catch (IOException ex) {
-            jDialog1.setVisible(false);
+            Warnings.setVisible(false);
             JOptionPane.showMessageDialog(this,
                     "Erro ao Adicionar um autor",
                     "Aviso",
@@ -450,7 +715,7 @@ public class Interface extends javax.swing.JFrame {
         String nome = jTextField1.getText();
 
         if ("".equals(nome)) {
-            jDialog1.setVisible(false);
+            Warnings.setVisible(false);
             JOptionPane.showMessageDialog(this,
                     "Insira um nome!",
                     "Aviso",
@@ -460,7 +725,7 @@ public class Interface extends javax.swing.JFrame {
 
             if (doc == null) {
 
-                jDialog1.setVisible(false);
+                Warnings.setVisible(false);
                 JOptionPane.showMessageDialog(this,
                         "Ficheiro nao encontrado",
                         "Aviso",
@@ -470,13 +735,13 @@ public class Interface extends javax.swing.JFrame {
                 doc = ModeloXML.removeAutorNome(nome, doc);
                 XMLJDomFunctions.escreverDocumentoParaFicheiro(doc, "autores.xml");
 
-                jDialog1.setVisible(false);
+                Warnings.setVisible(false);
                 JOptionPane.showMessageDialog(this,
                         "Autor removido com sucesso",
                         "Informação",
                         JOptionPane.INFORMATION_MESSAGE);
             } else {
-                jDialog1.setVisible(false);
+                Warnings.setVisible(false);
                 JOptionPane.showMessageDialog(this,
                         "Nome invalido",
                         "Aviso",
@@ -486,6 +751,228 @@ public class Interface extends javax.swing.JFrame {
 
 
     }//GEN-LAST:event_ButtonEliminarActionPerformed
+
+    private void DTD_AutoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DTD_AutoresActionPerformed
+        try {
+            // TODO add your handling code here:
+            int res = Validacao.validarDocumentoDTD("autores.xml", "autores.dtd");
+            if (res == 1) {
+                JOptionPane.showMessageDialog(this,
+                        "Ficheiro válido por DTD",
+                        "Validação DTD",
+                        JOptionPane.INFORMATION_MESSAGE);
+            }
+            if (res == -1) {
+                JOptionPane.showMessageDialog(this,
+                        "Ficheiro inválido por DTD",
+                        "Validação DTD",
+                        JOptionPane.ERROR_MESSAGE);
+            }
+        } catch (IOException ex) {
+            JOptionPane.showMessageDialog(this,
+                    "Verifique se os ficheiros XML e DTD existem",
+                    "Validação DTD",
+                    JOptionPane.ERROR_MESSAGE);
+            Logger.getLogger(Frame.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_DTD_AutoresActionPerformed
+
+    private void XSD_AutoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_XSD_AutoresActionPerformed
+        // TODO add your handling code here:
+           int res = Validacao.validarDocumentoXSD("autores.xml", "autores.xsd");
+        if (res == -1) {
+            
+             Warnings.setVisible(false);
+                JOptionPane.showMessageDialog(this,
+                        "O Ficheiro e valido",
+                        "Validacao XSD",
+                        JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            
+            Warnings.setVisible(false);
+                JOptionPane.showMessageDialog(this,
+                        "O Ficheiro e invalido",
+                        "Validacao XSD",
+                        JOptionPane.INFORMATION_MESSAGE);
+        }
+    }//GEN-LAST:event_XSD_AutoresActionPerformed
+
+    private void DTD_ObrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DTD_ObrasActionPerformed
+         try {
+            // TODO add your handling code here:
+            int res = Validacao.validarDocumentoDTD("obras.xml", "obras.dtd");
+            if (res == 1) {
+                JOptionPane.showMessageDialog(this,
+                        "Ficheiro válido por DTD",
+                        "Validação DTD",
+                        JOptionPane.INFORMATION_MESSAGE);
+            }
+            if (res == -1) {
+                JOptionPane.showMessageDialog(this,
+                        "Ficheiro inválido por DTD",
+                        "Validação DTD",
+                        JOptionPane.ERROR_MESSAGE);
+            }
+        } catch (IOException ex) {
+            JOptionPane.showMessageDialog(this,
+                    "Verifique se os ficheiros XML e DTD existem",
+                    "Validação DTD",
+                    JOptionPane.ERROR_MESSAGE);
+            Logger.getLogger(Frame.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_DTD_ObrasActionPerformed
+
+    private void XSD_ObrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_XSD_ObrasActionPerformed
+          int res = Validacao.validarDocumentoXSD("obras.xml", "obras.xsd");
+        if (res == -1) {
+            
+             Warnings.setVisible(false);
+                JOptionPane.showMessageDialog(this,
+                        "O Ficheiro e valido",
+                        "Validacao XSD",
+                        JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            
+            Warnings.setVisible(false);
+                JOptionPane.showMessageDialog(this,
+                        "O Ficheiro e invalido",
+                        "Validacao XSD",
+                        JOptionPane.INFORMATION_MESSAGE);
+        }
+    }//GEN-LAST:event_XSD_ObrasActionPerformed
+
+    private void AlterarDataNascActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AlterarDataNascActionPerformed
+        // TODO add your handling code here:
+        ADN.setSize(450, 300);
+        ADN.setLocation(500, 300);
+        ADN.setTitle("Alterar Data Nascimento");
+        ADN.setVisible(true);
+    }//GEN-LAST:event_AlterarDataNascActionPerformed
+
+    private void ADN_TF1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ADN_TF1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ADN_TF1ActionPerformed
+
+    private void ADN_BActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ADN_BActionPerformed
+        Document doc = XMLJDomFunctions.lerDocumentoXML("autores.xml");
+        
+        doc = ModeloXML.alterarDataNasc(ADN_TF1.getText(), ADN_TF2.getText(), doc);
+        
+        JOptionPane.showMessageDialog(this,
+                "Data alterada com sucesso",
+                "Informação",
+                JOptionPane.INFORMATION_MESSAGE);
+        
+        //grava o ficheiro XML em disco
+        if (doc != null) {
+            XMLJDomFunctions.escreverDocumentoParaFicheiro(doc, "autores.xml");
+        } else {
+            JOptionPane.showMessageDialog(this,
+                    "Autor não foi encontrado",
+                    "Informação",
+                    JOptionPane.INFORMATION_MESSAGE);
+        }
+        ADN.setVisible(false);
+    }//GEN-LAST:event_ADN_BActionPerformed
+
+    private void ANC_TF1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ANC_TF1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ANC_TF1ActionPerformed
+
+    private void ANC_B1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ANC_B1ActionPerformed
+        Document doc = XMLJDomFunctions.lerDocumentoXML("autores.xml");
+        
+        doc = ModeloXML.alterarNacionalidade(ANC_TF1.getText(), ANC_TF2.getText(), doc);
+        
+        JOptionPane.showMessageDialog(this,
+                "Nacionalidade alterada com sucesso",
+                "Informação",
+                JOptionPane.INFORMATION_MESSAGE);
+        
+        //grava o ficheiro XML em disco
+        if (doc != null) {
+            XMLJDomFunctions.escreverDocumentoParaFicheiro(doc, "autores.xml");
+        } else {
+            JOptionPane.showMessageDialog(this,
+                    "Autor não foi encontrado",
+                    "Informação",
+                    JOptionPane.INFORMATION_MESSAGE);
+        }
+        ANC.setVisible(false);
+    }//GEN-LAST:event_ANC_B1ActionPerformed
+
+    private void AlterarNacionalidadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AlterarNacionalidadeActionPerformed
+        ANC.setSize(450, 300);
+        ANC.setLocation(500, 300);
+        ANC.setTitle("Alterar Nacionalidade");
+        ANC.setVisible(true);
+    }//GEN-LAST:event_AlterarNacionalidadeActionPerformed
+
+    private void ACJ_TF1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ACJ_TF1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ACJ_TF1ActionPerformed
+
+    private void ACJ_B1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ACJ_B1ActionPerformed
+        Document doc = XMLJDomFunctions.lerDocumentoXML("autores.xml");
+        
+        doc = ModeloXML.alterarConjuge(ACJ_TF1.getText(), ACJ_TF2.getText(), doc);
+        
+        JOptionPane.showMessageDialog(this,
+                "Conjuge alterado com sucesso",
+                "Informação",
+                JOptionPane.INFORMATION_MESSAGE);
+        
+        //grava o ficheiro XML em disco
+        if (doc != null) {
+            XMLJDomFunctions.escreverDocumentoParaFicheiro(doc, "autores.xml");
+        } else {
+            JOptionPane.showMessageDialog(this,
+                    "Autor não foi encontrado",
+                    "Informação",
+                    JOptionPane.INFORMATION_MESSAGE);
+        }
+        ACJ.setVisible(false);
+    }//GEN-LAST:event_ACJ_B1ActionPerformed
+
+    private void AlterarConjugeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AlterarConjugeActionPerformed
+        ACJ.setSize(450, 300);
+        ACJ.setLocation(500, 300);
+        ACJ.setTitle("Alterar Conjuge");
+        ACJ.setVisible(true);
+    }//GEN-LAST:event_AlterarConjugeActionPerformed
+
+    private void AGL_TF1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AGL_TF1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_AGL_TF1ActionPerformed
+
+    private void AGL_B1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AGL_B1ActionPerformed
+        Document doc = XMLJDomFunctions.lerDocumentoXML("autores.xml");
+        
+        doc = ModeloXML.alterarGeneroLit(AGL_TF1.getText(), AGL_TF2.getText(), doc);
+        
+        JOptionPane.showMessageDialog(this,
+                "Genero Literario alterado com sucesso",
+                "Informação",
+                JOptionPane.INFORMATION_MESSAGE);
+        
+        //grava o ficheiro XML em disco
+        if (doc != null) {
+            XMLJDomFunctions.escreverDocumentoParaFicheiro(doc, "autores.xml");
+        } else {
+            JOptionPane.showMessageDialog(this,
+                    "Autor não foi encontrado",
+                    "Informação",
+                    JOptionPane.INFORMATION_MESSAGE);
+        }
+        AGL.setVisible(false);
+    }//GEN-LAST:event_AGL_B1ActionPerformed
+
+    private void AlterarGeneroLitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AlterarGeneroLitActionPerformed
+        AGL.setSize(450, 300);
+        AGL.setLocation(500, 300);
+        AGL.setTitle("Alterar Genero Literario");
+        AGL.setVisible(true);
+    }//GEN-LAST:event_AlterarGeneroLitActionPerformed
 
     /**
      * @param args the command line arguments
@@ -523,16 +1010,49 @@ public class Interface extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JDialog ACJ;
+    private javax.swing.JButton ACJ_B1;
+    private javax.swing.JLabel ACJ_L1;
+    private javax.swing.JLabel ACJ_L2;
+    private javax.swing.JTextField ACJ_TF1;
+    private javax.swing.JTextField ACJ_TF2;
+    private javax.swing.JDialog ADN;
+    private javax.swing.JButton ADN_B;
+    private javax.swing.JLabel ADN_Label1;
+    private javax.swing.JLabel ADN_Lebal2;
+    private javax.swing.JTextField ADN_TF1;
+    private javax.swing.JTextField ADN_TF2;
+    private javax.swing.JDialog AGL;
+    private javax.swing.JButton AGL_B1;
+    private javax.swing.JLabel AGL_L1;
+    private javax.swing.JLabel AGL_L2;
+    private javax.swing.JTextField AGL_TF1;
+    private javax.swing.JTextField AGL_TF2;
+    private javax.swing.JDialog ANC;
+    private javax.swing.JButton ANC_B1;
+    private javax.swing.JLabel ANC_Label1;
+    private javax.swing.JLabel ANC_Label2;
+    private javax.swing.JTextField ANC_TF1;
+    private javax.swing.JTextField ANC_TF2;
+    private javax.swing.JMenuItem AlterarConjuge;
+    private javax.swing.JMenuItem AlterarDataNasc;
+    private javax.swing.JMenuItem AlterarGeneroLit;
+    private javax.swing.JMenuItem AlterarNacionalidade;
     private javax.swing.JMenuItem Autores;
     private javax.swing.JMenuItem Autores_XML;
     private javax.swing.JButton ButtonAdd;
     private javax.swing.JButton ButtonEliminar;
+    private javax.swing.JMenuItem DTD_Autores;
+    private javax.swing.JMenuItem DTD_Obras;
+    private javax.swing.JMenuItem EliminarAutor;
     private javax.swing.JMenu Inicio;
     private javax.swing.JMenu Menu_XML;
     private javax.swing.JMenuItem Obras_XML;
     private javax.swing.JMenuItem Relatorio;
     private javax.swing.JMenuItem Sair;
-    private javax.swing.JDialog jDialog1;
+    private javax.swing.JDialog Warnings;
+    private javax.swing.JMenuItem XSD_Autores;
+    private javax.swing.JMenuItem XSD_Obras;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -542,10 +1062,6 @@ public class Interface extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu6;
     private javax.swing.JMenu jMenu7;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem10;
-    private javax.swing.JMenuItem jMenuItem11;
-    private javax.swing.JMenuItem jMenuItem13;
-    private javax.swing.JMenuItem jMenuItem14;
     private javax.swing.JMenuItem jMenuItem15;
     private javax.swing.JMenuItem jMenuItem16;
     private javax.swing.JMenuItem jMenuItem17;
@@ -555,8 +1071,6 @@ public class Interface extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem21;
     private javax.swing.JMenuItem jMenuItem22;
     private javax.swing.JMenuItem jMenuItem23;
-    private javax.swing.JMenuItem jMenuItem6;
-    private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JMenuItem jMenuItem8;
     private javax.swing.JMenuItem jMenuItem9;
     private javax.swing.JScrollPane jScrollPane1;

@@ -1,23 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE autores SYSTEM "autores.dtd">
-<autores>
-     <autor>
-          <nome />
-          <titulo />
-          <dataNascimento />
-          <dataMorte />
-          <nacionalidade />
-          <generoLiterario />
-          <conjuge />
-          <linkFoto />
-     </autor>
+<autores xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="autores.xsd">
      <autor id="2">
           <nome>José de Sousa Saramago</nome>
-          <dataNascimento>16 de novembro 1922</dataNascimento>
+          <dataNascimento>16 de Novembro 1922</dataNascimento>
           <dataMorte>18 de junho 2010</dataMorte>
-          <nacionalidade>português</nacionalidade>
-          <generoLiterario>Sem informacao</generoLiterario>
-          <conjuge>Ilda Reis</conjuge>
+          <nacionalidade>Moçambicano</nacionalidade>
+          <generoLiterario>Romance</generoLiterario>
+          <conjuge>Bruno Oliveira</conjuge>
           <linkFoto>https://upload.wikimedia.org/wikipedia/commons/5/5c/JSJoseSaramago.jpg</linkFoto>
      </autor>
 </autores>

@@ -109,6 +109,142 @@ public class ModeloXML {
         return doc;
     }
 
+    public static Document alterarDataNasc(String nomeAutor, String novaDataNasc, Document doc) {
+        Element raiz;
+        if (doc == null) {
+            System.out.println("Ficheiro nao existe");
+            return null;
+
+        } else {
+            raiz = doc.getRootElement();
+        }
+
+        List todosAutores = raiz.getChildren("autor");
+        boolean found = false;
+        for (int i = 0; i < todosAutores.size(); i++) {
+            Element autor = (Element) todosAutores.get(i); //obtem cidade i da Lista
+            if (autor.getChild("nome").getText().contains(nomeAutor)) {
+                String dataNasc = autor.getChild("dataNascimento").getText();
+                System.out.println("Nome: " + nomeAutor);
+                System.out.println("Data Nascimento: " + dataNasc);
+                autor.getChild("dataNascimento").setText(novaDataNasc);
+                System.out.println("DataNascimento alterada com sucesso");
+
+                found = true;
+            }
+        }
+        if (!found) {
+            System.out.println("O Autor " + nomeAutor + " não foi encontrado");
+            return null;
+        }
+
+        return doc;
+
+    }
+    
+    
+    
+    public static Document alterarNacionalidade(String nomeAutor, String novaNacionalidade, Document doc) {
+        Element raiz;
+        if (doc == null) {
+            System.out.println("Ficheiro nao existe");
+            return null;
+
+        } else {
+            raiz = doc.getRootElement();
+        }
+
+        List todosAutores = raiz.getChildren("autor");
+        boolean found = false;
+        for (int i = 0; i < todosAutores.size(); i++) {
+            Element autor = (Element) todosAutores.get(i); //obtem cidade i da Lista
+            if (autor.getChild("nome").getText().contains(nomeAutor)) {
+                String nacionalidade = autor.getChild("nacionalidade").getText();
+                System.out.println("Nome: " + nomeAutor);
+                System.out.println("nacionalidade: " + nacionalidade);
+                autor.getChild("nacionalidade").setText(novaNacionalidade);
+                System.out.println("nacionalidade alterada com sucesso");
+
+                found = true;
+            }
+        }
+        if (!found) {
+            System.out.println("O Autor " + nomeAutor + " não foi encontrado");
+            return null;
+        }
+
+        return doc;
+
+    }
+    
+    
+    public static Document alterarConjuge(String nomeAutor, String newConjuge, Document doc) {
+        Element raiz;
+        if (doc == null) {
+            System.out.println("Ficheiro nao existe");
+            return null;
+
+        } else {
+            raiz = doc.getRootElement();
+        }
+
+        List todosAutores = raiz.getChildren("autor");
+        boolean found = false;
+        for (int i = 0; i < todosAutores.size(); i++) {
+            Element autor = (Element) todosAutores.get(i); //obtem cidade i da Lista
+            if (autor.getChild("nome").getText().contains(nomeAutor)) {
+                String conjuge = autor.getChild("conjuge").getText();
+                System.out.println("Nome: " + nomeAutor);
+                System.out.println("conjuge: " + conjuge);
+                autor.getChild("conjuge").setText(newConjuge);
+                System.out.println("conjuge alterado com sucesso");
+
+                found = true;
+            }
+        }
+        if (!found) {
+            System.out.println("O Autor " + nomeAutor + " não foi encontrado");
+            return null;
+        }
+
+        return doc;
+
+    }
+    
+    
+    public static Document alterarGeneroLit(String nomeAutor, String newGeneroLit, Document doc) {
+        Element raiz;
+        if (doc == null) {
+            System.out.println("Ficheiro nao existe");
+            return null;
+
+        } else {
+            raiz = doc.getRootElement();
+        }
+
+        List todosAutores = raiz.getChildren("autor");
+        boolean found = false;
+        for (int i = 0; i < todosAutores.size(); i++) {
+            Element autor = (Element) todosAutores.get(i); //obtem cidade i da Lista
+            if (autor.getChild("nome").getText().contains(nomeAutor)) {
+                String generoLiterario = autor.getChild("generoLiterario").getText();
+                System.out.println("Nome: " + nomeAutor);
+                System.out.println("generoLiterario: " + generoLiterario);
+                autor.getChild("generoLiterario").setText(newGeneroLit);
+                System.out.println("Genero Literario alterado com sucesso");
+
+                found = true;
+            }
+        }
+        if (!found) {
+            System.out.println("O Autor " + nomeAutor + " não foi encontrado");
+            return null;
+        }
+
+        return doc;
+
+    }
+
     public static Document adicionaObra(ArrayList<Obras> o, Document doc) {
 
         for (int i = 0; i < o.size(); i++) {
@@ -159,4 +295,5 @@ public class ModeloXML {
 
         return doc;
     }
+
 }
