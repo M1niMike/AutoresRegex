@@ -12,8 +12,10 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.io.Reader;
+import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.stream.Collectors;
 import org.jdom2.Document;
 import org.jdom2.JDOMException;
 import org.jdom2.input.SAXBuilder;
@@ -37,7 +39,7 @@ public class XMLJDomFunctions{
             Document anotherDocument = builder.build(reader);
             return anotherDocument; 
         } catch (JDOMException | IOException ex) {
-            System.out.println("Ficheiro XML nao existe");
+            System.out.println(ex.getMessage());
             return null;
         }
     }

@@ -1,12 +1,12 @@
 <!ELEMENT autores (autor)+>
 <!ELEMENT autor (nome,dataNascimento,dataMorte,nacionalidade,generoLiterario,conjuge,linkFoto)+>
 <!ELEMENT nome(#PCDATA)>
-<!ELEMENT dataNascimento(#PCDATA)>
-<!ELEMENT dataMorte(#PCDATA)>
-<!ELEMENT nacionalidade(#PCDATA)>
-<!ELEMENT generoLiterario(#PCDATA)>
-<!ELEMENT conjuge(#PCDATA)>
-<!ELEMENT linkFoto(#PCDATA)>
+<!ELEMENT dataNascimento (#PCDATA)>
+<!ELEMENT dataMorte (#PCDATA)>
+<!ELEMENT nacionalidade (#PCDATA)>
+<!ELEMENT generoLiterario (#PCDATA)>
+<!ELEMENT conjuge (#PCDATA)>
+<!ELEMENT linkFoto (#PCDATA)>
 
 <!ATTLIST autores xmlns:xsi CDATA #IMPLIED>
 <!ATTLIST autores xsi:noNamespaceSchemaLocation CDATA #IMPLIED>
