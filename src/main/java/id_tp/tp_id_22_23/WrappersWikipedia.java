@@ -200,7 +200,7 @@ public class WrappersWikipedia {
         HttpRequestFunctions.httpRequest2("https://pt.wikipedia.org/wiki/", nome_autor, "autores.txt");
 
         String er1 = "<td scope=\"row\" style=\"vertical-align: top; text-align: left; font-weight:bold;\"><a href=\"/wiki/[^<]+\" title=\"[^<]+\">Gênero literário</a>";
-        String er2 = "<td style=\"vertical-align: top; text-align: left;\"><a href=\"/wiki/[^<]+\" title=\"[^<]+\">([^<]+)</a>, <a href=\"/wiki/[^<]+\" title=\"[^<]+\">([^<]+)</a>, <a href=\"/wiki/[^<]+\" title=\"[^<]+\">([^<]+)</a>, <a href=\"/wiki/[^<]+\" title=\"[^<]+\">([^<]+)</a>";
+        String er2 = "<a href=\"/wiki/[^<]+\" title=\"[^<]+\">([^<]+)</a>";
 
         Pattern p1 = Pattern.compile(er1);
         Pattern p2 = Pattern.compile(er2);
@@ -210,7 +210,7 @@ public class WrappersWikipedia {
 
         Scanner ler = new Scanner(new FileInputStream("autores.txt"));
 
-        String res = "";
+        //String res = "";
 
         while (ler.hasNextLine()) {
             String linha = ler.nextLine();
@@ -225,9 +225,9 @@ public class WrappersWikipedia {
                     m2 = p2.matcher(linha);
 
                     if (m2.find()) {
-                        res = m2.group(1) + " " + m2.group(2) + " " + m2.group(3);
+                        //res = m2.group(1) + " " + m2.group(2) + " " + m2.group(3);
                         ler.close();
-                        return res;
+                        return m2.group(1);
                     }
 
                 }
@@ -327,7 +327,7 @@ public class WrappersWikipedia {
         HttpRequestFunctions.httpRequest2("https://pt.wikipedia.org/wiki/", nome_autor, "autores.txt");
 
         String er1 = "<td scope=\"row\" style=\"vertical-align: top; text-align: left; font-weight:bold;\">Ocupação";
-        String er2 = "<a href=\"/wiki/[^<]+\" title=\"[^<]+\">([^<]+)</a>";
+        String er2 = "<td style=\"vertical-align: top; text-align: left;\"><a href=\"/wiki/[^<]+\" title=\"[^<]+\">([^<]+)</a>";
 
         Pattern p1 = Pattern.compile(er1);
         Pattern p2 = Pattern.compile(er2);
@@ -335,7 +335,7 @@ public class WrappersWikipedia {
         Matcher m1;
         Matcher m2;
 
-        //int i = 0;
+        int i = 0;
         ArrayList lista = new ArrayList();
         Scanner ler = new Scanner(new FileInputStream("autores.txt"));
 
@@ -344,39 +344,25 @@ public class WrappersWikipedia {
 
             m1 = p1.matcher(linha);
 
-            if (m1.find()) {
+            if (m1.find() && linha.contains("Ocupação")) {
                 while (ler.hasNextLine()) {
-                    linha = ler.nextLine();
+                    String linha2 = ler.nextLine();
 
-                    m2 = p2.matcher(linha);
+                    m2 = p2.matcher(linha2);
 
-                    while (m2.find()) {
+                    if (m2.find() && i < 5) {
                         lista.add(m2.group(1));
-                        //i++;
+                        i++;
                     }
 
                 }
             }
-            ler.close();
-            return lista;
+
         }
-        
-        
-
-    public static Autor cria_Autor(String nome_autor) throws IOException {
-
-        String nome = nome_autor;
-        String data_Nasc = WrappersWikipedia.obtem_dataNasc(nome_autor);
-        String dataMorte = WrappersWikipedia.obtem_dataMorte(nome_autor);
-        String nacionalidade = WrappersWikipedia.obtem_nacionalidade(nome_autor);
-        String generoLit = WrappersWikipedia.obtem_generoLiterario(nome_autor);
-        String conjuge = WrappersWikipedia.obtem_conjuge(nome_autor);
-        String link_foto = WrappersWikipedia.obtem_linkFoto(nome_autor);
-
-        Autor a = new Autor(nome, data_Nasc, dataMorte, nacionalidade, generoLit, conjuge, link_foto);
-
-        return a;
+        ler.close();
+        return lista;
     }
+
 
     public static Autor criaAutor(String nome_autor) throws IOException {
 
@@ -385,12 +371,12 @@ public class WrappersWikipedia {
         String dataMorte = WrappersWikipedia.obtem_dataMorte(nome_autor);
         String nacionalidade = WrappersWikipedia.obtem_nacionalidade(nome_autor);
         String generoLit = WrappersWikipedia.obtem_generoLiterario(nome_autor);
-        //ArrayList ocupacoes = WrappersWikipedia.obtem_ocupacao(nome_autor);
+        ArrayList ocupacoes = WrappersWikipedia.obtem_ocupacao(nome_autor);
         // String premios = WrappersBertrand.obtem_anoEdicao(linkObras);
         String conjuge = WrappersWikipedia.obtem_conjuge(nome_autor);
         String link_foto = WrappersWikipedia.obtem_linkFoto(nome_autor);
 
-        Autor a = new Autor(nome, data_Nasc, dataMorte, nacionalidade, generoLit, /*ocupacoes,*/ conjuge, link_foto);
+        Autor a = new Autor(nome, data_Nasc, dataMorte, nacionalidade, generoLit, ocupacoes, conjuge, link_foto);
         return a;
     }
 

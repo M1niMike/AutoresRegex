@@ -17,19 +17,19 @@ public class Autor {
     String data_morte; 
     String nacionalidade;
     String genero_literario;
-    //ArrayList<String> ocupacoes;
-    //String premios;
+    ArrayList ocupacoes;
+    String premios;
     String conjuge;
     String fotografia;
 
-    public Autor(String nome, String data_nasc, String data_morte, String nacionalidade, String genero_literario, /*ArrayList<String> ocupacoes, /*String premios,*/ String conjuge ,String fotografia) {
+    public Autor(String nome, String data_nasc, String data_morte, String nacionalidade, String genero_literario, ArrayList ocupacoes, /*String premios,*/ String conjuge ,String fotografia) {
         this.id = id;
         this.nome = nome;
         this.data_nasc = data_nasc;
         this.data_morte = data_morte;
         this.nacionalidade = nacionalidade;
         this.genero_literario = genero_literario;
-        //this.ocupacoes = ocupacoes;
+        this.ocupacoes = ocupacoes;
         //this.premios = premios;
         this.conjuge = conjuge;
         this.fotografia = fotografia;
@@ -42,8 +42,8 @@ public class Autor {
     public String getData_morte() {return data_morte;}
     public String getNacionalidade() {return nacionalidade;}
     public String getGenero_literario() {return genero_literario;}
-    //public ArrayList<String> getOcupacoes() {return ocupacoes;}
-    //public String getPremios() {return premios;}
+    public ArrayList getOcupacoes() {return ocupacoes;}
+    public String getPremios() {return premios;}
     public String getConjuge() {return conjuge;}
     public String getFotografia() {return fotografia;}
 
@@ -55,8 +55,8 @@ public class Autor {
     public void setData_morte(String data_morte) {this.data_morte = data_morte;}
     public void setNacionalidade(String nacionalidade) {this.nacionalidade = nacionalidade;}
     public void setGenero_literario(String genero_literario) {this.genero_literario = genero_literario;}
-    //public void setOcupacoes(ArrayList<String> ocupacoes) {this.ocupacoes = ocupacoes;}
-    //public void setPremios(String premios) {this.premios = premios;}
+    public void setOcupacoes(ArrayList ocupacoes) {this.ocupacoes = ocupacoes;}
+    public void setPremios(String premios) {this.premios = premios;}
     public void setConjuge(String conjuge) {this.conjuge = conjuge;}
     
 }
