@@ -4,6 +4,7 @@
  */
 package id_tp.tp_id_22_23;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import org.jdom2.Attribute;
@@ -43,7 +44,7 @@ public class ModeloXML {
 //        }
 //        return true;
 //    }
-    public static Document adicionaAutor(Autor au, Document doc) {
+    public static Document adicionaAutor(Autor au, Document doc) throws IOException {
         Element raiz;
         if (doc == null) {
             raiz = new Element("autores"); //cria <catalogo>...</catalogo>
@@ -70,6 +71,16 @@ public class ModeloXML {
 
         x = new Element("generoLiterario").addContent(au.getGenero_literario());
         pai.addContent(x);
+        
+        x = new Element("ocupacoes").addContent(au.getGenero_literario());
+        pai.addContent(x);
+        
+        ArrayList listaOcupacoes = WrappersWikipedia.obtem_ocupacao(au.getNome());
+        for (int i = 0; i < listaOcupacoes.size(); i++) {
+            String ocupa = (String) listaOcupacoes.get(i);
+            x = new Element("ocupacoes").addContent(ocupa);
+            pai.addContent(x);
+        }
 
         x = new Element("conjuge").addContent(au.getConjuge());
         pai.addContent(x);
@@ -277,6 +288,9 @@ public class ModeloXML {
             pai.addContent(x);
 
             x = new Element("anoEdicao").addContent(o.get(i).getAno_edicao());
+            pai.addContent(x);
+            
+            x = new Element("idioma").addContent(o.get(i).getIdioma());
             pai.addContent(x);
 
             x = new Element("encadernacao").addContent(o.get(i).getEncadernacao());

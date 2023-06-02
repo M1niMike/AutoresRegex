@@ -86,7 +86,7 @@ public class WrappersBertrand {
 
         }
         ler.close();
-        return null;
+        return "Sem Informacao";
     }
 
     public static String obtem_autor(String linkObras) throws FileNotFoundException, IOException {
@@ -106,7 +106,7 @@ public class WrappersBertrand {
 
         }
         ler.close();
-        return null;
+        return "Sem Informacao";
 
     }
 
@@ -169,7 +169,7 @@ public class WrappersBertrand {
 
         }
         ler.close();
-        return null;
+        return "Sem Informacao";
 
     }
 
@@ -190,7 +190,7 @@ public class WrappersBertrand {
         }
 
         ler.close();
-        return null;
+        return "Sem Informacao";
     }
 
     public static String obtem_isbn(String linkObras) throws IOException {
@@ -210,7 +210,7 @@ public class WrappersBertrand {
         }
 
         ler.close();
-        return null;
+        return "Sem Informacao";
     }
 
     public static String obtem_anoEdicao(String linkObras) throws IOException {
@@ -230,7 +230,7 @@ public class WrappersBertrand {
         }
 
         ler.close();
-        return null;
+        return "Sem Informacao";
     }
     //<div id=\"productPageSectionDetails-collapseDetalhes-content-language\" class=\"col-xs-12\">\\s*Idioma:\\s*<div class=\"info\">\\s*([a-zA-zê]+)\\s*</div>
 
@@ -250,8 +250,49 @@ public class WrappersBertrand {
         }
 
         ler.close();
-        return null;
+        return "Sem Informacao";
     }
+    
+    public static String obtem_Idioma(String linkObras) throws IOException {
+        HttpRequestFunctions.httpRequest1(linkObras, "", "obras.txt");
+
+        String er = "Idioma:\\s*<div class=\"info\">";
+        String er2 = "([^<]+)\\s*</div>";
+
+        Pattern p1 = Pattern.compile(er);
+        Pattern p2 = Pattern.compile(er2);
+
+        Matcher m1;
+        Matcher m2;
+
+        Scanner ler = new Scanner(new FileInputStream("obras.txt"));
+        while (ler.hasNextLine()) {
+            String linha = ler.nextLine();
+
+            Matcher m = p1.matcher(linha);
+
+            if (m.find()) {
+                while (ler.hasNextLine()) {
+                    linha = ler.nextLine();
+
+                    m2 = p2.matcher(linha);
+
+                    if (m2.find()) {
+                        ler.close();
+                        return m2.group(1);
+
+                    }
+
+                }
+            }
+        }
+
+        ler.close();
+        return "Sem Informacao";
+    }
+    
+    
+    
 
     public static Obras criaObras(String linkObras) throws IOException {
 
@@ -262,10 +303,11 @@ public class WrappersBertrand {
         Double preco = WrappersBertrand.obtem_preco(linkObras);
         int quant_paginas = WrappersBertrand.obtem_paginas(linkObras);
         String ano_edicao = WrappersBertrand.obtem_anoEdicao(linkObras);
+        String idioma = WrappersBertrand.obtem_Idioma(linkObras);
         String encadernacao = WrappersBertrand.obtem_encadernacao(linkObras);
         String capa = WrappersBertrand.obtem_capa(linkObras);
 
-        Obras o = new Obras(isbn, nome, titulo, editora, preco, quant_paginas, ano_edicao, encadernacao, capa);
+        Obras o = new Obras(isbn, nome, titulo, editora, preco, quant_paginas, ano_edicao, idioma, encadernacao, capa);
         return o;
     }
 }

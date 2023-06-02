@@ -10,20 +10,20 @@ package id_tp.tp_id_22_23;
  */
 public class Obras {
     String isbn;
-    //String codigo_autor; - Uma excepção
     String nome_autor;
     String titulo; 
     String editora;
     Double preco;
     int quant_paginas;
     String ano_edicao;
+    String idioma;
     String encadernacao;    
     String Foto_capa;
  
     
     
     
-    public Obras(String isbn, String nome_autor, String titulo, String editora, Double preco, int quant_paginas, String ano_edi, String encadernacao, String Foto_capa) {
+    public Obras(String isbn, String nome_autor, String titulo, String editora, Double preco, int quant_paginas, String ano_edi, String idioma, String encadernacao, String Foto_capa) {
         this.isbn = isbn;
         this.nome_autor = nome_autor;
         this.titulo = titulo;
@@ -31,6 +31,7 @@ public class Obras {
         this.preco = preco;
         this.quant_paginas = quant_paginas;
         this.ano_edicao = ano_edi;
+        this.idioma = idioma;
         this.encadernacao = encadernacao;
         this.Foto_capa = Foto_capa;
     }
@@ -45,6 +46,7 @@ public class Obras {
     public Double getPreco() { return preco; }
     public int getQuant_paginas() { return quant_paginas; }
     public String getAno_edicao() { return ano_edicao; }
+    public String getIdioma() {return idioma;}
     public String getEncadernacao() { return encadernacao; }
             
     //SETS
@@ -56,24 +58,7 @@ public class Obras {
     public void setPreco(Double preco) { this.preco = preco; }
     public void setQuant_paginas(int quant_paginas) { this.quant_paginas = quant_paginas; }
     public void setAno_edicao(String ano_edicao) { this.ano_edicao = ano_edicao; }
+    public void setIdioma(String idioma){this.idioma = idioma;}
     public void setEncadernacao(String encadernacao) { this.encadernacao = encadernacao; }
-
-    
-    //Func Aux
-    public void printLivro() {
-        System.out.println("ISBN: " + this.getIsbn());
-        System.out.println("Titulo: " + this.getTitulo());
-        System.out.println("Autor: " + this.getNome_autor());
-        System.out.println("Preco: " + this.getPreco() + "€");
-        System.out.println("Editora: " + this.getEditora());
-        System.out.println("Paginas: " + this.getQuant_paginas());
-        System.out.println("Encadernacao: " + this.getEncadernacao());
-        System.out.println("Ano de edicao: " + this.getAno_edicao());
-        System.out.println("Link capa: " + this.getFoto_capa());
-        
-    }
-
-
-  
     
 }

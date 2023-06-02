@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <autores xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="autores.xsd">
-     <autor id="2">
-          <nome>José de Sousa Saramago</nome>
-          <dataNascimento>16 de Novembro 1922</dataNascimento>
-          <dataMorte>18 de junho 2010</dataMorte>
-          <nacionalidade>Moçambicano</nacionalidade>
-          <generoLiterario>Romance</generoLiterario>
-          <conjuge>Bruno Oliveira</conjuge>
-          <linkFoto>https://upload.wikimedia.org/wikipedia/commons/5/5c/JSJoseSaramago.jpg</linkFoto>
+     <autor id="14">
+          <nome>J. K. Rowling</nome>
+          <dataNascimento>31 de julho 1965</dataNascimento>
+          <dataMorte>O Autor ainda esta vivo</dataMorte>
+          <nacionalidade>britânica</nacionalidade>
+          <generoLiterario>Fantasia drama tragicomédia</generoLiterario>
+          <conjuge>Jorge Arantes</conjuge>
+          <linkFoto>https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/J._K._Rowling_2010.jpg/1200px-J._K._Rowling_2010.jpg</linkFoto>
      </autor>
 </autores>

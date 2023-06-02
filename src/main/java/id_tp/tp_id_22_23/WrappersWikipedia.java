@@ -87,7 +87,6 @@ public class WrappersWikipedia {
             String linha = ler.nextLine();
 
             m1 = p1.matcher(linha);
-            m2 = p2.matcher(linha);
 
             if (m1.find()) {
                 while (ler.hasNextLine()) {
@@ -323,21 +322,75 @@ public class WrappersWikipedia {
         ler.close();
         return "Sem informacao";
     }
-    
-    
-     public static Autor criaAutor(String nome_autor) throws IOException {
 
-        String nome = WrappersWikipedia.obtem_nome(nome_autor);
+    public static ArrayList obtem_ocupacao(String nome_autor) throws IOException {
+        HttpRequestFunctions.httpRequest2("https://pt.wikipedia.org/wiki/", nome_autor, "autores.txt");
+
+        String er1 = "<td scope=\"row\" style=\"vertical-align: top; text-align: left; font-weight:bold;\">Ocupação";
+        String er2 = "<a href=\"/wiki/[^<]+\" title=\"[^<]+\">([^<]+)</a>";
+
+        Pattern p1 = Pattern.compile(er1);
+        Pattern p2 = Pattern.compile(er2);
+
+        Matcher m1;
+        Matcher m2;
+
+        //int i = 0;
+        ArrayList lista = new ArrayList();
+        Scanner ler = new Scanner(new FileInputStream("autores.txt"));
+
+        while (ler.hasNextLine()) {
+            String linha = ler.nextLine();
+
+            m1 = p1.matcher(linha);
+
+            if (m1.find()) {
+                while (ler.hasNextLine()) {
+                    linha = ler.nextLine();
+
+                    m2 = p2.matcher(linha);
+
+                    while (m2.find()) {
+                        lista.add(m2.group(1));
+                        //i++;
+                    }
+
+                }
+            }
+            ler.close();
+            return lista;
+        }
+        
+        
+
+    public static Autor cria_Autor(String nome_autor) throws IOException {
+
+        String nome = nome_autor;
         String data_Nasc = WrappersWikipedia.obtem_dataNasc(nome_autor);
         String dataMorte = WrappersWikipedia.obtem_dataMorte(nome_autor);
         String nacionalidade = WrappersWikipedia.obtem_nacionalidade(nome_autor);
         String generoLit = WrappersWikipedia.obtem_generoLiterario(nome_autor);
-        //String ocupa = WrappersBertrand.obtem_paginas(linkObras);
-       // String premios = WrappersBertrand.obtem_anoEdicao(linkObras);
         String conjuge = WrappersWikipedia.obtem_conjuge(nome_autor);
         String link_foto = WrappersWikipedia.obtem_linkFoto(nome_autor);
 
-        Autor a = new Autor (nome, data_Nasc, dataMorte, nacionalidade, generoLit, conjuge, link_foto);
+        Autor a = new Autor(nome, data_Nasc, dataMorte, nacionalidade, generoLit, conjuge, link_foto);
+
+        return a;
+    }
+
+    public static Autor criaAutor(String nome_autor) throws IOException {
+
+        String nome = nome_autor;
+        String data_Nasc = WrappersWikipedia.obtem_dataNasc(nome_autor);
+        String dataMorte = WrappersWikipedia.obtem_dataMorte(nome_autor);
+        String nacionalidade = WrappersWikipedia.obtem_nacionalidade(nome_autor);
+        String generoLit = WrappersWikipedia.obtem_generoLiterario(nome_autor);
+        //ArrayList ocupacoes = WrappersWikipedia.obtem_ocupacao(nome_autor);
+        // String premios = WrappersBertrand.obtem_anoEdicao(linkObras);
+        String conjuge = WrappersWikipedia.obtem_conjuge(nome_autor);
+        String link_foto = WrappersWikipedia.obtem_linkFoto(nome_autor);
+
+        Autor a = new Autor(nome, data_Nasc, dataMorte, nacionalidade, generoLit, /*ocupacoes,*/ conjuge, link_foto);
         return a;
     }
 

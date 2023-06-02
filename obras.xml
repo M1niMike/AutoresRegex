@@ -12,4 +12,16 @@
           <encadernacao>Capa mole</encadernacao>
           <fotoCapa>https://img.bertrand.pt/images/memorial-do-convento-jose-saramago/NDV8MTU3NDc0NDR8MjM1NjIyNjF8MTY2MjA0MDgyMzAwMA==/500x</fotoCapa>
      </livro>
+     <livro>
+          <isbn>9789722365598</isbn>
+          <titulo>Harry Potter e a Pedra Filosofal</titulo>
+          <autor>J. K. Rowling</autor>
+          <editora>Editorial Presença</editora>
+          <preco>16.9</preco>
+          <quantidadePaginas>256</quantidadePaginas>
+          <anoEdicao>06-2020</anoEdicao>
+          <idioma>Português</idioma>
+          <encadernacao>Capa mole</encadernacao>
+          <fotoCapa>https://img.bertrand.pt/images/harry-potter-e-a-pedra-filosofal-j-k-rowling/NDV8MjQwNjY3OTh8MjAxMjQ0MzF8MTU5MDU5MzU3OTAwMA==/500x</fotoCapa>
+     </livro>
 </obras>
