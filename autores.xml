@@ -1,26 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<autores xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="autores.xsd">
+<autores>
      <autor id="23">
-          <nome>Nicholas Sparks</nome>
-          <dataNascimento>31 de dezembro 1965</dataNascimento>
-          <dataMorte>O Autor ainda esta vivo</dataMorte>
-          <nacionalidade>norte-americano</nacionalidade>
-          <generoLiterario>Sem informacao</generoLiterario>
-          <ocupacoes>Sem informacao</ocupacoes>
-          <conjuge>Cathy Sparks (1989-2015)</conjuge>
-          <linkFoto>https://upload.wikimedia.org/wikipedia/commons/a/af/Nicholas-Sparks-Autograph-1-4-06.jpg</linkFoto>
-     </autor>
-     <autor id="11">
           <nome>J. K. Rowling</nome>
           <dataNascimento>31 de julho 1965</dataNascimento>
           <dataMorte>O Autor ainda esta vivo</dataMorte>
           <nacionalidade>britânica</nacionalidade>
           <generoLiterario>Fantasia</generoLiterario>
-          <ocupacoes>Fantasia</ocupacoes>
           <ocupacoes>escritora</ocupacoes>
-          <ocupacoes>Fantasia</ocupacoes>
-          <ocupacoes>cristã</ocupacoes>
           <conjuge>Jorge Arantes</conjuge>
           <linkFoto>https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/J._K._Rowling_2010.jpg/1200px-J._K._Rowling_2010.jpg</linkFoto>
+     </autor>
+     <autor id="24">
+          <nome>Nicholas Sparks</nome>
+          <dataNascimento>31 de dezembro 1965</dataNascimento>
+          <dataMorte>O Autor ainda esta vivo</dataMorte>
+          <nacionalidade>norte-americano</nacionalidade>
+          <generoLiterario>Sem informacao</generoLiterario>
+          <ocupacoes>Escritor</ocupacoes>
+          <conjuge>Cathy Sparks (1989-2015)</conjuge>
+          <linkFoto>https://upload.wikimedia.org/wikipedia/commons/a/af/Nicholas-Sparks-Autograph-1-4-06.jpg</linkFoto>
      </autor>
 </autores>

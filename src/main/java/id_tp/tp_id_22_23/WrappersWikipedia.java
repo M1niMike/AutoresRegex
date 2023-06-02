@@ -199,7 +199,7 @@ public class WrappersWikipedia {
     public static String obtem_generoLiterario(String nome_autor) throws IOException {
         HttpRequestFunctions.httpRequest2("https://pt.wikipedia.org/wiki/", nome_autor, "autores.txt");
 
-        String er1 = "<td scope=\"row\" style=\"vertical-align: top; text-align: left; font-weight:bold;\"><a href=\"/wiki/[^<]+\" title=\"[^<]+\">Gênero literário</a>";
+        String er1 = "Gênero literário";
         String er2 = "<a href=\"/wiki/[^<]+\" title=\"[^<]+\">([^<]+)</a>";
 
         Pattern p1 = Pattern.compile(er1);
@@ -211,29 +211,28 @@ public class WrappersWikipedia {
         Scanner ler = new Scanner(new FileInputStream("autores.txt"));
 
         //String res = "";
-
         while (ler.hasNextLine()) {
             String linha = ler.nextLine();
 
             m1 = p1.matcher(linha);
-            m2 = p2.matcher(linha);
+            // m2 = p2.matcher(linha);
 
             if (m1.find()) {
-                while (ler.hasNextLine()) {
-                    linha = ler.nextLine();
+                ler.nextLine();
+                linha = ler.nextLine();
 
-                    m2 = p2.matcher(linha);
+                m2 = p2.matcher(linha);
 
-                    if (m2.find()) {
-                        //res = m2.group(1) + " " + m2.group(2) + " " + m2.group(3);
-                        ler.close();
-                        return m2.group(1);
-                    }
-
+                if (m2.find()) {
+                    //res = m2.group(1) + " " + m2.group(2) + " " + m2.group(3);
+                    ler.close();
+                    return m2.group(1);
                 }
 
             }
+
         }
+
         ler.close();
         return "Sem informacao";
     }
@@ -326,7 +325,7 @@ public class WrappersWikipedia {
     public static ArrayList obtem_ocupacao(String nome_autor) throws IOException {
         HttpRequestFunctions.httpRequest2("https://pt.wikipedia.org/wiki/", nome_autor, "autores.txt");
 
-        String er1 = "<td scope=\"row\" style=\"vertical-align: top; text-align: left; font-weight:bold;\">Ocupação";
+        String er1 = "Ocupação";
         String er2 = "<td style=\"vertical-align: top; text-align: left;\"><a href=\"/wiki/[^<]+\" title=\"[^<]+\">([^<]+)</a>";
 
         Pattern p1 = Pattern.compile(er1);
@@ -344,17 +343,19 @@ public class WrappersWikipedia {
 
             m1 = p1.matcher(linha);
 
-            if (m1.find() && linha.contains("Ocupação")) {
-                while (ler.hasNextLine()) {
+            if (m1.find()) {
+                ler.nextLine(); {
                     String linha2 = ler.nextLine();
 
                     m2 = p2.matcher(linha2);
-
-                    if (m2.find() && i < 5) {
+                    
+                    if (m2.find() && i < 3) {
+                     
                         lista.add(m2.group(1));
                         i++;
-                    }
 
+                    }
+                    
                 }
             }
 

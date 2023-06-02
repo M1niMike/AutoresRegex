@@ -71,9 +71,9 @@ public class ModeloXML {
 
         x = new Element("generoLiterario").addContent(au.getGenero_literario());
         pai.addContent(x);
-        
-        x = new Element("ocupacoes").addContent(au.getGenero_literario());
-        pai.addContent(x);
+        //mudar estes de baixo
+       // x = new Element("ocupacoes").addContent(au.getGenero_literario());
+        //pai.addContent(x);
         
         ArrayList listaOcupacoes = WrappersWikipedia.obtem_ocupacao(au.getNome());
         for (int i = 0; i < listaOcupacoes.size(); i++) {
