@@ -24,4 +24,16 @@
           <encadernacao>Capa mole</encadernacao>
           <fotoCapa>https://img.bertrand.pt/images/harry-potter-e-a-pedra-filosofal-j-k-rowling/NDV8MjQwNjY3OTh8MjAxMjQ0MzF8MTU5MDU5MzU3OTAwMA==/500x</fotoCapa>
      </livro>
+     <livro>
+          <isbn>9789896370268</isbn>
+          <titulo>A Fúria dos Reis</titulo>
+          <autor>George R. R. Martin</autor>
+          <editora>Saída de Emergência</editora>
+          <preco>15.22</preco>
+          <quantidadePaginas>-1</quantidadePaginas>
+          <anoEdicao>02-2008</anoEdicao>
+          <idioma>Português</idioma>
+          <encadernacao>Capa mole</encadernacao>
+          <fotoCapa>https://img.bertrand.pt/images/a-furia-dos-reis-george-r-r-martin/NDV8MjAwMjkzfDI1Nzg5NnwxMzgzNTkwMzkyMDAw/500x</fotoCapa>
+     </livro>
 </obras>

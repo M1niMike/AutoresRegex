@@ -1,7 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE autores SYSTEM "autores.dtd">
 <autores>
-     <autor id="23">
+     <autor id="1">
+          <nome>George R. R. Martin</nome>
+          <dataNascimento>20 de setembro 1948</dataNascimento>
+          <dataMorte>O Autor ainda esta vivo</dataMorte>
+          <nacionalidade>norte-americano</nacionalidade>
+          <generoLiterario>Ficção científica</generoLiterario>
+          <ocupacoes>Escritor</ocupacoes>
+          <conjuge>Gale Burnick</conjuge>
+          <linkFoto>https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Portrait_photoshoot_at_Worldcon_75%2C_Helsinki%2C_before_the_Hugo_Awards_%E2%80%93_George_R._R._Martin.jpg/1200px-Portrait_photoshoot_at_Worldcon_75%2C_Helsinki%2C_before_the_Hugo_Awards_%E2%80%93_George_R._R._Martin.jpg</linkFoto>
+     </autor>
+     <autor id="7">
+          <nome>Nicholas Sparks</nome>
+          <dataNascimento>31 de dezembro 1965</dataNascimento>
+          <dataMorte>O Autor ainda esta vivo</dataMorte>
+          <nacionalidade>norte-americano</nacionalidade>
+          <generoLiterario>Sem informacao</generoLiterario>
+          <ocupacoes>Escritor</ocupacoes>
+          <ocupacoes>roteirista</ocupacoes>
+          <ocupacoes>produtor</ocupacoes>
+          <conjuge>Cathy Sparks (1989-2015)</conjuge>
+          <linkFoto>https://upload.wikimedia.org/wikipedia/commons/a/af/Nicholas-Sparks-Autograph-1-4-06.jpg</linkFoto>
+     </autor>
+     <autor id="10">
           <nome>J. K. Rowling</nome>
           <dataNascimento>31 de julho 1965</dataNascimento>
           <dataMorte>O Autor ainda esta vivo</dataMorte>
@@ -11,14 +33,26 @@
           <conjuge>Jorge Arantes</conjuge>
           <linkFoto>https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/J._K._Rowling_2010.jpg/1200px-J._K._Rowling_2010.jpg</linkFoto>
      </autor>
-     <autor id="24">
-          <nome>Nicholas Sparks</nome>
-          <dataNascimento>31 de dezembro 1965</dataNascimento>
-          <dataMorte>O Autor ainda esta vivo</dataMorte>
-          <nacionalidade>norte-americano</nacionalidade>
+     <autor id="20">
+          <nome>Jose Saramago</nome>
+          <dataNascimento>16 de novembro 1922</dataNascimento>
+          <dataMorte>18 de junho 2010</dataMorte>
+          <nacionalidade>português</nacionalidade>
           <generoLiterario>Sem informacao</generoLiterario>
-          <ocupacoes>Escritor</ocupacoes>
-          <conjuge>Cathy Sparks (1989-2015)</conjuge>
-          <linkFoto>https://upload.wikimedia.org/wikipedia/commons/a/af/Nicholas-Sparks-Autograph-1-4-06.jpg</linkFoto>
+          <conjuge>Ilda Reis</conjuge>
+          <linkFoto>https://upload.wikimedia.org/wikipedia/commons/5/5c/JSJoseSaramago.jpg</linkFoto>
+     </autor>
+     <autor id="4">
+          <nome>Fernando Pessoa</nome>
+          <dataNascimento>13 de junho 1888</dataNascimento>
+          <dataMorte>30 de novembro 1935</dataMorte>
+          <nacionalidade>Português</nacionalidade>
+          <generoLiterario>Sem informacao</generoLiterario>
+          <ocupacoes>Poeta</ocupacoes>
+          <ocupacoes>escritor</ocupacoes>
+          <ocupacoes>tradutor</ocupacoes>
+          <premios>Prémio Antero de Quental</premios>
+          <conjuge>Sem informacao</conjuge>
+          <linkFoto>https://upload.wikimedia.org/wikipedia/commons/3/32/Pessoa_chapeu.jpg</linkFoto>
      </autor>
 </autores>

@@ -1,6 +1,6 @@
 <!ELEMENT autores (autor)+>
 <!ELEMENT autor (nome,dataNascimento,dataMorte,nacionalidade,generoLiterario,conjuge,linkFoto)+>
-<!ELEMENT nome(#PCDATA)>
+<!ELEMENT nome (#PCDATA)>
 <!ELEMENT dataNascimento (#PCDATA)>
 <!ELEMENT dataMorte (#PCDATA)>
 <!ELEMENT nacionalidade (#PCDATA)>

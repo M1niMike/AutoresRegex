@@ -71,14 +71,18 @@ public class ModeloXML {
 
         x = new Element("generoLiterario").addContent(au.getGenero_literario());
         pai.addContent(x);
-        //mudar estes de baixo
-       // x = new Element("ocupacoes").addContent(au.getGenero_literario());
-        //pai.addContent(x);
         
         ArrayList listaOcupacoes = WrappersWikipedia.obtem_ocupacao(au.getNome());
         for (int i = 0; i < listaOcupacoes.size(); i++) {
             String ocupa = (String) listaOcupacoes.get(i);
             x = new Element("ocupacoes").addContent(ocupa);
+            pai.addContent(x);
+        }
+        
+        ArrayList listaPremios = WrappersWikipedia.obtem_premios(au.getNome());
+        for (int i = 0; i < listaPremios.size(); i++) {
+            String premios = (String) listaPremios.get(i);
+            x = new Element("premios").addContent(premios);
             pai.addContent(x);
         }
 
@@ -87,12 +91,7 @@ public class ModeloXML {
 
         x = new Element("linkFoto").addContent(au.getFotografia());
         pai.addContent(x);
-
-//        x = new Element("premios").addContent(au.getFotografia());
-//        pai.addContent(x);
-//        
-//        x = new Element("ocupacoes").addContent(au.getFotografia());
-//        pai.addContent(x);
+;
         raiz.addContent(pai);
         return doc;
 

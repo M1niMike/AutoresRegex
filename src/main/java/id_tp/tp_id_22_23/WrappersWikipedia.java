@@ -25,7 +25,7 @@ public class WrappersWikipedia {
     public static String obtem_nome(String nome_autor) throws IOException {
         HttpRequestFunctions.httpRequest2("https://pt.wikipedia.org/wiki/", nome_autor, "autores.txt");
 
-        String er1 = "<td scope=\"row\" style=\"vertical-align: top; text-align: left; font-weight:bold;\">Nome completo";
+        String er1 = "Nome completo";
         String er2 = "<td style=\"vertical-align: top; text-align: left;\">([^<]+)";
         String er3 = "<span class=\"\">([^<]+)</span>";
 
@@ -46,17 +46,14 @@ public class WrappersWikipedia {
             m3 = p3.matcher(linha);
 
             if (m1.find()) {
-                while (ler.hasNextLine()) {
-                    linha = ler.nextLine();
+                linha = ler.nextLine();
 
-                    m2 = p2.matcher(linha);
+                m2 = p2.matcher(linha);
 
-                    if (m2.find()) {
+                if (m2.find()) {
 
-                        ler.close();
-                        return m2.group(1);
-                    }
-
+                    ler.close();
+                    return m2.group(1);
                 }
 
             } else if (m3.find()) {
@@ -70,7 +67,7 @@ public class WrappersWikipedia {
 
     public static String obtem_dataNasc(String nome_autor) throws IOException {
         HttpRequestFunctions.httpRequest2("https://pt.wikipedia.org/wiki/", nome_autor, "autores.txt");
-        String er1 = "<td scope=\"row\" style=\"vertical-align: top; text-align: left; font-weight:bold;\">Nascimento";
+        String er1 = "Nascimento";
         String er2 = "<a\\s*href=\"/wiki/[^<]+#Nascimentos\"\\s*title=\"[^<]+\">([^<]+)</a>\\s*de\\s*<a\\s*href=\"/wiki/[0-9]+\"\\s*title=\"[0-9]+\">([0-9]+)</a>";
 
         Pattern p1 = Pattern.compile(er1);
@@ -89,17 +86,16 @@ public class WrappersWikipedia {
             m1 = p1.matcher(linha);
 
             if (m1.find()) {
-                while (ler.hasNextLine()) {
-                    linha = ler.nextLine();
+                ler.nextLine();
 
-                    m2 = p2.matcher(linha);
+                String linha2 = ler.nextLine();
 
-                    if (m2.find()) {
-                        res = m2.group(1) + " " + m2.group(2);
-                        ler.close();
-                        return res;
-                    }
+                m2 = p2.matcher(linha2);
 
+                if (m2.find()) {
+                    res = m2.group(1) + " " + m2.group(2);
+                    ler.close();
+                    return res;
                 }
 
             }
@@ -110,7 +106,7 @@ public class WrappersWikipedia {
 
     public static String obtem_dataMorte(String nome_autor) throws IOException {
         HttpRequestFunctions.httpRequest2("https://pt.wikipedia.org/wiki/", nome_autor, "autores.txt");
-        String er1 = "<td scope=\"row\" style=\"vertical-align: top; text-align: left; font-weight:bold;\">Morte";
+        String er1 = "Morte";
         String er2 = "<span style=\"white-space:nowrap;\"><a\\s*href=\"/wiki/[^<]+\"\\s*title=\"[^<]+\">([^<]+)</a>\\s*de\\s*<a\\s*href=\"/wiki/[0-9]+\"\\s*title=\"[0-9]+\">([0-9]+)</a>";
         String er3 = "<a href=\"/wiki/[^<]+\" title=\"[^<]+o\">([^<]+)</a>\\s*de\\s*<a href=\"/wiki/[0-9]+\" title=\"[0-9]+\">([0-9]+)</a>";
 
@@ -132,21 +128,20 @@ public class WrappersWikipedia {
             m1 = p1.matcher(linha);
 
             if (m1.find()) {
-                while (ler.hasNextLine()) {
-                    linha = ler.nextLine();
+                ler.nextLine();
 
-                    m2 = p2.matcher(linha);
-                    m3 = p3.matcher(linha);
-                    if (m2.find()) {
-                        res = m2.group(1) + " " + m2.group(2);
-                        ler.close();
-                        return res;
-                    } else if (m3.find()) {
-                        res = m3.group(1) + " " + m3.group(2);
-                        ler.close();
-                        return res;
-                    }
+                String linha2 = ler.nextLine();
 
+                m2 = p2.matcher(linha2);
+                m3 = p3.matcher(linha2);
+                if (m2.find()) {
+                    res = m2.group(1) + " " + m2.group(2);
+                    ler.close();
+                    return res;
+                } else if (m3.find()) {
+                    res = m3.group(1) + " " + m3.group(2);
+                    ler.close();
+                    return res;
                 }
 
             }
@@ -159,7 +154,7 @@ public class WrappersWikipedia {
         //String link_sec = WrappersBertrand.obtem_link(nome_autor);
         HttpRequestFunctions.httpRequest2("https://pt.wikipedia.org/wiki/", nome_autor, "autores.txt");
 
-        String er1 = "<td scope=\"row\" style=\"vertical-align: top; text-align: left; font-weight:bold;\">Nacionalidade";
+        String er1 = "Nacionalidade";
         String er2 = "<td\\s*style=\"[^<]+\"><a\\s*href=\"/wiki/[^<]+\"\\s*title=\"[^<]+\">([^<]+)</a>";
 
         Pattern p1 = Pattern.compile(er1);
@@ -174,22 +169,19 @@ public class WrappersWikipedia {
             String linha = ler.nextLine();
 
             m1 = p1.matcher(linha);
-            m2 = p2.matcher(linha);
 
             if (m1.find()) {
-                while (ler.hasNextLine()) {
-                    linha = ler.nextLine();
+                ler.nextLine();
 
-                    m2 = p2.matcher(linha);
+                String linha2 = ler.nextLine();
 
-                    if (m2.find()) {
+                m2 = p2.matcher(linha2);
 
-                        ler.close();
-                        return m2.group(1);
-                    }
+                if (m2.find()) {
 
+                    ler.close();
+                    return m2.group(1);
                 }
-
             }
         }
         ler.close();
@@ -210,18 +202,16 @@ public class WrappersWikipedia {
 
         Scanner ler = new Scanner(new FileInputStream("autores.txt"));
 
-        //String res = "";
         while (ler.hasNextLine()) {
             String linha = ler.nextLine();
 
             m1 = p1.matcher(linha);
-            // m2 = p2.matcher(linha);
 
             if (m1.find()) {
                 ler.nextLine();
-                linha = ler.nextLine();
+                String linha2 = ler.nextLine();
 
-                m2 = p2.matcher(linha);
+                m2 = p2.matcher(linha2);
 
                 if (m2.find()) {
                     //res = m2.group(1) + " " + m2.group(2) + " " + m2.group(3);
@@ -240,7 +230,7 @@ public class WrappersWikipedia {
     public static String obtem_conjuge(String nome_autor) throws IOException {
         HttpRequestFunctions.httpRequest2("https://pt.wikipedia.org/wiki/", nome_autor, "autores.txt");
 
-        String er1 = "<td scope=\"row\" style=\"vertical-align: top; text-align: left; font-weight:bold;\">Cônjuge";
+        String er1 = "Cônjuge";
         String er2 = "<a href=\"/wiki/[^<]+\" title=\"[^<]+\">([^<]+)</a>";
         String er3 = "<td style=\"vertical-align: top; text-align: left;\">([^<]+)";
         String er4 = "<td style=\"vertical-align: top; text-align: left;\">[^<]+ <span style=\"font-size:[0-9]+%;\">[0-9()]+</span><br />([^<]+) <span style=\"font-size:[0-9]+%;\">([a-zA-Z0-9()]+)</span>";
@@ -263,25 +253,24 @@ public class WrappersWikipedia {
             m1 = p1.matcher(linha);
 
             if (m1.find()) {
-                while (ler.hasNextLine()) {
-                    linha = ler.nextLine();
+                ler.nextLine();
 
-                    m2 = p2.matcher(linha);
-                    m3 = p3.matcher(linha);
-                    m4 = p4.matcher(linha);
+                String linha2 = ler.nextLine();
 
-                    if (m2.find()) {
+                m2 = p2.matcher(linha2);
+                m3 = p3.matcher(linha2);
+                m4 = p4.matcher(linha2);
 
-                        ler.close();
-                        return m2.group(1);
-                    } else if (m3.find()) {
-                        ler.close();
-                        return m3.group(1);
-                    } else if (m4.find()) {
-                        ler.close();
-                        return m4.group(1);
-                    }
+                if (m2.find()) {
 
+                    ler.close();
+                    return m2.group(1);
+                } else if (m3.find()) {
+                    ler.close();
+                    return m3.group(1);
+                } else if (m4.find()) {
+                    ler.close();
+                    return m4.group(1);
                 }
 
             }
@@ -326,7 +315,7 @@ public class WrappersWikipedia {
         HttpRequestFunctions.httpRequest2("https://pt.wikipedia.org/wiki/", nome_autor, "autores.txt");
 
         String er1 = "Ocupação";
-        String er2 = "<td style=\"vertical-align: top; text-align: left;\"><a href=\"/wiki/[^<]+\" title=\"[^<]+\">([^<]+)</a>";
+        String er2 = "<a href=\"/wiki/[^<]+\" title=\"[^<]+\">([^<]+)</a>";
 
         Pattern p1 = Pattern.compile(er1);
         Pattern p2 = Pattern.compile(er2);
@@ -344,26 +333,75 @@ public class WrappersWikipedia {
             m1 = p1.matcher(linha);
 
             if (m1.find()) {
-                ler.nextLine(); {
-                    String linha2 = ler.nextLine();
+                ler.nextLine();
 
-                    m2 = p2.matcher(linha2);
-                    
-                    if (m2.find() && i < 3) {
-                     
-                        lista.add(m2.group(1));
-                        i++;
+                String linha2 = ler.nextLine();
+                m2 = p2.matcher(linha2);
 
-                    }
-                    
+                while (m2.find() && i < 3) {
+
+                    lista.add(m2.group(1));
+                    i++;
+                    ler.nextLine();
+
                 }
+
+                ler.close();
+                return lista;
+
             }
 
         }
+        lista.add("Sem informacao");
         ler.close();
         return lista;
     }
 
+    public static ArrayList obtem_premios(String nome_autor) throws IOException {
+        HttpRequestFunctions.httpRequest2("https://pt.wikipedia.org/wiki/", nome_autor, "autores.txt");
+
+        String er1 = "Prémios";
+        String er2 = "<a href=\"/wiki/[^<]+\" title=\"[^<]+\">([^<]+)</a>";
+
+        Pattern p1 = Pattern.compile(er1);
+        Pattern p2 = Pattern.compile(er2);
+
+        Matcher m1;
+        Matcher m2;
+
+        int i = 0;
+        ArrayList lista = new ArrayList();
+        Scanner ler = new Scanner(new FileInputStream("autores.txt"));
+
+        while (ler.hasNextLine()) {
+            String linha = ler.nextLine();
+
+            m1 = p1.matcher(linha);
+
+            if (m1.find()) {
+                ler.nextLine();
+
+                String linha2 = ler.nextLine();
+                m2 = p2.matcher(linha2);
+
+                while (m2.find() && i < 3) {
+
+                    lista.add(m2.group(1));
+                    i++;
+                    ler.nextLine();
+
+                }
+
+                ler.close();
+                return lista;
+
+            }
+
+        }
+        lista.add("Sem informacao");
+        ler.close();
+        return lista;
+    }
 
     public static Autor criaAutor(String nome_autor) throws IOException {
 
@@ -373,11 +411,11 @@ public class WrappersWikipedia {
         String nacionalidade = WrappersWikipedia.obtem_nacionalidade(nome_autor);
         String generoLit = WrappersWikipedia.obtem_generoLiterario(nome_autor);
         ArrayList ocupacoes = WrappersWikipedia.obtem_ocupacao(nome_autor);
-        // String premios = WrappersBertrand.obtem_anoEdicao(linkObras);
+        ArrayList premios = WrappersWikipedia.obtem_premios(nome_autor);
         String conjuge = WrappersWikipedia.obtem_conjuge(nome_autor);
         String link_foto = WrappersWikipedia.obtem_linkFoto(nome_autor);
 
-        Autor a = new Autor(nome, data_Nasc, dataMorte, nacionalidade, generoLit, ocupacoes, conjuge, link_foto);
+        Autor a = new Autor(nome, data_Nasc, dataMorte, nacionalidade, generoLit, ocupacoes, premios, conjuge, link_foto);
         return a;
     }
 

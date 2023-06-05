@@ -11,6 +11,8 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import net.sf.saxon.s9api.SaxonApiException;
+import net.sf.saxon.s9api.XdmValue;
 import org.jdom2.Document;
 import org.jdom2.Element;
 
@@ -78,6 +80,18 @@ public class Interface extends javax.swing.JFrame {
         AGL_B1 = new javax.swing.JButton();
         AGL_L1 = new javax.swing.JLabel();
         AGL_L2 = new javax.swing.JLabel();
+        PIA = new javax.swing.JDialog();
+        PIA_TF1 = new javax.swing.JTextField();
+        PIA_B1 = new javax.swing.JButton();
+        PIA_L1 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        PIA_TA1 = new javax.swing.JTextArea();
+        PIN = new javax.swing.JDialog();
+        PIN_TF1 = new javax.swing.JTextField();
+        PIN_B1 = new javax.swing.JButton();
+        PIN_L1 = new javax.swing.JLabel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        PIN_TA1 = new javax.swing.JTextArea();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
         jLabel1 = new javax.swing.JLabel();
@@ -103,8 +117,8 @@ public class Interface extends javax.swing.JFrame {
         AlterarConjuge = new javax.swing.JMenuItem();
         AlterarGeneroLit = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
-        jMenuItem16 = new javax.swing.JMenuItem();
-        jMenuItem17 = new javax.swing.JMenuItem();
+        P_InfoAutor = new javax.swing.JMenuItem();
+        P_autorNacionalidade = new javax.swing.JMenuItem();
         jMenuItem18 = new javax.swing.JMenuItem();
         jMenuItem19 = new javax.swing.JMenuItem();
         jMenuItem20 = new javax.swing.JMenuItem();
@@ -320,6 +334,99 @@ public class Interface extends javax.swing.JFrame {
                 .addContainerGap(87, Short.MAX_VALUE))
         );
 
+        PIA_TF1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PIA_TF1ActionPerformed(evt);
+            }
+        });
+
+        PIA_B1.setText("Pesquisar");
+        PIA_B1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PIA_B1ActionPerformed(evt);
+            }
+        });
+
+        PIA_L1.setText("Nome do Autor:");
+
+        PIA_TA1.setColumns(20);
+        PIA_TA1.setRows(5);
+        jScrollPane2.setViewportView(PIA_TA1);
+
+        javax.swing.GroupLayout PIALayout = new javax.swing.GroupLayout(PIA.getContentPane());
+        PIA.getContentPane().setLayout(PIALayout);
+        PIALayout.setHorizontalGroup(
+            PIALayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PIALayout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addGroup(PIALayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 649, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(PIA_B1, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(PIA_TF1, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(PIA_L1))
+                .addContainerGap(15, Short.MAX_VALUE))
+        );
+        PIALayout.setVerticalGroup(
+            PIALayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PIALayout.createSequentialGroup()
+                .addGap(25, 25, 25)
+                .addComponent(PIA_L1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(PIA_TF1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 378, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(PIA_B1)
+                .addGap(16, 16, 16))
+        );
+
+        PIN_TF1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PIN_TF1ActionPerformed(evt);
+            }
+        });
+
+        PIN_B1.setText("Pesquisar");
+        PIN_B1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PIN_B1ActionPerformed(evt);
+            }
+        });
+
+        PIN_L1.setText("Nacionalidade do Autor/Autora");
+
+        PIN_TA1.setColumns(20);
+        PIN_TA1.setRows(5);
+        jScrollPane3.setViewportView(PIN_TA1);
+
+        javax.swing.GroupLayout PINLayout = new javax.swing.GroupLayout(PIN.getContentPane());
+        PIN.getContentPane().setLayout(PINLayout);
+        PINLayout.setHorizontalGroup(
+            PINLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PINLayout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addGroup(PINLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 649, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(PIN_B1, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(PINLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(PIN_TF1, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(PIN_L1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addContainerGap(15, Short.MAX_VALUE))
+        );
+        PINLayout.setVerticalGroup(
+            PINLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PINLayout.createSequentialGroup()
+                .addGap(25, 25, 25)
+                .addComponent(PIN_L1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(PIN_TF1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 378, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(PIN_B1)
+                .addGap(16, 16, 16))
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jTextArea1.setColumns(20);
@@ -453,11 +560,21 @@ public class Interface extends javax.swing.JFrame {
 
         jMenu3.setText("XPath");
 
-        jMenuItem16.setText("Pesquisar informações autor");
-        jMenu3.add(jMenuItem16);
+        P_InfoAutor.setText("Pesquisar informações autor");
+        P_InfoAutor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                P_InfoAutorActionPerformed(evt);
+            }
+        });
+        jMenu3.add(P_InfoAutor);
 
-        jMenuItem17.setText("Pesquisar autor por país/nacionalidade");
-        jMenu3.add(jMenuItem17);
+        P_autorNacionalidade.setText("Pesquisar autor por país/nacionalidade");
+        P_autorNacionalidade.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                P_autorNacionalidadeActionPerformed(evt);
+            }
+        });
+        jMenu3.add(P_autorNacionalidade);
 
         jMenuItem18.setText("Pesquisar obras do autor");
         jMenu3.add(jMenuItem18);
@@ -974,6 +1091,67 @@ public class Interface extends javax.swing.JFrame {
         AGL.setVisible(true);
     }//GEN-LAST:event_AlterarGeneroLitActionPerformed
 
+    private void P_InfoAutorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_P_InfoAutorActionPerformed
+        PIA.setSize(700, 550);
+        PIA.setLocation(500, 300);
+        PIA.setTitle("Pesquisar informações do Autor");
+        PIA.setVisible(true);
+        
+    }//GEN-LAST:event_P_InfoAutorActionPerformed
+
+    private void PIA_TF1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PIA_TF1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_PIA_TF1ActionPerformed
+
+    private void PIA_B1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PIA_B1ActionPerformed
+        try {
+            String xp = "//autor[nome = " + "'" + PIA_TF1.getText()+ "'" + "]/*";
+
+            XdmValue res = XPathFunctions.executaXpath(xp, "autores.xml");
+            String s = XPathFunctions.listaResultado(res);
+            if (res == null) {
+                PIA_TA1.setText("Ficheiro nao existe");
+
+            } else if (res.size() == 0) {
+                PIA_TA1.setText("Pesquisa sem resultados");
+            } else {
+                PIA_TA1.setText(s);
+            }
+        } catch (SaxonApiException ex) {
+            Logger.getLogger(Interface.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_PIA_B1ActionPerformed
+
+    private void PIN_TF1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PIN_TF1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_PIN_TF1ActionPerformed
+
+    private void PIN_B1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PIN_B1ActionPerformed
+        try {
+            String xp = "//autor[nacionalidade = " + "'" + PIN_TF1.getText()+ "'" + "]/nome";
+
+            XdmValue res = XPathFunctions.executaXpath(xp, "autores.xml");
+            String s = XPathFunctions.listaResultado(res);
+            if (res == null) {
+                PIN_TA1.setText("Ficheiro nao existe");
+
+            } else if (res.size() == 0) {
+                PIN_TA1.setText("Pesquisa sem resultados");
+            } else {
+                PIN_TA1.setText(s);
+            }
+        } catch (SaxonApiException ex) {
+            Logger.getLogger(Interface.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_PIN_B1ActionPerformed
+
+    private void P_autorNacionalidadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_P_autorNacionalidadeActionPerformed
+        PIN.setSize(700, 550);
+        PIN.setLocation(500, 300);
+        PIN.setTitle("Pesquisar nome do autor/a pela nacionalidade");
+        PIN.setVisible(true);
+    }//GEN-LAST:event_P_autorNacionalidadeActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1048,6 +1226,18 @@ public class Interface extends javax.swing.JFrame {
     private javax.swing.JMenu Inicio;
     private javax.swing.JMenu Menu_XML;
     private javax.swing.JMenuItem Obras_XML;
+    private javax.swing.JDialog PIA;
+    private javax.swing.JButton PIA_B1;
+    private javax.swing.JLabel PIA_L1;
+    private javax.swing.JTextArea PIA_TA1;
+    private javax.swing.JTextField PIA_TF1;
+    private javax.swing.JDialog PIN;
+    private javax.swing.JButton PIN_B1;
+    private javax.swing.JLabel PIN_L1;
+    private javax.swing.JTextArea PIN_TA1;
+    private javax.swing.JTextField PIN_TF1;
+    private javax.swing.JMenuItem P_InfoAutor;
+    private javax.swing.JMenuItem P_autorNacionalidade;
     private javax.swing.JMenuItem Relatorio;
     private javax.swing.JMenuItem Sair;
     private javax.swing.JDialog Warnings;
@@ -1063,8 +1253,6 @@ public class Interface extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu7;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem15;
-    private javax.swing.JMenuItem jMenuItem16;
-    private javax.swing.JMenuItem jMenuItem17;
     private javax.swing.JMenuItem jMenuItem18;
     private javax.swing.JMenuItem jMenuItem19;
     private javax.swing.JMenuItem jMenuItem20;
@@ -1074,6 +1262,8 @@ public class Interface extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem8;
     private javax.swing.JMenuItem jMenuItem9;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
