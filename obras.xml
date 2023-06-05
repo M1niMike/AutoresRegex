@@ -36,4 +36,28 @@
           <encadernacao>Capa mole</encadernacao>
           <fotoCapa>https://img.bertrand.pt/images/a-furia-dos-reis-george-r-r-martin/NDV8MjAwMjkzfDI1Nzg5NnwxMzgzNTkwMzkyMDAw/500x</fotoCapa>
      </livro>
+     <livro>
+          <isbn>978-972-0-04671-0</isbn>
+          <titulo>Memorial do Convento</titulo>
+          <autor>José Saramago</autor>
+          <editora>Porto Editora</editora>
+          <preco>14.2</preco>
+          <quantidadePaginas>402</quantidadePaginas>
+          <anoEdicao>09-2014</anoEdicao>
+          <idioma>Português</idioma>
+          <encadernacao>Capa mole</encadernacao>
+          <fotoCapa>https://img.bertrand.pt/images/memorial-do-convento-jose-saramago/NDV8MTU3NDc0NDR8MjM1NjIyNjF8MTY2MjA0MDgyMzAwMA==/500x</fotoCapa>
+     </livro>
+     <livro>
+          <isbn>978-972-0-04667-3</isbn>
+          <titulo>As Intermitências da Morte</titulo>
+          <autor>José Saramago</autor>
+          <editora>Porto Editora</editora>
+          <preco>13.32</preco>
+          <quantidadePaginas>232</quantidadePaginas>
+          <anoEdicao>05-2014</anoEdicao>
+          <idioma>Português</idioma>
+          <encadernacao>Capa mole</encadernacao>
+          <fotoCapa>https://img.bertrand.pt/images/as-intermitencias-da-morte-jose-saramago/NDV8MTU3MjM4ODR8MjQ5MjQxNDB8MTY4NDg0NzY4NjAwMA==/500x</fotoCapa>
+     </livro>
 </obras>

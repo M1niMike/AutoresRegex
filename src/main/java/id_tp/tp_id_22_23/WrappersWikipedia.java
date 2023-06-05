@@ -25,17 +25,17 @@ public class WrappersWikipedia {
     public static String obtem_nome(String nome_autor) throws IOException {
         HttpRequestFunctions.httpRequest2("https://pt.wikipedia.org/wiki/", nome_autor, "autores.txt");
 
-        String er1 = "Nome completo";
-        String er2 = "<td style=\"vertical-align: top; text-align: left;\">([^<]+)";
-        String er3 = "<span class=\"\">([^<]+)</span>";
+        String er1 = "<title>([^<]+) – Wikipédia, a enciclopédia livre</title>";
+        //String er2 = "<td style=\"vertical-align: top; text-align: left;\">([^<]+)";
+        //String er3 = "<span class=\"\">([^<]+)</span>";
 
         Pattern p1 = Pattern.compile(er1);
-        Pattern p2 = Pattern.compile(er2);
-        Pattern p3 = Pattern.compile(er3);
+//        Pattern p2 = Pattern.compile(er2);
+//        Pattern p3 = Pattern.compile(er3);
 
         Matcher m1;
-        Matcher m2;
-        Matcher m3;
+//        Matcher m2;
+//        Matcher m3;
 
         Scanner ler = new Scanner(new FileInputStream("autores.txt"));
 
@@ -43,23 +43,13 @@ public class WrappersWikipedia {
             String linha = ler.nextLine();
 
             m1 = p1.matcher(linha);
-            m3 = p3.matcher(linha);
+            //m3 = p3.matcher(linha);
 
             if (m1.find()) {
-                linha = ler.nextLine();
+               ler.close();
+               return m1.group(1);
 
-                m2 = p2.matcher(linha);
-
-                if (m2.find()) {
-
-                    ler.close();
-                    return m2.group(1);
-                }
-
-            } else if (m3.find()) {
-                ler.close();
-                return m3.group(1);
-            }
+            } 
         }
         ler.close();
         return "Sem informacao";
@@ -316,6 +306,7 @@ public class WrappersWikipedia {
 
         String er1 = "Ocupação";
         String er2 = "<a href=\"/wiki/[^<]+\" title=\"[^<]+\">([^<]+)</a>";
+        
 
         Pattern p1 = Pattern.compile(er1);
         Pattern p2 = Pattern.compile(er2);
@@ -398,14 +389,12 @@ public class WrappersWikipedia {
             }
 
         }
-        lista.add("Sem informacao");
-        ler.close();
-        return lista;
+       return lista;
     }
 
     public static Autor criaAutor(String nome_autor) throws IOException {
 
-        String nome = nome_autor;
+        String nome = WrappersWikipedia.obtem_nome(nome_autor);
         String data_Nasc = WrappersWikipedia.obtem_dataNasc(nome_autor);
         String dataMorte = WrappersWikipedia.obtem_dataMorte(nome_autor);
         String nacionalidade = WrappersWikipedia.obtem_nacionalidade(nome_autor);

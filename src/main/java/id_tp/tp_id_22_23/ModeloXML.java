@@ -91,7 +91,7 @@ public class ModeloXML {
 
         x = new Element("linkFoto").addContent(au.getFotografia());
         pai.addContent(x);
-;
+        
         raiz.addContent(pai);
         return doc;
 

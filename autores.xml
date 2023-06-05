@@ -11,18 +11,6 @@
           <conjuge>Gale Burnick</conjuge>
           <linkFoto>https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Portrait_photoshoot_at_Worldcon_75%2C_Helsinki%2C_before_the_Hugo_Awards_%E2%80%93_George_R._R._Martin.jpg/1200px-Portrait_photoshoot_at_Worldcon_75%2C_Helsinki%2C_before_the_Hugo_Awards_%E2%80%93_George_R._R._Martin.jpg</linkFoto>
      </autor>
-     <autor id="7">
-          <nome>Nicholas Sparks</nome>
-          <dataNascimento>31 de dezembro 1965</dataNascimento>
-          <dataMorte>O Autor ainda esta vivo</dataMorte>
-          <nacionalidade>norte-americano</nacionalidade>
-          <generoLiterario>Sem informacao</generoLiterario>
-          <ocupacoes>Escritor</ocupacoes>
-          <ocupacoes>roteirista</ocupacoes>
-          <ocupacoes>produtor</ocupacoes>
-          <conjuge>Cathy Sparks (1989-2015)</conjuge>
-          <linkFoto>https://upload.wikimedia.org/wikipedia/commons/a/af/Nicholas-Sparks-Autograph-1-4-06.jpg</linkFoto>
-     </autor>
      <autor id="10">
           <nome>J. K. Rowling</nome>
           <dataNascimento>31 de julho 1965</dataNascimento>
@@ -32,15 +20,6 @@
           <ocupacoes>escritora</ocupacoes>
           <conjuge>Jorge Arantes</conjuge>
           <linkFoto>https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/J._K._Rowling_2010.jpg/1200px-J._K._Rowling_2010.jpg</linkFoto>
-     </autor>
-     <autor id="20">
-          <nome>Jose Saramago</nome>
-          <dataNascimento>16 de novembro 1922</dataNascimento>
-          <dataMorte>18 de junho 2010</dataMorte>
-          <nacionalidade>português</nacionalidade>
-          <generoLiterario>Sem informacao</generoLiterario>
-          <conjuge>Ilda Reis</conjuge>
-          <linkFoto>https://upload.wikimedia.org/wikipedia/commons/5/5c/JSJoseSaramago.jpg</linkFoto>
      </autor>
      <autor id="4">
           <nome>Fernando Pessoa</nome>
@@ -54,5 +33,28 @@
           <premios>Prémio Antero de Quental</premios>
           <conjuge>Sem informacao</conjuge>
           <linkFoto>https://upload.wikimedia.org/wikipedia/commons/3/32/Pessoa_chapeu.jpg</linkFoto>
+     </autor>
+     <autor id="16">
+          <nome>José Saramago</nome>
+          <dataNascimento>16 de novembro 1922</dataNascimento>
+          <dataMorte>18 de junho 2010</dataMorte>
+          <nacionalidade>português</nacionalidade>
+          <generoLiterario>Sem informacao</generoLiterario>
+          <ocupacoes>Sem informacao</ocupacoes>
+          <conjuge>Ilda Reis</conjuge>
+          <linkFoto>https://upload.wikimedia.org/wikipedia/commons/5/5c/JSJoseSaramago.jpg</linkFoto>
+     </autor>
+     <autor id="11">
+          <nome>Nicholas Sparks</nome>
+          <dataNascimento>31 de dezembro 1965</dataNascimento>
+          <dataMorte>O Autor ainda esta vivo</dataMorte>
+          <nacionalidade>norte-americano</nacionalidade>
+          <generoLiterario>Sem informacao</generoLiterario>
+          <ocupacoes>Escritor</ocupacoes>
+          <ocupacoes>roteirista</ocupacoes>
+          <ocupacoes>produtor</ocupacoes>
+          <premios>Sem informacao</premios>
+          <conjuge>Cathy Sparks (1989-2015)</conjuge>
+          <linkFoto>https://upload.wikimedia.org/wikipedia/commons/a/af/Nicholas-Sparks-Autograph-1-4-06.jpg</linkFoto>
      </autor>
 </autores>
