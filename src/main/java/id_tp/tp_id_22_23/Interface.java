@@ -28,7 +28,7 @@ public class Interface extends javax.swing.JFrame {
     public Interface() {
         initComponents();
     }
-    
+
     public static boolean AchaNome(String nomeAutor, Document doc) {
         Element raiz;
         raiz = doc.getRootElement();
@@ -56,6 +56,11 @@ public class Interface extends javax.swing.JFrame {
     private void initComponents() {
 
         Warnings = new javax.swing.JDialog();
+        ADO = new javax.swing.JDialog();
+        ADO_B1 = new javax.swing.JButton();
+        ADO_L1 = new javax.swing.JLabel();
+        ADO_L2 = new javax.swing.JLabel();
+        ADO_TF1 = new javax.swing.JTextField();
         ADN = new javax.swing.JDialog();
         ADN_TF1 = new javax.swing.JTextField();
         ADN_TF2 = new javax.swing.JTextField();
@@ -86,6 +91,16 @@ public class Interface extends javax.swing.JFrame {
         ACP_B1 = new javax.swing.JButton();
         ACP_L1 = new javax.swing.JLabel();
         ACP_L2 = new javax.swing.JLabel();
+        RMP = new javax.swing.JDialog();
+        RMP_TF1 = new javax.swing.JTextField();
+        RMP_TF2 = new javax.swing.JTextField();
+        RMP_B1 = new javax.swing.JButton();
+        RMP_L1 = new javax.swing.JLabel();
+        RMP_L2 = new javax.swing.JLabel();
+        RMO = new javax.swing.JDialog();
+        RMO_B1 = new javax.swing.JButton();
+        RMO_L1 = new javax.swing.JLabel();
+        RMO_TF1 = new javax.swing.JTextField();
         PIA = new javax.swing.JDialog();
         PIA_TF1 = new javax.swing.JTextField();
         PIA_B1 = new javax.swing.JButton();
@@ -139,8 +154,6 @@ public class Interface extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         ButtonAdd = new javax.swing.JButton();
         ButtonEliminar = new javax.swing.JButton();
-        jTextField2 = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         Inicio = new javax.swing.JMenu();
         Relatorio = new javax.swing.JMenuItem();
@@ -149,13 +162,13 @@ public class Interface extends javax.swing.JFrame {
         Menu_XML = new javax.swing.JMenu();
         Autores_XML = new javax.swing.JMenuItem();
         Obras_XML = new javax.swing.JMenuItem();
-        EliminarAutor = new javax.swing.JMenuItem();
         AlterarDataNasc = new javax.swing.JMenuItem();
         AlterarNacionalidade = new javax.swing.JMenuItem();
         AcrescentarPremio = new javax.swing.JMenuItem();
-        jMenuItem9 = new javax.swing.JMenuItem();
+        EliminaPremio = new javax.swing.JMenuItem();
         AlterarConjuge = new javax.swing.JMenuItem();
         AlterarGeneroLit = new javax.swing.JMenuItem();
+        EliminarObra = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
         P_InfoAutor = new javax.swing.JMenuItem();
         P_autorNacionalidade = new javax.swing.JMenuItem();
@@ -184,6 +197,59 @@ public class Interface extends javax.swing.JFrame {
         WarningsLayout.setVerticalGroup(
             WarningsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 300, Short.MAX_VALUE)
+        );
+
+        ADO_B1.setText("Adicionar");
+        ADO_B1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ADO_B1ActionPerformed(evt);
+            }
+        });
+
+        ADO_L1.setText("Quantas obras você deseja adicionar?");
+
+        ADO_L2.setText("Entre 1 e 5");
+
+        ADO_TF1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ADO_TF1ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout ADOLayout = new javax.swing.GroupLayout(ADO.getContentPane());
+        ADO.getContentPane().setLayout(ADOLayout);
+        ADOLayout.setHorizontalGroup(
+            ADOLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ADOLayout.createSequentialGroup()
+                .addGroup(ADOLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(ADOLayout.createSequentialGroup()
+                        .addGap(25, 25, 25)
+                        .addGroup(ADOLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(ADO_L1)
+                            .addGroup(ADOLayout.createSequentialGroup()
+                                .addGap(58, 58, 58)
+                                .addComponent(ADO_L2))))
+                    .addGroup(ADOLayout.createSequentialGroup()
+                        .addGap(61, 61, 61)
+                        .addGroup(ADOLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(ADO_TF1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(ADOLayout.createSequentialGroup()
+                                .addGap(6, 6, 6)
+                                .addComponent(ADO_B1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(22, Short.MAX_VALUE))
+        );
+        ADOLayout.setVerticalGroup(
+            ADOLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ADOLayout.createSequentialGroup()
+                .addGap(25, 25, 25)
+                .addComponent(ADO_L1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(ADO_L2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(ADO_TF1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(ADO_B1)
+                .addContainerGap(48, Short.MAX_VALUE))
         );
 
         ADN_TF1.addActionListener(new java.awt.event.ActionListener() {
@@ -419,6 +485,92 @@ public class Interface extends javax.swing.JFrame {
                 .addGap(32, 32, 32)
                 .addComponent(ACP_B1)
                 .addContainerGap(80, Short.MAX_VALUE))
+        );
+
+        RMP_TF1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RMP_TF1ActionPerformed(evt);
+            }
+        });
+
+        RMP_B1.setText("Remover");
+        RMP_B1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RMP_B1ActionPerformed(evt);
+            }
+        });
+
+        RMP_L1.setText("Nome do Autor");
+
+        RMP_L2.setText("Nome do premio");
+
+        javax.swing.GroupLayout RMPLayout = new javax.swing.GroupLayout(RMP.getContentPane());
+        RMP.getContentPane().setLayout(RMPLayout);
+        RMPLayout.setHorizontalGroup(
+            RMPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(RMPLayout.createSequentialGroup()
+                .addGap(112, 112, 112)
+                .addGroup(RMPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(RMP_B1)
+                    .addComponent(RMP_L1)
+                    .addComponent(RMP_TF1, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(RMP_L2)
+                    .addComponent(RMP_TF2, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(149, Short.MAX_VALUE))
+        );
+        RMPLayout.setVerticalGroup(
+            RMPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(RMPLayout.createSequentialGroup()
+                .addGap(53, 53, 53)
+                .addComponent(RMP_L1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(RMP_TF1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(RMP_L2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(RMP_TF2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(32, 32, 32)
+                .addComponent(RMP_B1)
+                .addContainerGap(80, Short.MAX_VALUE))
+        );
+
+        RMO_B1.setText("Eliminar");
+        RMO_B1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RMO_B1ActionPerformed(evt);
+            }
+        });
+
+        RMO_L1.setText("Nome da obra:");
+
+        RMO_TF1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RMO_TF1ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout RMOLayout = new javax.swing.GroupLayout(RMO.getContentPane());
+        RMO.getContentPane().setLayout(RMOLayout);
+        RMOLayout.setHorizontalGroup(
+            RMOLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(RMOLayout.createSequentialGroup()
+                .addGap(49, 49, 49)
+                .addGroup(RMOLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(RMO_B1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(RMO_L1)
+                    .addComponent(RMO_TF1, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(58, Short.MAX_VALUE))
+        );
+        RMOLayout.setVerticalGroup(
+            RMOLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(RMOLayout.createSequentialGroup()
+                .addGap(52, 52, 52)
+                .addComponent(RMO_L1)
+                .addGap(18, 18, 18)
+                .addComponent(RMO_TF1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(RMO_B1)
+                .addContainerGap(51, Short.MAX_VALUE))
         );
 
         PIA_TF1.addActionListener(new java.awt.event.ActionListener() {
@@ -813,8 +965,6 @@ public class Interface extends javax.swing.JFrame {
             }
         });
 
-        jLabel2.setText("Insira o numero de obras: (5 a 1)");
-
         Inicio.setText("Inicio");
         Inicio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -871,9 +1021,6 @@ public class Interface extends javax.swing.JFrame {
         });
         Menu_XML.add(Obras_XML);
 
-        EliminarAutor.setText("Eliminar autor");
-        Menu_XML.add(EliminarAutor);
-
         AlterarDataNasc.setText("Alterar data de nascimento");
         AlterarDataNasc.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -898,8 +1045,13 @@ public class Interface extends javax.swing.JFrame {
         });
         Menu_XML.add(AcrescentarPremio);
 
-        jMenuItem9.setText("Eliminar prêmio");
-        Menu_XML.add(jMenuItem9);
+        EliminaPremio.setText("Eliminar prêmio");
+        EliminaPremio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EliminaPremioActionPerformed(evt);
+            }
+        });
+        Menu_XML.add(EliminaPremio);
 
         AlterarConjuge.setText("Alterar conjuge");
         AlterarConjuge.addActionListener(new java.awt.event.ActionListener() {
@@ -916,6 +1068,14 @@ public class Interface extends javax.swing.JFrame {
             }
         });
         Menu_XML.add(AlterarGeneroLit);
+
+        EliminarObra.setText("Eliminar Obra");
+        EliminarObra.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EliminarObraActionPerformed(evt);
+            }
+        });
+        Menu_XML.add(EliminarObra);
 
         jMenuBar1.add(Menu_XML);
 
@@ -1059,16 +1219,13 @@ public class Interface extends javax.swing.JFrame {
                     .addComponent(jLabel1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jLabel3)
-                        .addComponent(jTextField1)
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(ButtonAdd)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(ButtonEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(jTextField2))
-                    .addComponent(jLabel2))
-                .addContainerGap(89, Short.MAX_VALUE))
+                    .addComponent(jLabel3)
+                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(ButtonAdd)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(ButtonEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(90, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1081,11 +1238,7 @@ public class Interface extends javax.swing.JFrame {
                         .addComponent(jLabel3)
                         .addGap(5, 5, 5)
                         .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel2)
-                        .addGap(5, 5, 5)
-                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(ButtonAdd)
                             .addComponent(ButtonEliminar)))
@@ -1135,7 +1288,6 @@ public class Interface extends javax.swing.JFrame {
         try {
 
             String nome = jTextField1.getText();
-            String quant = jTextField2.getText();
 
             if ("".equals(nome)) {
                 Warnings.setVisible(false);
@@ -1148,18 +1300,17 @@ public class Interface extends javax.swing.JFrame {
                 Autor au = WrappersWikipedia.criaAutor(nome);
 
                 Document doc = XMLJDomFunctions.lerDocumentoXML("autores.xml");
-                
-                
-                if(AchaNome(nome, doc)){
+
+                if (AchaNome(nome, doc)) {
                     Warnings.setVisible(false);
                     JOptionPane.showMessageDialog(this,
-                        "Autor ja existe",
-                        "Informação",
-                        JOptionPane.INFORMATION_MESSAGE);
-                    
+                            "Autor ja existe",
+                            "Informação",
+                            JOptionPane.INFORMATION_MESSAGE);
+
                     return;
                 }
-                
+
                 doc = ModeloXML.adicionaAutor(au, doc);
 
                 XMLJDomFunctions.escreverDocumentoParaFicheiro(doc, "autores.xml");
@@ -1170,27 +1321,10 @@ public class Interface extends javax.swing.JFrame {
                         "Informação",
                         JOptionPane.INFORMATION_MESSAGE);
 
-                if (!"".equals(quant)) {
-                    ArrayList<Obras> obs = new ArrayList<>();
-                    ArrayList<String> linkObras = WrappersBertrand.obtem_link(nome, Integer.parseInt(quant));
-
-                    for (int i = 0; i < linkObras.size(); i++) {
-                        obs.add(WrappersBertrand.criaObras(linkObras.get(i)));
-                    }
-
-                    Document doc2 = XMLJDomFunctions.lerDocumentoXML("obras.xml");
-
-                    doc2 = ModeloXML.adicionaObra(obs, doc2);
-
-                    XMLJDomFunctions.escreverDocumentoParaFicheiro(doc2, "obras.xml");
-
-                    Warnings.setVisible(false);
-                    JOptionPane.showMessageDialog(this,
-                            "Obra/as adicionada/as com sucesso",
-                            "Informação",
-                            JOptionPane.INFORMATION_MESSAGE);
-
-                }
+                ADO.setSize(290, 220);
+                ADO.setLocation(500, 300);
+                ADO.setTitle("Adicionar obra");
+                ADO.setVisible(true);
 
             }
 
@@ -1293,26 +1427,26 @@ public class Interface extends javax.swing.JFrame {
 
     private void XSD_AutoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_XSD_AutoresActionPerformed
         // TODO add your handling code here:
-           int res = Validacao.validarDocumentoXSD("autores.xml", "autores.xsd");
+        int res = Validacao.validarDocumentoXSD("autores.xml", "autores.xsd");
         if (res == -1) {
-            
-             Warnings.setVisible(false);
-                JOptionPane.showMessageDialog(this,
-                        "O Ficheiro e valido",
-                        "Validacao XSD",
-                        JOptionPane.INFORMATION_MESSAGE);
-        } else {
-            
+
             Warnings.setVisible(false);
-                JOptionPane.showMessageDialog(this,
-                        "O Ficheiro e invalido",
-                        "Validacao XSD",
-                        JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(this,
+                    "O Ficheiro e valido",
+                    "Validacao XSD",
+                    JOptionPane.INFORMATION_MESSAGE);
+        } else {
+
+            Warnings.setVisible(false);
+            JOptionPane.showMessageDialog(this,
+                    "O Ficheiro e invalido",
+                    "Validacao XSD",
+                    JOptionPane.INFORMATION_MESSAGE);
         }
     }//GEN-LAST:event_XSD_AutoresActionPerformed
 
     private void DTD_ObrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DTD_ObrasActionPerformed
-         try {
+        try {
             // TODO add your handling code here:
             int res = Validacao.validarDocumentoDTD("obras.xml", "obras.dtd");
             if (res == 1) {
@@ -1337,46 +1471,42 @@ public class Interface extends javax.swing.JFrame {
     }//GEN-LAST:event_DTD_ObrasActionPerformed
 
     private void XSD_ObrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_XSD_ObrasActionPerformed
-          int res = Validacao.validarDocumentoXSD("obras.xml", "obras.xsd");
+        int res = Validacao.validarDocumentoXSD("obras.xml", "obras.xsd");
         if (res == -1) {
-            
-             Warnings.setVisible(false);
-                JOptionPane.showMessageDialog(this,
-                        "O Ficheiro e valido",
-                        "Validacao XSD",
-                        JOptionPane.INFORMATION_MESSAGE);
-        } else {
-            
+
             Warnings.setVisible(false);
-                JOptionPane.showMessageDialog(this,
-                        "O Ficheiro e invalido",
-                        "Validacao XSD",
-                        JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(this,
+                    "O Ficheiro e valido",
+                    "Validacao XSD",
+                    JOptionPane.INFORMATION_MESSAGE);
+        } else {
+
+            Warnings.setVisible(false);
+            JOptionPane.showMessageDialog(this,
+                    "O Ficheiro e invalido",
+                    "Validacao XSD",
+                    JOptionPane.INFORMATION_MESSAGE);
         }
     }//GEN-LAST:event_XSD_ObrasActionPerformed
 
     private void AlterarDataNascActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AlterarDataNascActionPerformed
-        // TODO add your handling code here:
+
         ADN.setSize(450, 300);
         ADN.setLocation(500, 300);
         ADN.setTitle("Alterar Data Nascimento");
         ADN.setVisible(true);
     }//GEN-LAST:event_AlterarDataNascActionPerformed
 
-    private void ADN_TF1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ADN_TF1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ADN_TF1ActionPerformed
-
     private void ADN_BActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ADN_BActionPerformed
         Document doc = XMLJDomFunctions.lerDocumentoXML("autores.xml");
-        
+
         doc = ModeloXML.alterarDataNasc(ADN_TF1.getText(), ADN_TF2.getText(), doc);
-        
+
         JOptionPane.showMessageDialog(this,
                 "Data alterada com sucesso",
                 "Informação",
                 JOptionPane.INFORMATION_MESSAGE);
-        
+
         //grava o ficheiro XML em disco
         if (doc != null) {
             XMLJDomFunctions.escreverDocumentoParaFicheiro(doc, "autores.xml");
@@ -1395,14 +1525,14 @@ public class Interface extends javax.swing.JFrame {
 
     private void ANC_B1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ANC_B1ActionPerformed
         Document doc = XMLJDomFunctions.lerDocumentoXML("autores.xml");
-        
+
         doc = ModeloXML.alterarNacionalidade(ANC_TF1.getText(), ANC_TF2.getText(), doc);
-        
+
         JOptionPane.showMessageDialog(this,
                 "Nacionalidade alterada com sucesso",
                 "Informação",
                 JOptionPane.INFORMATION_MESSAGE);
-        
+
         //grava o ficheiro XML em disco
         if (doc != null) {
             XMLJDomFunctions.escreverDocumentoParaFicheiro(doc, "autores.xml");
@@ -1428,14 +1558,14 @@ public class Interface extends javax.swing.JFrame {
 
     private void ACJ_B1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ACJ_B1ActionPerformed
         Document doc = XMLJDomFunctions.lerDocumentoXML("autores.xml");
-        
+
         doc = ModeloXML.alterarConjuge(ACJ_TF1.getText(), ACJ_TF2.getText(), doc);
-        
+
         JOptionPane.showMessageDialog(this,
                 "Conjuge alterado com sucesso",
                 "Informação",
                 JOptionPane.INFORMATION_MESSAGE);
-        
+
         //grava o ficheiro XML em disco
         if (doc != null) {
             XMLJDomFunctions.escreverDocumentoParaFicheiro(doc, "autores.xml");
@@ -1461,14 +1591,14 @@ public class Interface extends javax.swing.JFrame {
 
     private void AGL_B1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AGL_B1ActionPerformed
         Document doc = XMLJDomFunctions.lerDocumentoXML("autores.xml");
-        
+
         doc = ModeloXML.alterarGeneroLit(AGL_TF1.getText(), AGL_TF2.getText(), doc);
-        
+
         JOptionPane.showMessageDialog(this,
                 "Genero Literario alterado com sucesso",
                 "Informação",
                 JOptionPane.INFORMATION_MESSAGE);
-        
+
         //grava o ficheiro XML em disco
         if (doc != null) {
             XMLJDomFunctions.escreverDocumentoParaFicheiro(doc, "autores.xml");
@@ -1493,7 +1623,7 @@ public class Interface extends javax.swing.JFrame {
         PIA.setLocation(500, 300);
         PIA.setTitle("Pesquisar informações do Autor");
         PIA.setVisible(true);
-        
+
     }//GEN-LAST:event_P_InfoAutorActionPerformed
 
     private void PIA_TF1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PIA_TF1ActionPerformed
@@ -1502,7 +1632,7 @@ public class Interface extends javax.swing.JFrame {
 
     private void PIA_B1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PIA_B1ActionPerformed
         try {
-            String xp = "//autor[nome = " + "'" + PIA_TF1.getText()+ "'" + "]/*";
+            String xp = "//autor[nome = " + "'" + PIA_TF1.getText() + "'" + "]/*";
 
             XdmValue res = XPathFunctions.executaXpath(xp, "autores.xml");
             String s = XPathFunctions.listaResultado(res);
@@ -1525,7 +1655,7 @@ public class Interface extends javax.swing.JFrame {
 
     private void PIN_B1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PIN_B1ActionPerformed
         try {
-            String xp = "//autor[nacionalidade = " + "'" + PIN_TF1.getText()+ "'" + "]/nome";
+            String xp = "//autor[nacionalidade = " + "'" + PIN_TF1.getText() + "'" + "]/nome";
 
             XdmValue res = XPathFunctions.executaXpath(xp, "autores.xml");
             String s = XPathFunctions.listaResultado(res);
@@ -1555,7 +1685,7 @@ public class Interface extends javax.swing.JFrame {
 
     private void POA_B1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_POA_B1ActionPerformed
         try {
-            String xp = "//livro[autor = " + "'" + POA_TF1.getText()+ "'" + "]/titulo";
+            String xp = "//livro[autor = " + "'" + POA_TF1.getText() + "'" + "]/titulo";
 
             XdmValue res = XPathFunctions.executaXpath(xp, "obras.xml");
             String s = XPathFunctions.listaResultado(res);
@@ -1581,11 +1711,11 @@ public class Interface extends javax.swing.JFrame {
 
     private void PAP_B1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PAP_B1ActionPerformed
         try {
-            String xp = "//autor[count(premios) = max(//autor/count(premios))]/nome";
+            String xp = "//autor[count(premios/premio) = max(//autor/count(premios/premio))]/nome";
 
             XdmValue res = XPathFunctions.executaXpath(xp, "autores.xml");
             String s = XPathFunctions.listaResultado(res);
-            
+
             if (res == null) {
                 PAP_TA1.setText("Ficheiro nao existe");
 
@@ -1616,7 +1746,7 @@ public class Interface extends javax.swing.JFrame {
 
             XdmValue res = XPathFunctions.executaXpath(xp, "obras.xml");
             String s = XPathFunctions.listaResultado(res);
-            
+
             if (res == null) {
                 PPL_TA1.setText("Ficheiro nao existe");
 
@@ -1647,7 +1777,7 @@ public class Interface extends javax.swing.JFrame {
 
             XdmValue res = XPathFunctions.executaXpath(xp, "autores.xml");
             String s = XPathFunctions.listaResultado(res);
-            
+
             if (res == null) {
                 PGL_TA1.setText("Ficheiro nao existe");
 
@@ -1678,7 +1808,7 @@ public class Interface extends javax.swing.JFrame {
 
             XdmValue res = XPathFunctions.executaXpath(xp, "autores.xml");
             String s = XPathFunctions.listaResultado(res);
-            
+
             if (res == null) {
                 PPC_TA1.setText("Ficheiro nao existe");
 
@@ -1708,12 +1838,12 @@ public class Interface extends javax.swing.JFrame {
     }//GEN-LAST:event_PDN_TF1ActionPerformed
 
     private void PDN_B1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PDN_B1ActionPerformed
-         try {
+        try {
             String xp = "//autor[dataNascimento = " + "'" + PDN_TF1.getText() + "'" + "]/nome";
 
             XdmValue res = XPathFunctions.executaXpath(xp, "autores.xml");
             String s = XPathFunctions.listaResultado(res);
-            
+
             if (res == null) {
                 PDN_TA1.setText("Ficheiro nao existe");
 
@@ -1740,14 +1870,14 @@ public class Interface extends javax.swing.JFrame {
 
     private void ACP_B1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ACP_B1ActionPerformed
         Document doc = XMLJDomFunctions.lerDocumentoXML("autores.xml");
-        
+
         doc = ModeloXML.adicionaPremio(ACP_TF1.getText(), ACP_TF2.getText(), doc);
-        
+
         JOptionPane.showMessageDialog(this,
                 "Premio adicionado com sucesso",
                 "Informação",
                 JOptionPane.INFORMATION_MESSAGE);
-        
+
         //grava o ficheiro XML em disco
         if (doc != null) {
             XMLJDomFunctions.escreverDocumentoParaFicheiro(doc, "autores.xml");
@@ -1766,6 +1896,129 @@ public class Interface extends javax.swing.JFrame {
         ACP.setTitle("Adicionar Premio");
         ACP.setVisible(true);
     }//GEN-LAST:event_AcrescentarPremioActionPerformed
+
+    private void RMP_TF1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RMP_TF1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_RMP_TF1ActionPerformed
+
+    private void RMP_B1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RMP_B1ActionPerformed
+        Document doc = XMLJDomFunctions.lerDocumentoXML("autores.xml");
+
+        doc = ModeloXML.removePremio(RMP_TF1.getText(), RMP_TF2.getText(), doc);
+
+        JOptionPane.showMessageDialog(this,
+                "Premio removido com sucesso",
+                "Informação",
+                JOptionPane.INFORMATION_MESSAGE);
+
+        //grava o ficheiro XML em disco
+        if (doc != null) {
+            XMLJDomFunctions.escreverDocumentoParaFicheiro(doc, "autores.xml");
+        } else {
+            JOptionPane.showMessageDialog(this,
+                    "Autor não foi encontrado",
+                    "Informação",
+                    JOptionPane.INFORMATION_MESSAGE);
+        }
+        RMP.setVisible(false);
+    }//GEN-LAST:event_RMP_B1ActionPerformed
+
+    private void EliminaPremioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EliminaPremioActionPerformed
+        RMP.setSize(450, 300);
+        RMP.setLocation(500, 300);
+        RMP.setTitle("Remover Premio");
+        RMP.setVisible(true);
+    }//GEN-LAST:event_EliminaPremioActionPerformed
+
+    private void ADO_B1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ADO_B1ActionPerformed
+        if (!"".equals(ADO_TF1.getText()) && !"0".equals(ADO_TF1.getText())) {
+            try {
+                ArrayList<Obras> obs = new ArrayList<>();
+                ArrayList<String> linkObras = WrappersBertrand.obtem_link(jTextField1.getText(), Integer.parseInt(ADO_TF1.getText()));
+
+                for (int i = 0; i < linkObras.size(); i++) {
+                    obs.add(WrappersBertrand.criaObras(linkObras.get(i)));
+                }
+
+                Document doc2 = XMLJDomFunctions.lerDocumentoXML("obras.xml");
+
+                doc2 = ModeloXML.adicionaObra(obs, doc2);
+
+                XMLJDomFunctions.escreverDocumentoParaFicheiro(doc2, "obras.xml");
+
+                Warnings.setVisible(false);
+                JOptionPane.showMessageDialog(this,
+                        "Obra/as adicionada/as com sucesso",
+                        "Informação",
+                        JOptionPane.INFORMATION_MESSAGE);
+            } catch (IOException ex) {
+                Logger.getLogger(Interface.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+        }else{
+            ADO.setVisible(false);
+        }
+    }//GEN-LAST:event_ADO_B1ActionPerformed
+
+    private void ADN_TF1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ADN_TF1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ADN_TF1ActionPerformed
+
+    private void ADO_TF1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ADO_TF1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ADO_TF1ActionPerformed
+
+    private void RMO_B1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RMO_B1ActionPerformed
+         String titulo = RMO_TF1.getText();
+
+        if ("".equals(titulo)) {
+            Warnings.setVisible(false);
+            JOptionPane.showMessageDialog(this,
+                    "Insira um titulo!",
+                    "Aviso",
+                    JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            Document doc = XMLJDomFunctions.lerDocumentoXML("obras.xml");
+
+            if (doc == null) {
+
+                Warnings.setVisible(false);
+                JOptionPane.showMessageDialog(this,
+                        "Ficheiro nao encontrado",
+                        "Aviso",
+                        JOptionPane.ERROR_MESSAGE);
+
+            } else if (doc != null) {
+                doc = ModeloXML.removeLivroTitulo(titulo, doc);
+                XMLJDomFunctions.escreverDocumentoParaFicheiro(doc, "obras.xml");
+
+                Warnings.setVisible(false);
+                JOptionPane.showMessageDialog(this,
+                        "Obra removida com sucesso",
+                        "Informação",
+                        JOptionPane.INFORMATION_MESSAGE);
+            } else {
+                Warnings.setVisible(false);
+                JOptionPane.showMessageDialog(this,
+                        "Titulo invalido",
+                        "Aviso",
+                        JOptionPane.ERROR_MESSAGE);
+            }
+        }
+        
+        RMO.setVisible(false);
+    }//GEN-LAST:event_RMO_B1ActionPerformed
+
+    private void RMO_TF1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RMO_TF1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_RMO_TF1ActionPerformed
+
+    private void EliminarObraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EliminarObraActionPerformed
+        RMO.setSize(280, 200);
+        RMO.setLocation(500, 300);
+        RMO.setTitle("Remover Obra");
+        RMO.setVisible(true);
+    }//GEN-LAST:event_EliminarObraActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1821,6 +2074,11 @@ public class Interface extends javax.swing.JFrame {
     private javax.swing.JLabel ADN_Lebal2;
     private javax.swing.JTextField ADN_TF1;
     private javax.swing.JTextField ADN_TF2;
+    private javax.swing.JDialog ADO;
+    private javax.swing.JButton ADO_B1;
+    private javax.swing.JLabel ADO_L1;
+    private javax.swing.JLabel ADO_L2;
+    private javax.swing.JTextField ADO_TF1;
     private javax.swing.JDialog AGL;
     private javax.swing.JButton AGL_B1;
     private javax.swing.JLabel AGL_L1;
@@ -1844,7 +2102,8 @@ public class Interface extends javax.swing.JFrame {
     private javax.swing.JButton ButtonEliminar;
     private javax.swing.JMenuItem DTD_Autores;
     private javax.swing.JMenuItem DTD_Obras;
-    private javax.swing.JMenuItem EliminarAutor;
+    private javax.swing.JMenuItem EliminaPremio;
+    private javax.swing.JMenuItem EliminarObra;
     private javax.swing.JMenu Inicio;
     private javax.swing.JMenu Menu_XML;
     private javax.swing.JMenuItem Obras_XML;
@@ -1894,13 +2153,22 @@ public class Interface extends javax.swing.JFrame {
     private javax.swing.JMenuItem P_LivrosPreco;
     private javax.swing.JMenuItem P_ObrasAutor;
     private javax.swing.JMenuItem P_autorNacionalidade;
+    private javax.swing.JDialog RMO;
+    private javax.swing.JButton RMO_B1;
+    private javax.swing.JLabel RMO_L1;
+    private javax.swing.JTextField RMO_TF1;
+    private javax.swing.JDialog RMP;
+    private javax.swing.JButton RMP_B1;
+    private javax.swing.JLabel RMP_L1;
+    private javax.swing.JLabel RMP_L2;
+    private javax.swing.JTextField RMP_TF1;
+    private javax.swing.JTextField RMP_TF2;
     private javax.swing.JMenuItem Relatorio;
     private javax.swing.JMenuItem Sair;
     private javax.swing.JDialog Warnings;
     private javax.swing.JMenuItem XSD_Autores;
     private javax.swing.JMenuItem XSD_Obras;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
@@ -1909,7 +2177,6 @@ public class Interface extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu7;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem15;
-    private javax.swing.JMenuItem jMenuItem9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane10;
     private javax.swing.JScrollPane jScrollPane2;
@@ -1921,6 +2188,5 @@ public class Interface extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
     // End of variables declaration//GEN-END:variables
 }
