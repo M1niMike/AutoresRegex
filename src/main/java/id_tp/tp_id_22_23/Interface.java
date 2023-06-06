@@ -4,15 +4,20 @@
  */
 package id_tp.tp_id_22_23;
 
+import java.awt.Desktop;
 import java.awt.Frame;
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import net.sf.saxon.s9api.SaxonApiException;
 import net.sf.saxon.s9api.XdmValue;
+import net.sf.saxon.trans.XPathException;
 import org.jdom2.Document;
 import org.jdom2.Element;
 
@@ -184,7 +189,10 @@ public class Interface extends javax.swing.JFrame {
         DTD_Obras = new javax.swing.JMenuItem();
         XSD_Obras = new javax.swing.JMenuItem();
         jMenu5 = new javax.swing.JMenu();
+        FotosAutores = new javax.swing.JMenuItem();
+        ObrasMaisCaras = new javax.swing.JMenuItem();
         jMenu6 = new javax.swing.JMenu();
+        TodosAutores = new javax.swing.JMenuItem();
         jMenu7 = new javax.swing.JMenu();
         jMenuItem15 = new javax.swing.JMenuItem();
 
@@ -1189,9 +1197,40 @@ public class Interface extends javax.swing.JFrame {
         jMenuBar1.add(jMenu4);
 
         jMenu5.setText("XSLT");
+        jMenu5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenu5ActionPerformed(evt);
+            }
+        });
+
+        FotosAutores.setText("HTML -> Nome Autores e Fotos");
+        FotosAutores.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                FotosAutoresActionPerformed(evt);
+            }
+        });
+        jMenu5.add(FotosAutores);
+
+        ObrasMaisCaras.setText("XML -> 5 Obras mais caras");
+        ObrasMaisCaras.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ObrasMaisCarasActionPerformed(evt);
+            }
+        });
+        jMenu5.add(ObrasMaisCaras);
+
         jMenuBar1.add(jMenu5);
 
         jMenu6.setText("XQuery");
+
+        TodosAutores.setText("TXT -> Todos os autores");
+        TodosAutores.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TodosAutoresActionPerformed(evt);
+            }
+        });
+        jMenu6.add(TodosAutores);
+
         jMenuBar1.add(jMenu6);
 
         jMenu7.setText("Ajuda");
@@ -2020,6 +2059,72 @@ public class Interface extends javax.swing.JFrame {
         RMO.setVisible(true);
     }//GEN-LAST:event_EliminarObraActionPerformed
 
+    private void jMenu5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenu5ActionPerformed
+
+    private void FotosAutoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FotosAutoresActionPerformed
+        Document doc = XMLJDomFunctions.lerDocumentoXML("autores.xml");
+        if (doc != null) {
+            try {
+                Document novo = JDOMFunctions_XSLT.transformaDocumento(doc, "autores.xml", "autoresFoto.xsl");
+                XMLJDomFunctions.escreverDocumentoParaFicheiro(novo, "autoresFoto.html");
+                doc = XMLJDomFunctions.lerDocumentoXML("autoresFoto.html");
+               
+                JOptionPane.showMessageDialog(this,
+                        ".HTML criado",
+                        "XSLT para HTML", JOptionPane.INFORMATION_MESSAGE);
+                
+                
+                String url = "autoresFoto.html";
+                File htmlFile = new File(url);
+                Desktop.getDesktop().browse(htmlFile.toURI());
+                
+            } catch (IOException ex) {
+                Logger.getLogger(Interface.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    }//GEN-LAST:event_FotosAutoresActionPerformed
+
+    private void TodosAutoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TodosAutoresActionPerformed
+        try {
+            // TODO add your handling code here:
+            SaxonFunctions_XQuery.xQueryToText("todosAutores.txt", "todosAutores.xql");
+            
+            JOptionPane.showMessageDialog(this,
+                    "ficheiro TXT criado",
+                    "XQuery", JOptionPane.INFORMATION_MESSAGE);
+            
+            
+            Scanner ler = new Scanner(new FileInputStream("todosAutores.txt"));
+            StringBuilder texto = new StringBuilder();
+            String linha;
+            while (ler.hasNextLine()) {
+                linha = ler.nextLine();
+                texto = texto.append(linha).append("\n");
+            }
+            ler.close();
+            jTextArea1.setText(texto.toString());
+            
+        } catch (XPathException ex) {
+            Logger.getLogger(Interface.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(Interface.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_TodosAutoresActionPerformed
+
+    private void ObrasMaisCarasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ObrasMaisCarasActionPerformed
+        
+            Document doc = XMLJDomFunctions.lerDocumentoXML("obras.xml");
+        if (doc != null) {
+            Document novo = JDOMFunctions_XSLT.transformaDocumento(doc, "obras.xml", "livrosCaros.xsl");
+            XMLJDomFunctions.escreverDocumentoParaFicheiro(novo, "livrosCaros.xml");
+            doc = XMLJDomFunctions.lerDocumentoXML("livrosCaros.xml");
+            String t = XMLJDomFunctions.escreverDocumentoString(doc);
+            jTextArea1.setText(t);
+        }
+    }//GEN-LAST:event_ObrasMaisCarasActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -2104,8 +2209,10 @@ public class Interface extends javax.swing.JFrame {
     private javax.swing.JMenuItem DTD_Obras;
     private javax.swing.JMenuItem EliminaPremio;
     private javax.swing.JMenuItem EliminarObra;
+    private javax.swing.JMenuItem FotosAutores;
     private javax.swing.JMenu Inicio;
     private javax.swing.JMenu Menu_XML;
+    private javax.swing.JMenuItem ObrasMaisCaras;
     private javax.swing.JMenuItem Obras_XML;
     private javax.swing.JDialog PAP;
     private javax.swing.JButton PAP_B1;
@@ -2165,6 +2272,7 @@ public class Interface extends javax.swing.JFrame {
     private javax.swing.JTextField RMP_TF2;
     private javax.swing.JMenuItem Relatorio;
     private javax.swing.JMenuItem Sair;
+    private javax.swing.JMenuItem TodosAutores;
     private javax.swing.JDialog Warnings;
     private javax.swing.JMenuItem XSD_Autores;
     private javax.swing.JMenuItem XSD_Obras;

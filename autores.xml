@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE autores SYSTEM "autores.dtd">
 <autores xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="autores.xsd">
      <autor id="15">
           <nome>Nicholas Sparks</nome>
@@ -18,7 +17,7 @@
                <premio>Nobel</premio>
           </premios>
      </autor>
-     <autor id="2">
+     <autor id="24">
           <nome>Fernando Pessoa</nome>
           <dataNascimento>13 de junho 1888</dataNascimento>
           <dataMorte>30 de novembro 1935</dataMorte>
@@ -29,10 +28,10 @@
                <ocupacao>escritor</ocupacao>
                <ocupacao>tradutor</ocupacao>
           </ocupacoes>
-          <conjuge>Sem informacao</conjuge>
-          <linkFoto>https://upload.wikimedia.org/wikipedia/commons/3/32/Pessoa_chapeu.jpg</linkFoto>
           <premios>
                <premio>Prémio Antero de Quental</premio>
           </premios>
+          <conjuge>Sem informacao</conjuge>
+          <linkFoto>https://upload.wikimedia.org/wikipedia/commons/3/32/Pessoa_chapeu.jpg</linkFoto>
      </autor>
 </autores>

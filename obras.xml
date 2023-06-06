@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE obras SYSTEM "obras.dtd">
 <obras xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="obras.xsd">
      <livro>
           <isbn>978-972-0-04671-0</isbn>
@@ -59,5 +58,41 @@
           <idioma>Português</idioma>
           <encadernacao>Capa dura</encadernacao>
           <fotoCapa>https://img.bertrand.pt/images/duarte-uma-peca-de-arte-fernando-pessoa-de-almada-negreiros-volume-1-rita-seabra/NDV8Mjg1OTQ0OTR8MjQ5NzQ4Nzh8MTY4NDMyODE1ODAwMA==/500x</fotoCapa>
+     </livro>
+     <livro>
+          <isbn>9789897852169</isbn>
+          <titulo>duARTe - Uma Peça de Arte: Fernando Pessoa de Almada Negreiros - Volume 1</titulo>
+          <autor>Rita Seabra</autor>
+          <editora>Gradiva</editora>
+          <preco>13.41</preco>
+          <quantidadePaginas>32</quantidadePaginas>
+          <anoEdicao>05-2023</anoEdicao>
+          <idioma>Português</idioma>
+          <encadernacao>Capa dura</encadernacao>
+          <fotoCapa>https://img.bertrand.pt/images/duarte-uma-peca-de-arte-fernando-pessoa-de-almada-negreiros-volume-1-rita-seabra/NDV8Mjg1OTQ0OTR8MjQ5NzQ4Nzh8MTY4NDMyODE1ODAwMA==/500x</fotoCapa>
+     </livro>
+     <livro>
+          <isbn>9789897558665</isbn>
+          <titulo>Fernando Pessoa: Pré-Heteronímia, Drama em Gente e Desassossego</titulo>
+          <autor>Alexandra Soares Rodrigues</autor>
+          <editora>Edições Humus</editora>
+          <preco>5.0</preco>
+          <quantidadePaginas>100</quantidadePaginas>
+          <anoEdicao>03-2023</anoEdicao>
+          <idioma>Português</idioma>
+          <encadernacao>Capa mole</encadernacao>
+          <fotoCapa>https://img.bertrand.pt/images/fernando-pessoa-pre-heteronimia-drama-em-gente-e-desassossego-nuno-ribeiro/NDV8Mjg0MjMzNzd8MjQ3OTE1MjF8MTY3OTk5MzA3MjAwMA==/500x</fotoCapa>
+     </livro>
+     <livro>
+          <isbn>9789722731003</isbn>
+          <titulo>Fernando Pessoa - O Ser Verbal</titulo>
+          <autor>Dionísio Vila Maior</autor>
+          <editora>INCM – Imprensa Nacional Casa da Moeda</editora>
+          <preco>27.0</preco>
+          <quantidadePaginas>416</quantidadePaginas>
+          <anoEdicao>05-2023</anoEdicao>
+          <idioma>Português</idioma>
+          <encadernacao>Capa mole</encadernacao>
+          <fotoCapa>https://img.bertrand.pt/images/fernando-pessoa-o-ser-verbal-dionisio-vila-maior/NDV8Mjg1MDUwMTd8MjQ4NzgyMjN8MTY4MTgyOTQ4NjAwMA==/500x</fotoCapa>
      </livro>
 </obras>
