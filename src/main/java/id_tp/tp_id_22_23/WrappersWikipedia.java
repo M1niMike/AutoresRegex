@@ -343,8 +343,6 @@ public class WrappersWikipedia {
             }
 
         }
-        lista.add("Sem informacao");
-        ler.close();
         return lista;
     }
 

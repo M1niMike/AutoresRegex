@@ -80,6 +80,12 @@ public class Interface extends javax.swing.JFrame {
         AGL_B1 = new javax.swing.JButton();
         AGL_L1 = new javax.swing.JLabel();
         AGL_L2 = new javax.swing.JLabel();
+        ACP = new javax.swing.JDialog();
+        ACP_TF1 = new javax.swing.JTextField();
+        ACP_TF2 = new javax.swing.JTextField();
+        ACP_B1 = new javax.swing.JButton();
+        ACP_L1 = new javax.swing.JLabel();
+        ACP_L2 = new javax.swing.JLabel();
         PIA = new javax.swing.JDialog();
         PIA_TF1 = new javax.swing.JTextField();
         PIA_B1 = new javax.swing.JButton();
@@ -102,6 +108,30 @@ public class Interface extends javax.swing.JFrame {
         PAP_B1 = new javax.swing.JButton();
         jScrollPane5 = new javax.swing.JScrollPane();
         PAP_TA1 = new javax.swing.JTextArea();
+        PPL = new javax.swing.JDialog();
+        PPL_TF1 = new javax.swing.JTextField();
+        PPL_B1 = new javax.swing.JButton();
+        PPL_L1 = new javax.swing.JLabel();
+        jScrollPane7 = new javax.swing.JScrollPane();
+        PPL_TA1 = new javax.swing.JTextArea();
+        PGL = new javax.swing.JDialog();
+        PGL_TF1 = new javax.swing.JTextField();
+        PGL_B1 = new javax.swing.JButton();
+        PGL_L1 = new javax.swing.JLabel();
+        jScrollPane8 = new javax.swing.JScrollPane();
+        PGL_TA1 = new javax.swing.JTextArea();
+        PPC = new javax.swing.JDialog();
+        PPC_TF1 = new javax.swing.JTextField();
+        PPC_B1 = new javax.swing.JButton();
+        PPC_L1 = new javax.swing.JLabel();
+        jScrollPane9 = new javax.swing.JScrollPane();
+        PPC_TA1 = new javax.swing.JTextArea();
+        PDN = new javax.swing.JDialog();
+        PDN_TF1 = new javax.swing.JTextField();
+        PDN_B1 = new javax.swing.JButton();
+        PDN_L1 = new javax.swing.JLabel();
+        jScrollPane10 = new javax.swing.JScrollPane();
+        PDN_TA1 = new javax.swing.JTextArea();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
         jLabel1 = new javax.swing.JLabel();
@@ -122,7 +152,7 @@ public class Interface extends javax.swing.JFrame {
         EliminarAutor = new javax.swing.JMenuItem();
         AlterarDataNasc = new javax.swing.JMenuItem();
         AlterarNacionalidade = new javax.swing.JMenuItem();
-        jMenuItem8 = new javax.swing.JMenuItem();
+        AcrescentarPremio = new javax.swing.JMenuItem();
         jMenuItem9 = new javax.swing.JMenuItem();
         AlterarConjuge = new javax.swing.JMenuItem();
         AlterarGeneroLit = new javax.swing.JMenuItem();
@@ -130,11 +160,11 @@ public class Interface extends javax.swing.JFrame {
         P_InfoAutor = new javax.swing.JMenuItem();
         P_autorNacionalidade = new javax.swing.JMenuItem();
         P_ObrasAutor = new javax.swing.JMenuItem();
-        jMenuItem19 = new javax.swing.JMenuItem();
-        jMenuItem20 = new javax.swing.JMenuItem();
-        jMenuItem21 = new javax.swing.JMenuItem();
-        jMenuItem22 = new javax.swing.JMenuItem();
-        jMenuItem23 = new javax.swing.JMenuItem();
+        P_AutorPremiado = new javax.swing.JMenuItem();
+        P_LivrosPreco = new javax.swing.JMenuItem();
+        P_AutorGenero = new javax.swing.JMenuItem();
+        P_ConjugeAutor = new javax.swing.JMenuItem();
+        P_AutorDataNasc = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
         DTD_Autores = new javax.swing.JMenuItem();
         XSD_Autores = new javax.swing.JMenuItem();
@@ -344,6 +374,53 @@ public class Interface extends javax.swing.JFrame {
                 .addContainerGap(87, Short.MAX_VALUE))
         );
 
+        ACP_TF1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ACP_TF1ActionPerformed(evt);
+            }
+        });
+
+        ACP_B1.setText("Adicionar");
+        ACP_B1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ACP_B1ActionPerformed(evt);
+            }
+        });
+
+        ACP_L1.setText("Nome do Autor");
+
+        ACP_L2.setText("Novo premio");
+
+        javax.swing.GroupLayout ACPLayout = new javax.swing.GroupLayout(ACP.getContentPane());
+        ACP.getContentPane().setLayout(ACPLayout);
+        ACPLayout.setHorizontalGroup(
+            ACPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ACPLayout.createSequentialGroup()
+                .addGap(112, 112, 112)
+                .addGroup(ACPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(ACP_B1)
+                    .addComponent(ACP_L1)
+                    .addComponent(ACP_TF1, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ACP_L2)
+                    .addComponent(ACP_TF2, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(149, Short.MAX_VALUE))
+        );
+        ACPLayout.setVerticalGroup(
+            ACPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ACPLayout.createSequentialGroup()
+                .addGap(53, 53, 53)
+                .addComponent(ACP_L1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(ACP_TF1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(ACP_L2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(ACP_TF2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(32, 32, 32)
+                .addComponent(ACP_B1)
+                .addContainerGap(80, Short.MAX_VALUE))
+        );
+
         PIA_TF1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 PIA_TF1ActionPerformed(evt);
@@ -518,6 +595,194 @@ public class Interface extends javax.swing.JFrame {
                 .addGap(80, 80, 80))
         );
 
+        PPL_TF1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PPL_TF1ActionPerformed(evt);
+            }
+        });
+
+        PPL_B1.setText("Pesquisar");
+        PPL_B1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PPL_B1ActionPerformed(evt);
+            }
+        });
+
+        PPL_L1.setText("Preço do livro:");
+
+        PPL_TA1.setColumns(20);
+        PPL_TA1.setRows(5);
+        jScrollPane7.setViewportView(PPL_TA1);
+
+        javax.swing.GroupLayout PPLLayout = new javax.swing.GroupLayout(PPL.getContentPane());
+        PPL.getContentPane().setLayout(PPLLayout);
+        PPLLayout.setHorizontalGroup(
+            PPLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PPLLayout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addGroup(PPLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 649, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(PPL_B1, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(PPLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(PPL_L1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
+                        .addComponent(PPL_TF1, javax.swing.GroupLayout.Alignment.LEADING)))
+                .addContainerGap(15, Short.MAX_VALUE))
+        );
+        PPLLayout.setVerticalGroup(
+            PPLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PPLLayout.createSequentialGroup()
+                .addGap(25, 25, 25)
+                .addComponent(PPL_L1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(PPL_TF1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 378, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(PPL_B1)
+                .addGap(16, 16, 16))
+        );
+
+        PGL_TF1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PGL_TF1ActionPerformed(evt);
+            }
+        });
+
+        PGL_B1.setText("Pesquisar");
+        PGL_B1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PGL_B1ActionPerformed(evt);
+            }
+        });
+
+        PGL_L1.setText("Genero Literario:");
+
+        PGL_TA1.setColumns(20);
+        PGL_TA1.setRows(5);
+        jScrollPane8.setViewportView(PGL_TA1);
+
+        javax.swing.GroupLayout PGLLayout = new javax.swing.GroupLayout(PGL.getContentPane());
+        PGL.getContentPane().setLayout(PGLLayout);
+        PGLLayout.setHorizontalGroup(
+            PGLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PGLLayout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addGroup(PGLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 649, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(PGL_B1, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(PGLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(PGL_L1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
+                        .addComponent(PGL_TF1, javax.swing.GroupLayout.Alignment.LEADING)))
+                .addContainerGap(15, Short.MAX_VALUE))
+        );
+        PGLLayout.setVerticalGroup(
+            PGLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PGLLayout.createSequentialGroup()
+                .addGap(25, 25, 25)
+                .addComponent(PGL_L1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(PGL_TF1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane8, javax.swing.GroupLayout.DEFAULT_SIZE, 378, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(PGL_B1)
+                .addGap(16, 16, 16))
+        );
+
+        PPC_TF1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PPC_TF1ActionPerformed(evt);
+            }
+        });
+
+        PPC_B1.setText("Pesquisar");
+        PPC_B1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PPC_B1ActionPerformed(evt);
+            }
+        });
+
+        PPC_L1.setText("Nome do autor/a:");
+
+        PPC_TA1.setColumns(20);
+        PPC_TA1.setRows(5);
+        jScrollPane9.setViewportView(PPC_TA1);
+
+        javax.swing.GroupLayout PPCLayout = new javax.swing.GroupLayout(PPC.getContentPane());
+        PPC.getContentPane().setLayout(PPCLayout);
+        PPCLayout.setHorizontalGroup(
+            PPCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PPCLayout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addGroup(PPCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 649, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(PPC_B1, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(PPCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(PPC_L1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
+                        .addComponent(PPC_TF1, javax.swing.GroupLayout.Alignment.LEADING)))
+                .addContainerGap(15, Short.MAX_VALUE))
+        );
+        PPCLayout.setVerticalGroup(
+            PPCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PPCLayout.createSequentialGroup()
+                .addGap(25, 25, 25)
+                .addComponent(PPC_L1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(PPC_TF1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane9, javax.swing.GroupLayout.DEFAULT_SIZE, 378, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(PPC_B1)
+                .addGap(16, 16, 16))
+        );
+
+        PDN_TF1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PDN_TF1ActionPerformed(evt);
+            }
+        });
+
+        PDN_B1.setText("Pesquisar");
+        PDN_B1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PDN_B1ActionPerformed(evt);
+            }
+        });
+
+        PDN_L1.setText("Data de Nascimento:");
+
+        PDN_TA1.setColumns(20);
+        PDN_TA1.setRows(5);
+        jScrollPane10.setViewportView(PDN_TA1);
+
+        javax.swing.GroupLayout PDNLayout = new javax.swing.GroupLayout(PDN.getContentPane());
+        PDN.getContentPane().setLayout(PDNLayout);
+        PDNLayout.setHorizontalGroup(
+            PDNLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PDNLayout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addGroup(PDNLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 649, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(PDN_B1, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(PDNLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(PDN_L1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
+                        .addComponent(PDN_TF1, javax.swing.GroupLayout.Alignment.LEADING)))
+                .addContainerGap(15, Short.MAX_VALUE))
+        );
+        PDNLayout.setVerticalGroup(
+            PDNLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PDNLayout.createSequentialGroup()
+                .addGap(25, 25, 25)
+                .addComponent(PDN_L1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(PDN_TF1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane10, javax.swing.GroupLayout.DEFAULT_SIZE, 378, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(PDN_B1)
+                .addGap(16, 16, 16))
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jTextArea1.setColumns(20);
@@ -625,8 +890,13 @@ public class Interface extends javax.swing.JFrame {
         });
         Menu_XML.add(AlterarNacionalidade);
 
-        jMenuItem8.setText("Acrescentar prêmio");
-        Menu_XML.add(jMenuItem8);
+        AcrescentarPremio.setText("Acrescentar prêmio");
+        AcrescentarPremio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AcrescentarPremioActionPerformed(evt);
+            }
+        });
+        Menu_XML.add(AcrescentarPremio);
 
         jMenuItem9.setText("Eliminar prêmio");
         Menu_XML.add(jMenuItem9);
@@ -650,6 +920,11 @@ public class Interface extends javax.swing.JFrame {
         jMenuBar1.add(Menu_XML);
 
         jMenu3.setText("XPath");
+        jMenu3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenu3ActionPerformed(evt);
+            }
+        });
 
         P_InfoAutor.setText("Pesquisar informações autor");
         P_InfoAutor.addActionListener(new java.awt.event.ActionListener() {
@@ -675,25 +950,45 @@ public class Interface extends javax.swing.JFrame {
         });
         jMenu3.add(P_ObrasAutor);
 
-        jMenuItem19.setText("Pesquisar autor mais premiado");
-        jMenuItem19.addActionListener(new java.awt.event.ActionListener() {
+        P_AutorPremiado.setText("Pesquisar autor mais premiado");
+        P_AutorPremiado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem19ActionPerformed(evt);
+                P_AutorPremiadoActionPerformed(evt);
             }
         });
-        jMenu3.add(jMenuItem19);
+        jMenu3.add(P_AutorPremiado);
 
-        jMenuItem20.setText("Pesquisar livros editados por preco (>...)");
-        jMenu3.add(jMenuItem20);
+        P_LivrosPreco.setText("Pesquisar livros editados por preco (>...)");
+        P_LivrosPreco.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                P_LivrosPrecoActionPerformed(evt);
+            }
+        });
+        jMenu3.add(P_LivrosPreco);
 
-        jMenuItem21.setText("Pesquisar autor pelo genero literario");
-        jMenu3.add(jMenuItem21);
+        P_AutorGenero.setText("Pesquisar autor pelo genero literario");
+        P_AutorGenero.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                P_AutorGeneroActionPerformed(evt);
+            }
+        });
+        jMenu3.add(P_AutorGenero);
 
-        jMenuItem22.setText("Pesquisar conjuge do autor/autora");
-        jMenu3.add(jMenuItem22);
+        P_ConjugeAutor.setText("Pesquisar conjuge do autor/autora");
+        P_ConjugeAutor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                P_ConjugeAutorActionPerformed(evt);
+            }
+        });
+        jMenu3.add(P_ConjugeAutor);
 
-        jMenuItem23.setText("Pesquisar por data de nascimento");
-        jMenu3.add(jMenuItem23);
+        P_AutorDataNasc.setText("Pesquisar por data de nascimento");
+        P_AutorDataNasc.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                P_AutorDataNascActionPerformed(evt);
+            }
+        });
+        jMenu3.add(P_AutorDataNasc);
 
         jMenuBar1.add(jMenu3);
 
@@ -1286,7 +1581,7 @@ public class Interface extends javax.swing.JFrame {
 
     private void PAP_B1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PAP_B1ActionPerformed
         try {
-            String xp = "count(//autor/premios)";
+            String xp = "//autor[count(premios) = max(//autor/count(premios))]/nome";
 
             XdmValue res = XPathFunctions.executaXpath(xp, "autores.xml");
             String s = XPathFunctions.listaResultado(res);
@@ -1304,12 +1599,173 @@ public class Interface extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_PAP_B1ActionPerformed
 
-    private void jMenuItem19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem19ActionPerformed
+    private void P_AutorPremiadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_P_AutorPremiadoActionPerformed
         PAP.setSize(700, 550);
         PAP.setLocation(500, 300);
         PAP.setTitle("Pesquisar autor mais premiado");
         PAP.setVisible(true);
-    }//GEN-LAST:event_jMenuItem19ActionPerformed
+    }//GEN-LAST:event_P_AutorPremiadoActionPerformed
+
+    private void PPL_TF1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PPL_TF1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_PPL_TF1ActionPerformed
+
+    private void PPL_B1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PPL_B1ActionPerformed
+        try {
+            String xp = "//obras/livro[preco >= " + PPL_TF1.getText() + "]/titulo";
+
+            XdmValue res = XPathFunctions.executaXpath(xp, "obras.xml");
+            String s = XPathFunctions.listaResultado(res);
+            
+            if (res == null) {
+                PPL_TA1.setText("Ficheiro nao existe");
+
+            } else if (res.size() == 0) {
+                PPL_TA1.setText("Pesquisa sem resultados");
+            } else {
+                PPL_TA1.setText(s);
+            }
+        } catch (SaxonApiException ex) {
+            Logger.getLogger(Interface.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_PPL_B1ActionPerformed
+
+    private void P_LivrosPrecoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_P_LivrosPrecoActionPerformed
+        PPL.setSize(700, 550);
+        PPL.setLocation(500, 300);
+        PPL.setTitle("Pesquisar livro por preço");
+        PPL.setVisible(true);
+    }//GEN-LAST:event_P_LivrosPrecoActionPerformed
+
+    private void PGL_TF1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PGL_TF1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_PGL_TF1ActionPerformed
+
+    private void PGL_B1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PGL_B1ActionPerformed
+        try {
+            String xp = "//autor[generoLiterario = " + "'" + PGL_TF1.getText() + "'" + "]/nome";
+
+            XdmValue res = XPathFunctions.executaXpath(xp, "autores.xml");
+            String s = XPathFunctions.listaResultado(res);
+            
+            if (res == null) {
+                PGL_TA1.setText("Ficheiro nao existe");
+
+            } else if (res.size() == 0) {
+                PGL_TA1.setText("Pesquisa sem resultados");
+            } else {
+                PGL_TA1.setText(s);
+            }
+        } catch (SaxonApiException ex) {
+            Logger.getLogger(Interface.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_PGL_B1ActionPerformed
+
+    private void P_AutorGeneroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_P_AutorGeneroActionPerformed
+        PGL.setSize(700, 550);
+        PGL.setLocation(500, 300);
+        PGL.setTitle("Pesquisar autor/a pelo genero literario");
+        PGL.setVisible(true);
+    }//GEN-LAST:event_P_AutorGeneroActionPerformed
+
+    private void PPC_TF1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PPC_TF1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_PPC_TF1ActionPerformed
+
+    private void PPC_B1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PPC_B1ActionPerformed
+        try {
+            String xp = "//autor[nome = " + "'" + PPC_TF1.getText() + "'" + "]/conjuge";
+
+            XdmValue res = XPathFunctions.executaXpath(xp, "autores.xml");
+            String s = XPathFunctions.listaResultado(res);
+            
+            if (res == null) {
+                PPC_TA1.setText("Ficheiro nao existe");
+
+            } else if (res.size() == 0) {
+                PPC_TA1.setText("Pesquisa sem resultados");
+            } else {
+                PPC_TA1.setText(s);
+            }
+        } catch (SaxonApiException ex) {
+            Logger.getLogger(Interface.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_PPC_B1ActionPerformed
+
+    private void jMenu3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenu3ActionPerformed
+
+    private void P_AutorDataNascActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_P_AutorDataNascActionPerformed
+        PDN.setSize(700, 550);
+        PDN.setLocation(500, 300);
+        PDN.setTitle("Pesquisar autor/a pela data de nascimento");
+        PDN.setVisible(true);
+    }//GEN-LAST:event_P_AutorDataNascActionPerformed
+
+    private void PDN_TF1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PDN_TF1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_PDN_TF1ActionPerformed
+
+    private void PDN_B1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PDN_B1ActionPerformed
+         try {
+            String xp = "//autor[dataNascimento = " + "'" + PDN_TF1.getText() + "'" + "]/nome";
+
+            XdmValue res = XPathFunctions.executaXpath(xp, "autores.xml");
+            String s = XPathFunctions.listaResultado(res);
+            
+            if (res == null) {
+                PDN_TA1.setText("Ficheiro nao existe");
+
+            } else if (res.size() == 0) {
+                PDN_TA1.setText("Pesquisa sem resultados");
+            } else {
+                PDN_TA1.setText(s);
+            }
+        } catch (SaxonApiException ex) {
+            Logger.getLogger(Interface.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_PDN_B1ActionPerformed
+
+    private void P_ConjugeAutorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_P_ConjugeAutorActionPerformed
+        PPC.setSize(700, 550);
+        PPC.setLocation(500, 300);
+        PPC.setTitle("Pesquisar o conjuge pelo nome do autor");
+        PPC.setVisible(true);
+    }//GEN-LAST:event_P_ConjugeAutorActionPerformed
+
+    private void ACP_TF1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ACP_TF1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ACP_TF1ActionPerformed
+
+    private void ACP_B1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ACP_B1ActionPerformed
+        Document doc = XMLJDomFunctions.lerDocumentoXML("autores.xml");
+        
+        doc = ModeloXML.adicionaPremio(ACP_TF1.getText(), ACP_TF2.getText(), doc);
+        
+        JOptionPane.showMessageDialog(this,
+                "Premio adicionado com sucesso",
+                "Informação",
+                JOptionPane.INFORMATION_MESSAGE);
+        
+        //grava o ficheiro XML em disco
+        if (doc != null) {
+            XMLJDomFunctions.escreverDocumentoParaFicheiro(doc, "autores.xml");
+        } else {
+            JOptionPane.showMessageDialog(this,
+                    "Autor não foi encontrado",
+                    "Informação",
+                    JOptionPane.INFORMATION_MESSAGE);
+        }
+        ACP.setVisible(false);
+    }//GEN-LAST:event_ACP_B1ActionPerformed
+
+    private void AcrescentarPremioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AcrescentarPremioActionPerformed
+        ACP.setSize(450, 300);
+        ACP.setLocation(500, 300);
+        ACP.setTitle("Adicionar Premio");
+        ACP.setVisible(true);
+    }//GEN-LAST:event_AcrescentarPremioActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1353,6 +1809,12 @@ public class Interface extends javax.swing.JFrame {
     private javax.swing.JLabel ACJ_L2;
     private javax.swing.JTextField ACJ_TF1;
     private javax.swing.JTextField ACJ_TF2;
+    private javax.swing.JDialog ACP;
+    private javax.swing.JButton ACP_B1;
+    private javax.swing.JLabel ACP_L1;
+    private javax.swing.JLabel ACP_L2;
+    private javax.swing.JTextField ACP_TF1;
+    private javax.swing.JTextField ACP_TF2;
     private javax.swing.JDialog ADN;
     private javax.swing.JButton ADN_B;
     private javax.swing.JLabel ADN_Label1;
@@ -1371,6 +1833,7 @@ public class Interface extends javax.swing.JFrame {
     private javax.swing.JLabel ANC_Label2;
     private javax.swing.JTextField ANC_TF1;
     private javax.swing.JTextField ANC_TF2;
+    private javax.swing.JMenuItem AcrescentarPremio;
     private javax.swing.JMenuItem AlterarConjuge;
     private javax.swing.JMenuItem AlterarDataNasc;
     private javax.swing.JMenuItem AlterarGeneroLit;
@@ -1388,6 +1851,16 @@ public class Interface extends javax.swing.JFrame {
     private javax.swing.JDialog PAP;
     private javax.swing.JButton PAP_B1;
     private javax.swing.JTextArea PAP_TA1;
+    private javax.swing.JDialog PDN;
+    private javax.swing.JButton PDN_B1;
+    private javax.swing.JLabel PDN_L1;
+    private javax.swing.JTextArea PDN_TA1;
+    private javax.swing.JTextField PDN_TF1;
+    private javax.swing.JDialog PGL;
+    private javax.swing.JButton PGL_B1;
+    private javax.swing.JLabel PGL_L1;
+    private javax.swing.JTextArea PGL_TA1;
+    private javax.swing.JTextField PGL_TF1;
     private javax.swing.JDialog PIA;
     private javax.swing.JButton PIA_B1;
     private javax.swing.JLabel PIA_L1;
@@ -1403,7 +1876,22 @@ public class Interface extends javax.swing.JFrame {
     private javax.swing.JLabel POA_L1;
     private javax.swing.JTextArea POA_TA1;
     private javax.swing.JTextField POA_TF1;
+    private javax.swing.JDialog PPC;
+    private javax.swing.JButton PPC_B1;
+    private javax.swing.JLabel PPC_L1;
+    private javax.swing.JTextArea PPC_TA1;
+    private javax.swing.JTextField PPC_TF1;
+    private javax.swing.JDialog PPL;
+    private javax.swing.JButton PPL_B1;
+    private javax.swing.JLabel PPL_L1;
+    private javax.swing.JTextArea PPL_TA1;
+    private javax.swing.JTextField PPL_TF1;
+    private javax.swing.JMenuItem P_AutorDataNasc;
+    private javax.swing.JMenuItem P_AutorGenero;
+    private javax.swing.JMenuItem P_AutorPremiado;
+    private javax.swing.JMenuItem P_ConjugeAutor;
     private javax.swing.JMenuItem P_InfoAutor;
+    private javax.swing.JMenuItem P_LivrosPreco;
     private javax.swing.JMenuItem P_ObrasAutor;
     private javax.swing.JMenuItem P_autorNacionalidade;
     private javax.swing.JMenuItem Relatorio;
@@ -1421,18 +1909,16 @@ public class Interface extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu7;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem15;
-    private javax.swing.JMenuItem jMenuItem19;
-    private javax.swing.JMenuItem jMenuItem20;
-    private javax.swing.JMenuItem jMenuItem21;
-    private javax.swing.JMenuItem jMenuItem22;
-    private javax.swing.JMenuItem jMenuItem23;
-    private javax.swing.JMenuItem jMenuItem8;
     private javax.swing.JMenuItem jMenuItem9;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane10;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane7;
+    private javax.swing.JScrollPane jScrollPane8;
+    private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;

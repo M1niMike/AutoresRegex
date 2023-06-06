@@ -28,22 +28,7 @@ public class ModeloXML {
 
     }
 
-//    public static boolean AchaNome(String nomeAutor, Document doc) {
-//        Element raiz;
-//        raiz = doc.getRootElement();
-//        List todosAutores = raiz.getChildren("autor");
-//        boolean found = false;
-//        for (int i = 0; i < todosAutores.size(); i++) {
-//            Element autor = (Element) todosAutores.get(i); //obtem livro i da Lista 
-//            if (autor.getChild("nome").getText().contains(nomeAutor)) {
-//                found = true;
-//            }
-//        }
-//        if (!found) {
-//            return false;
-//        }
-//        return true;
-//    }
+
     public static Document adicionaAutor(Autor au, Document doc) throws IOException {
         Element raiz;
         if (doc == null) {
@@ -107,7 +92,7 @@ public class ModeloXML {
         List todosAutores = raiz.getChildren("autor");
         boolean found = false;
         for (int i = 0; i < todosAutores.size(); i++) {
-            Element autor = (Element) todosAutores.get(i); //obtem livro i da Lista 
+            Element autor = (Element) todosAutores.get(i);  
             if (autor.getChild("nome").getText().contains(nomeAutor)) {
                 autor.getParent().removeContent(autor);
                 found = true;
@@ -132,7 +117,7 @@ public class ModeloXML {
         List todosAutores = raiz.getChildren("autor");
         boolean found = false;
         for (int i = 0; i < todosAutores.size(); i++) {
-            Element autor = (Element) todosAutores.get(i); //obtem cidade i da Lista
+            Element autor = (Element) todosAutores.get(i);
             if (autor.getChild("nome").getText().contains(nomeAutor)) {
                 String dataNasc = autor.getChild("dataNascimento").getText();
                 System.out.println("Nome: " + nomeAutor);
@@ -167,7 +152,7 @@ public class ModeloXML {
         List todosAutores = raiz.getChildren("autor");
         boolean found = false;
         for (int i = 0; i < todosAutores.size(); i++) {
-            Element autor = (Element) todosAutores.get(i); //obtem cidade i da Lista
+            Element autor = (Element) todosAutores.get(i); 
             if (autor.getChild("nome").getText().contains(nomeAutor)) {
                 String nacionalidade = autor.getChild("nacionalidade").getText();
                 System.out.println("Nome: " + nomeAutor);
@@ -201,7 +186,7 @@ public class ModeloXML {
         List todosAutores = raiz.getChildren("autor");
         boolean found = false;
         for (int i = 0; i < todosAutores.size(); i++) {
-            Element autor = (Element) todosAutores.get(i); //obtem cidade i da Lista
+            Element autor = (Element) todosAutores.get(i); 
             if (autor.getChild("nome").getText().contains(nomeAutor)) {
                 String conjuge = autor.getChild("conjuge").getText();
                 System.out.println("Nome: " + nomeAutor);
@@ -235,7 +220,7 @@ public class ModeloXML {
         List todosAutores = raiz.getChildren("autor");
         boolean found = false;
         for (int i = 0; i < todosAutores.size(); i++) {
-            Element autor = (Element) todosAutores.get(i); //obtem cidade i da Lista
+            Element autor = (Element) todosAutores.get(i); 
             if (autor.getChild("nome").getText().contains(nomeAutor)) {
                 String generoLiterario = autor.getChild("generoLiterario").getText();
                 System.out.println("Nome: " + nomeAutor);
@@ -254,6 +239,43 @@ public class ModeloXML {
         return doc;
 
     }
+    
+    
+     public static Document adicionaPremio(String nomeAutor, String novoPremio, Document doc) {
+        Element raiz;
+        if (doc == null) {
+            System.out.println("Ficheiro nao existe");
+            return null;
+
+        } else {
+            raiz = doc.getRootElement();
+        }
+        
+        Element pai = new Element("autor");
+        List todosAutores = raiz.getChildren("autor");
+        boolean found = false;
+        
+        for (int i = 0; i < todosAutores.size(); i++) {
+            
+            Element autor = (Element) todosAutores.get(i); 
+            
+            if (autor.getChild("nome").getText().contains(nomeAutor)) {
+                Element x = new Element("premios").addContent(novoPremio);
+                //pai.addContent(x);
+                
+                // Adiciona a linha <premios></premios> ao elemento autor
+                autor.addContent(x);
+                found = true;
+            }
+        }
+        if (!found) {
+            System.out.println("O Autor " + nomeAutor + " não foi encontrado");
+            return null;
+        }
+
+        return doc;
+
+    }
 
     public static Document adicionaObra(ArrayList<Obras> o, Document doc) {
 
@@ -261,7 +283,7 @@ public class ModeloXML {
 
             Element raiz;
             if (doc == null) {
-                raiz = new Element("obras"); //cria <catalogo>...</catalogo>
+                raiz = new Element("obras"); 
                 doc = new Document(raiz);
             } else {
                 raiz = doc.getRootElement();
@@ -298,11 +320,6 @@ public class ModeloXML {
             x = new Element("fotoCapa").addContent(o.get(i).getFoto_capa());
             pai.addContent(x);
 
-//        x = new Element("premios").addContent(au.getFotografia());
-//        pai.addContent(x);
-//        
-//        x = new Element("ocupacoes").addContent(au.getFotografia());
-//        pai.addContent(x);
             raiz.addContent(pai);
         }
 
