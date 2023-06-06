@@ -1,13 +1,16 @@
-<!ELEMENT autores (autor)+>
-<!ELEMENT autor (nome,dataNascimento,dataMorte,nacionalidade,generoLiterario,conjuge,linkFoto)+>
+<!ELEMENT autores (autor+)>
+<!ATTLIST autores xmlns:xsi CDATA #IMPLIED>
+<!ATTLIST autores xsi:noNamespaceSchemaLocation CDATA #IMPLIED>
+<!ELEMENT autor (nome, dataNascimento, dataMorte, nacionalidade, generoLiterario, ocupacoes?, conjuge, linkFoto, premios?)>
+<!ATTLIST autor id CDATA #REQUIRED>
 <!ELEMENT nome (#PCDATA)>
 <!ELEMENT dataNascimento (#PCDATA)>
 <!ELEMENT dataMorte (#PCDATA)>
 <!ELEMENT nacionalidade (#PCDATA)>
 <!ELEMENT generoLiterario (#PCDATA)>
+<!ELEMENT ocupacoes (ocupacao)*>
+<!ELEMENT ocupacao (#PCDATA)>
 <!ELEMENT conjuge (#PCDATA)>
 <!ELEMENT linkFoto (#PCDATA)>
-
-<!ATTLIST autores xmlns:xsi CDATA #IMPLIED>
-<!ATTLIST autores xsi:noNamespaceSchemaLocation CDATA #IMPLIED>
-<!ATTLIST autor id ID #REQUIRED>
+<!ELEMENT premios (premio)*>
+<!ELEMENT premio (#PCDATA)>

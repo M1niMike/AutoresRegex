@@ -28,10 +28,10 @@ public class JDOMFunctions_Validar {
             System.out.println("Documento XML " + caminhoFicheiro + " é válido (DTD)");
             return doc;
         } catch (JDOMException ex) {
-            System.out.println("Documento XML " + caminhoFicheiro + " apresenta erros e não é válido (DTD)");
+            System.out.println(ex.getMessage());
             //Logger.getLogger(JDOMFunctions_Validar.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
-            System.out.println("Documento XML " + caminhoFicheiro + " nao foi encontrado");
+            System.out.println(ex.getMessage());
             //Logger.getLogger(JDOMFunctions_Validar.class.getName()).log(Level.SEVERE, null, ex);
         }
         return null;
@@ -51,10 +51,10 @@ public class JDOMFunctions_Validar {
             System.out.println("Documento XML " + caminhoFicheiro + " é válido (XSD)");
             return doc;
         } catch (JDOMException ex) {
-            System.out.println("Documento XML " + caminhoFicheiro + " apresenta erros e não é válido (XSD)");
+            System.out.println(ex.getMessage());
             //Logger.getLogger(JDOMFunctions_Validar.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
-            System.out.println("Documento XML " + caminhoFicheiro + " nao foi encontrado");
+            System.out.println(ex.getMessage());
             //Logger.getLogger(JDOMFunctions_Validar.class.getName()).log(Level.SEVERE, null, ex);
         }
         return null;

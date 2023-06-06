@@ -1,10 +1,14 @@
-<!ELEMENT obras (livro)>
-<!ELEMENT livro (isbn,titulo,autor,editora,preco,quantidadePaginas,idioma,encadernacao)>
-<!ELEMENT isbn EMPTY>
-<!ELEMENT titulo EMPTY>
-<!ELEMENT autor EMPTY>
-<!ELEMENT editora EMPTY>
-<!ELEMENT preco EMPTY>
-<!ELEMENT quantidadePaginas EMPTY>
-<!ELEMENT idioma EMPTY>
-<!ELEMENT encadernacao EMPTY>
+<!ELEMENT obras (livro+)>
+<!ATTLIST obras xmlns:xsi CDATA #IMPLIED>
+<!ATTLIST obras xsi:noNamespaceSchemaLocation CDATA #IMPLIED>
+<!ELEMENT livro (isbn, titulo, autor, editora, preco, quantidadePaginas, anoEdicao?, idioma?, encadernacao, fotoCapa)>
+<!ELEMENT isbn (#PCDATA)>
+<!ELEMENT titulo (#PCDATA)>
+<!ELEMENT autor (#PCDATA)>
+<!ELEMENT editora (#PCDATA)>
+<!ELEMENT preco (#PCDATA)>
+<!ELEMENT quantidadePaginas (#PCDATA)>
+<!ELEMENT anoEdicao (#PCDATA)>
+<!ELEMENT idioma (#PCDATA)>
+<!ELEMENT encadernacao (#PCDATA)>
+<!ELEMENT fotoCapa (#PCDATA)>
