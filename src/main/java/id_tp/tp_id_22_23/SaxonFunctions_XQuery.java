@@ -54,4 +54,30 @@ public class SaxonFunctions_XQuery {
         props.setProperty(OutputKeys.METHOD, "xml");
         exp.run(dynamicContext, new StreamResult(new File(outputFile)), props);
     }
+
+    public static void xQueryToHtmlInput(String outputFile, String queryFile, String nomeAutor) throws XPathException, IOException {
+        Configuration config = new Configuration();
+        StaticQueryContext sqc = new StaticQueryContext(config);
+        XQueryExpression exp = sqc.compileQuery(new FileReader(queryFile));
+        DynamicQueryContext dynamicContext = new DynamicQueryContext(config);
+
+        dynamicContext.setParameter("author", nomeAutor);
+
+        Properties props = new Properties();
+        props.setProperty(OutputKeys.METHOD, "html");
+        exp.run(dynamicContext, new StreamResult(new File(outputFile)), props);
+    }
+
+    public static void xQueryToXmlInput(String outputFile, String queryFile, String nomeAutor) throws XPathException, IOException {
+        Configuration config = new Configuration();
+        StaticQueryContext sqc = new StaticQueryContext(config);
+        XQueryExpression exp = sqc.compileQuery(new FileReader(queryFile));
+        DynamicQueryContext dynamicContext = new DynamicQueryContext(config);
+
+        dynamicContext.setParameter("author", nomeAutor);
+        
+        Properties props = new Properties();
+        props.setProperty(OutputKeys.METHOD, "xml");
+        exp.run(dynamicContext, new StreamResult(new File(outputFile)), props);
+    }
 }

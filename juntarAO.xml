@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autor>
+   <nome xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">J. K. Rowling</nome>
+   <dataNascimento xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">31 de julho 1965</dataNascimento>
+   <ocupacoes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+               <ocupacao>escritora</ocupacao>
+          </ocupacoes>
+   <livros>
+      <titulo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Harry Potter e a Pedra Filosofal</titulo>
+      <titulo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Harry Potter e a Pedra Filosofal</titulo>
+   </livros>
+</autor>

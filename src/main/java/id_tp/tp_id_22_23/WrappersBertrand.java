@@ -16,16 +16,13 @@ import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/**
- *
- * @author jlope
- */
 public class WrappersBertrand {
 
     public static ArrayList<String> obtem_link(String nome_autor, int quant) throws IOException {
         ArrayList<String> listaLinks = new ArrayList<String>();
         HttpRequestFunctions.httpRequest1("https://www.bertrand.pt/pesquisa/", nome_autor, "obras.txt");
         String er = "<a class=\"track\" href=\"([^\"]+)\">";
+        
         Scanner ler = new Scanner(new FileInputStream("obras.txt"));
         Pattern p = Pattern.compile(er);
         Matcher m;
@@ -311,74 +308,3 @@ public class WrappersBertrand {
         return o;
     }
 }
-
-//    static ArrayList<String> procura_fixo_por_id(String procura, String fileIn) throws FileNotFoundException {
-//        ArrayList<String> arr = new ArrayList<>();
-//        String er
-//                = "\\b" + procura + "\\s*-\\s*\\d+\\s*-\\s*(\\d+)\\b";
-//
-//        return Wrappers.matchIntoArrayList(arr, er, fileIn);
-//    }
-//
-//    static ArrayList<String> procura_tlm_por_id(String procura, String fileIn) throws FileNotFoundException {
-//        ArrayList<String> arr = new ArrayList<>();
-//        String er
-//                = "\\b" + procura + "\\s*-\\s*(\\d+)\\s*-\\s*\\d*\\b";
-//
-//        return Wrappers.matchIntoArrayList(arr, er, fileIn);
-//    }
-//
-//    static ArrayList<String> procura_idade_por_id(String procura, String fileIn) throws FileNotFoundException {
-//        ArrayList<String> arr = new ArrayList<>();
-//        String er
-//                = "<\\s*tr\\s*>\\s*"
-//                + "<\\s*td\\s*>\\s*" + procura + "\\s*<\\s*/td\\s*>"
-//                + "<\\s*td\\s*>\\s*\\w+\\s+\\w+\\s*<\\s*/td\\s*>"
-//                + "<\\s*td\\s*>\\s*([0-9]+)\\s*<\\s*/td\\s*>";
-//
-//        return Wrappers.matchIntoArrayList(arr, er, fileIn);
-//    }
-//
-//    static ArrayList<String> procura_nome_por_id(String procura, String fileIn) throws FileNotFoundException {
-//        ArrayList<String> arr = new ArrayList<>();
-//        String er
-//                = "<\\s*tr\\s*>\\s*"
-//                + "<\\s*td\\s*>\\s*" + procura + "\\s*<\\s*/td\\s*>"
-//                + "<\\s*td\\s*>\\s*(\\w+\\s+\\w+)\\s*<\\s*/td\\s*>"
-//                + "<\\s*td\\s*>\\s*[0-9]+\\s*<\\s*/td\\s*>";
-//
-//        return Wrappers.matchIntoArrayList(arr, er, fileIn);
-//    }
-//
-//    static ArrayList<String> procura_profissao_por_id(String procura, String fileIn) throws FileNotFoundException {
-//        ArrayList<String> arr = new ArrayList<>();
-//        String er
-//                = "<\\s*tr\\s*>\\s*"
-//                + "<\\s*td\\s*>\\s*" + procura + "\\s*<\\s*/td\\s*>"
-//                + "<\\s*td\\s*>\\w+\\s+\\w+<\\s*/td\\s*>"
-//                + "<\\s*td\\s*>[0-9]+<\\s*/td\\s*>"
-//                + "<\\s*td\\s*>[^<>]*<\\s*/td\\s*>"
-//                + "<\\s*td\\s*>(\\w+)<\\s*/td\\s*>[^<>]*<\\s*/tr\\s*>";
-//
-//        return Wrappers.matchIntoArrayList(arr, er, fileIn);
-//    }
-//
-//    static ArrayList<String> procura_por_cidades(String procura, String fileIn) throws FileNotFoundException {
-//        ArrayList<String> arr = new ArrayList<>();
-//        String er
-//                = "<\\s*tr\\s*>\\s*"
-//                + "<\\s*td\\s*>\\d*<\\s*/td\\s*>"
-//                + "<\\s*td\\s*>\\w+\\s+\\w+<\\s*/td\\s*>"
-//                + "<\\s*td\\s*>[0-9]+<\\s*/td\\s*>"
-//                + "<\\s*td\\s*>(\\w*,?\\s*" + procura + ")<\\s*/td\\s*>";
-//
-//        return Wrappers.matchIntoArrayList(arr, er, fileIn);
-//    }
-//
-//    static ArrayList<String> procura_nomes(String procura, String fileIn) throws FileNotFoundException {
-//
-//        ArrayList<String> arr = new ArrayList<String>();
-//        String er = "<\\s*tr\\s*>\\s*<\\s*td\\s*>\\d*<\\s*/td\\s*><\\s*td\\s*>(\\w+\\s+" + procura + ")<\\s*/td\\s*>\\s*<\\s*td\\s*>";
-//
-//        return Wrappers.matchIntoArrayList(arr, er, fileIn);
-//    }

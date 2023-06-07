@@ -4,6 +4,7 @@
  */
 package id_tp.tp_id_22_23;
 
+import static id_tp.tp_id_22_23.ModeloXML.removeLivroTitulo;
 import java.awt.Desktop;
 import java.awt.Frame;
 import java.io.File;
@@ -42,6 +43,23 @@ public class Interface extends javax.swing.JFrame {
         for (int i = 0; i < todosAutores.size(); i++) {
             Element autor = (Element) todosAutores.get(i); //obtem livro i da Lista 
             if (autor.getChild("nome").getText().contains(nomeAutor)) {
+                found = true;
+            }
+        }
+        if (!found) {
+            return false;
+        }
+        return true;
+    }
+
+    public static boolean AchaTitulo(String titulo, Document doc) {
+        Element raiz;
+        raiz = doc.getRootElement();
+        List todasObras = raiz.getChildren("livro");
+        boolean found = false;
+        for (int i = 0; i < todasObras.size(); i++) {
+            Element obra = (Element) todasObras.get(i); //obtem livro i da Lista 
+            if (obra.getChild("titulo").getText().contains(titulo)) {
                 found = true;
             }
         }
@@ -193,6 +211,8 @@ public class Interface extends javax.swing.JFrame {
         ObrasMaisCaras = new javax.swing.JMenuItem();
         jMenu6 = new javax.swing.JMenu();
         TodosAutores = new javax.swing.JMenuItem();
+        CapaLivros = new javax.swing.JMenuItem();
+        MesclarAutoresObras = new javax.swing.JMenuItem();
         jMenu7 = new javax.swing.JMenu();
         jMenuItem15 = new javax.swing.JMenuItem();
 
@@ -1222,6 +1242,11 @@ public class Interface extends javax.swing.JFrame {
         jMenuBar1.add(jMenu5);
 
         jMenu6.setText("XQuery");
+        jMenu6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenu6ActionPerformed(evt);
+            }
+        });
 
         TodosAutores.setText("TXT -> Todos os autores");
         TodosAutores.addActionListener(new java.awt.event.ActionListener() {
@@ -1230,6 +1255,22 @@ public class Interface extends javax.swing.JFrame {
             }
         });
         jMenu6.add(TodosAutores);
+
+        CapaLivros.setText("HTML -> Capa dos livros");
+        CapaLivros.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CapaLivrosActionPerformed(evt);
+            }
+        });
+        jMenu6.add(CapaLivros);
+
+        MesclarAutoresObras.setText("XML -> Juntar autores e obras");
+        MesclarAutoresObras.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MesclarAutoresObrasActionPerformed(evt);
+            }
+        });
+        jMenu6.add(MesclarAutoresObras);
 
         jMenuBar1.add(jMenu6);
 
@@ -1977,9 +2018,16 @@ public class Interface extends javax.swing.JFrame {
 
                 for (int i = 0; i < linkObras.size(); i++) {
                     obs.add(WrappersBertrand.criaObras(linkObras.get(i)));
+
                 }
 
                 Document doc2 = XMLJDomFunctions.lerDocumentoXML("obras.xml");
+
+                for (int i = 0; i < obs.size(); i++) { //verifica os titulos, se encontrar um igual, ele substitui o presente no ficheiro pelo novo/igual
+                    if (AchaTitulo(obs.get(i).getTitulo(), doc2)){
+                        removeLivroTitulo(obs.get(i).getTitulo(), doc2);
+                    }    
+                }
 
                 doc2 = ModeloXML.adicionaObra(obs, doc2);
 
@@ -1994,7 +2042,7 @@ public class Interface extends javax.swing.JFrame {
                 Logger.getLogger(Interface.class.getName()).log(Level.SEVERE, null, ex);
             }
 
-        }else{
+        } else {
             ADO.setVisible(false);
         }
     }//GEN-LAST:event_ADO_B1ActionPerformed
@@ -2008,7 +2056,7 @@ public class Interface extends javax.swing.JFrame {
     }//GEN-LAST:event_ADO_TF1ActionPerformed
 
     private void RMO_B1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RMO_B1ActionPerformed
-         String titulo = RMO_TF1.getText();
+        String titulo = RMO_TF1.getText();
 
         if ("".equals(titulo)) {
             Warnings.setVisible(false);
@@ -2044,7 +2092,7 @@ public class Interface extends javax.swing.JFrame {
                         JOptionPane.ERROR_MESSAGE);
             }
         }
-        
+
         RMO.setVisible(false);
     }//GEN-LAST:event_RMO_B1ActionPerformed
 
@@ -2070,16 +2118,15 @@ public class Interface extends javax.swing.JFrame {
                 Document novo = JDOMFunctions_XSLT.transformaDocumento(doc, "autores.xml", "autoresFoto.xsl");
                 XMLJDomFunctions.escreverDocumentoParaFicheiro(novo, "autoresFoto.html");
                 doc = XMLJDomFunctions.lerDocumentoXML("autoresFoto.html");
-               
+
                 JOptionPane.showMessageDialog(this,
                         ".HTML criado",
                         "XSLT para HTML", JOptionPane.INFORMATION_MESSAGE);
-                
-                
+
                 String url = "autoresFoto.html";
                 File htmlFile = new File(url);
                 Desktop.getDesktop().browse(htmlFile.toURI());
-                
+
             } catch (IOException ex) {
                 Logger.getLogger(Interface.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -2090,12 +2137,11 @@ public class Interface extends javax.swing.JFrame {
         try {
             // TODO add your handling code here:
             SaxonFunctions_XQuery.xQueryToText("todosAutores.txt", "todosAutores.xql");
-            
+
             JOptionPane.showMessageDialog(this,
-                    "ficheiro TXT criado",
-                    "XQuery", JOptionPane.INFORMATION_MESSAGE);
-            
-            
+                    ".TXT criado",
+                    "XQuery para TXT", JOptionPane.INFORMATION_MESSAGE);
+
             Scanner ler = new Scanner(new FileInputStream("todosAutores.txt"));
             StringBuilder texto = new StringBuilder();
             String linha;
@@ -2105,7 +2151,7 @@ public class Interface extends javax.swing.JFrame {
             }
             ler.close();
             jTextArea1.setText(texto.toString());
-            
+
         } catch (XPathException ex) {
             Logger.getLogger(Interface.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
@@ -2114,8 +2160,8 @@ public class Interface extends javax.swing.JFrame {
     }//GEN-LAST:event_TodosAutoresActionPerformed
 
     private void ObrasMaisCarasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ObrasMaisCarasActionPerformed
-        
-            Document doc = XMLJDomFunctions.lerDocumentoXML("obras.xml");
+
+        Document doc = XMLJDomFunctions.lerDocumentoXML("obras.xml");
         if (doc != null) {
             Document novo = JDOMFunctions_XSLT.transformaDocumento(doc, "obras.xml", "livrosCaros.xsl");
             XMLJDomFunctions.escreverDocumentoParaFicheiro(novo, "livrosCaros.xml");
@@ -2124,6 +2170,85 @@ public class Interface extends javax.swing.JFrame {
             jTextArea1.setText(t);
         }
     }//GEN-LAST:event_ObrasMaisCarasActionPerformed
+
+    private void jMenu6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenu6ActionPerformed
+
+    private void CapaLivrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CapaLivrosActionPerformed
+        try {
+
+            String nomeAutor = JOptionPane.showInputDialog(this, "Digite o nome do autor:");
+
+            SaxonFunctions_XQuery.xQueryToXmlInput("capaLivros.xml", "capaLivros.xql", nomeAutor);
+
+            JOptionPane.showMessageDialog(this,
+                    ".XML criado",
+                    "XQuery para XML", JOptionPane.INFORMATION_MESSAGE);
+
+            Scanner ler = new Scanner(new FileInputStream("capaLivros.xml"));
+            StringBuilder texto = new StringBuilder();
+            String linha;
+            while (ler.hasNextLine()) {
+                linha = ler.nextLine();
+                texto = texto.append(linha).append("\n");
+            }
+            ler.close();
+            jTextArea1.setText(texto.toString());
+
+            Document doc = XMLJDomFunctions.lerDocumentoXML("capaLivros.xml");
+            if (doc != null) {
+                try {
+                    Document novo = JDOMFunctions_XSLT.transformaDocumento(doc, "capaLivros.xml", "capaLivros.xsl");
+                    XMLJDomFunctions.escreverDocumentoParaFicheiro(novo, "capaLivros.html");
+                    doc = XMLJDomFunctions.lerDocumentoXML("capaLivros.html");
+
+                    JOptionPane.showMessageDialog(this,
+                            ".HTML criado",
+                            "XML para HTML", JOptionPane.INFORMATION_MESSAGE);
+
+                    String url = "capaLivros.html";
+                    File htmlFile = new File(url);
+                    Desktop.getDesktop().browse(htmlFile.toURI());
+
+                } catch (IOException ex) {
+                    Logger.getLogger(Interface.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+
+        } catch (XPathException ex) {
+            Logger.getLogger(Interface.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(Interface.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_CapaLivrosActionPerformed
+
+    private void MesclarAutoresObrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MesclarAutoresObrasActionPerformed
+        try {
+            String nomeAutor = JOptionPane.showInputDialog(this, "Digite o nome do autor:");
+
+            SaxonFunctions_XQuery.xQueryToXmlInput("juntarAO.xml", "juntarAO.xql", nomeAutor);
+
+            JOptionPane.showMessageDialog(this,
+                    ".XML criado",
+                    "XQuery para XML", JOptionPane.INFORMATION_MESSAGE);
+
+            Scanner ler = new Scanner(new FileInputStream("juntarAO.xml"));
+            StringBuilder texto = new StringBuilder();
+            String linha;
+            while (ler.hasNextLine()) {
+                linha = ler.nextLine();
+                texto = texto.append(linha).append("\n");
+            }
+            ler.close();
+            jTextArea1.setText(texto.toString());
+
+        } catch (XPathException ex) {
+            Logger.getLogger(Interface.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(Interface.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_MesclarAutoresObrasActionPerformed
 
     /**
      * @param args the command line arguments
@@ -2205,6 +2330,7 @@ public class Interface extends javax.swing.JFrame {
     private javax.swing.JMenuItem Autores_XML;
     private javax.swing.JButton ButtonAdd;
     private javax.swing.JButton ButtonEliminar;
+    private javax.swing.JMenuItem CapaLivros;
     private javax.swing.JMenuItem DTD_Autores;
     private javax.swing.JMenuItem DTD_Obras;
     private javax.swing.JMenuItem EliminaPremio;
@@ -2212,6 +2338,7 @@ public class Interface extends javax.swing.JFrame {
     private javax.swing.JMenuItem FotosAutores;
     private javax.swing.JMenu Inicio;
     private javax.swing.JMenu Menu_XML;
+    private javax.swing.JMenuItem MesclarAutoresObras;
     private javax.swing.JMenuItem ObrasMaisCaras;
     private javax.swing.JMenuItem Obras_XML;
     private javax.swing.JDialog PAP;

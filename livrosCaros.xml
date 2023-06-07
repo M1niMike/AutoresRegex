@@ -6,6 +6,11 @@
           <preco>27.0</preco>
      </obra>
      <obra>
+          <titulo>A Fúria dos Reis</titulo>
+          <autor>George R. R. Martin</autor>
+          <preco>19.03</preco>
+     </obra>
+     <obra>
           <titulo>Memorial do Convento</titulo>
           <autor>José Saramago</autor>
           <preco>17.75</preco>
@@ -16,13 +21,8 @@
           <preco>16.9</preco>
      </obra>
      <obra>
-          <titulo>A Fúria dos Reis</titulo>
-          <autor>George R. R. Martin</autor>
-          <preco>15.22</preco>
-     </obra>
-     <obra>
-          <titulo>Memorial do Convento</titulo>
-          <autor>José Saramago</autor>
-          <preco>14.2</preco>
+          <titulo>Harry Potter e a Pedra Filosofal</titulo>
+          <autor>J. K. Rowling</autor>
+          <preco>16.9</preco>
      </obra>
 </obras>

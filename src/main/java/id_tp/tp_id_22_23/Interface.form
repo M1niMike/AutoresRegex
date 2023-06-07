@@ -1338,6 +1338,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="XQuery"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenu6ActionPerformed"/>
+          </Events>
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="TodosAutores">
               <Properties>
@@ -1345,6 +1348,22 @@
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TodosAutoresActionPerformed"/>
+              </Events>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="CapaLivros">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="HTML -&gt; Capa dos livros"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CapaLivrosActionPerformed"/>
+              </Events>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="MesclarAutoresObras">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="XML -&gt; Juntar autores e obras"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="MesclarAutoresObrasActionPerformed"/>
               </Events>
             </MenuItem>
           </SubComponents>

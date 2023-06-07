@@ -5,6 +5,7 @@
 package id_tp.tp_id_22_23;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
@@ -14,6 +15,7 @@ import java.util.logging.Logger;
 import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerException;
 import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 import javax.xml.transform.stream.StreamSource;
 import org.jdom2.DocType;
@@ -37,6 +39,7 @@ public class JDOMFunctions_XSLT {
                 XMLdoc = XMLJDomFunctions.lerDocumentoXML(xmlFile);
             }
             XSLTransformer transformer = new XSLTransformer(xslFile);
+
             Document doc2 = transformer.transform(XMLdoc);
             if (doc2 == null) {
                 System.out.println("Null");
