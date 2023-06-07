@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<obras xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="obras.xsd">
+     <livro>
+          <isbn>978-972-0-04671-0</isbn>
+          <titulo>Memorial do Convento</titulo>
+          <autor>José Saramago</autor>
+          <editora>Porto Editora</editora>
+          <preco>17.75</preco>
+          <quantidadePaginas>402</quantidadePaginas>
+          <anoEdicao />
+          <encadernacao>Capa mole</encadernacao>
+          <fotoCapa>https://img.bertrand.pt/images/memorial-do-convento-jose-saramago/NDV8MTU3NDc0NDR8MjM1NjIyNjF8MTY2MjA0MDgyMzAwMA==/500x</fotoCapa>
+     </livro> 
+     <livro>
+          <isbn>9789897852169</isbn>
+          <titulo>duARTe - Uma Peça de Arte: Fernando Pessoa de Almada Negreiros - Volume 1</titulo>
+          <autor>Rita Seabra</autor>
+          <editora>Gradiva</editora>
+          <preco>13.41</preco>
+          <quantidadePaginas>32</quantidadePaginas>
+          <anoEdicao>05-2023</anoEdicao>
+          <idioma>Português</idioma>
+          <encadernacao>Capa dura</encadernacao>
+          <fotoCapa>https://img.bertrand.pt/images/duarte-uma-peca-de-arte-fernando-pessoa-de-almada-negreiros-volume-1-rita-seabra/NDV8Mjg1OTQ0OTR8MjQ5NzQ4Nzh8MTY4NDMyODE1ODAwMA==/500x</fotoCapa>
+     </livro>
+     <livro>
+          <isbn>9789897558665</isbn>
+          <titulo>Fernando Pessoa: Pré-Heteronímia, Drama em Gente e Desassossego</titulo>
+          <autor>Alexandra Soares Rodrigues</autor>
+          <editora>Edições Humus</editora>
+          <preco>5.0</preco>
+          <quantidadePaginas>100</quantidadePaginas>
+          <anoEdicao>03-2023</anoEdicao>
+          <idioma>Português</idioma>
+          <encadernacao>Capa mole</encadernacao>
+          <fotoCapa>https://img.bertrand.pt/images/fernando-pessoa-pre-heteronimia-drama-em-gente-e-desassossego-nuno-ribeiro/NDV8Mjg0MjMzNzd8MjQ3OTE1MjF8MTY3OTk5MzA3MjAwMA==/500x</fotoCapa>
+     </livro>
+     <livro>
+          <isbn>9789722731003</isbn>
+          <titulo>Fernando Pessoa - O Ser Verbal</titulo>
+          <autor>Dionísio Vila Maior</autor>
+          <editora>INCM – Imprensa Nacional Casa da Moeda</editora>
+          <preco>27.0</preco>
+          <quantidadePaginas>416</quantidadePaginas>
+          <anoEdicao>05-2023</anoEdicao>
+          <idioma>Português</idioma>
+          <encadernacao>Capa mole</encadernacao>
+          <fotoCapa>https://img.bertrand.pt/images/fernando-pessoa-o-ser-verbal-dionisio-vila-maior/NDV8Mjg1MDUwMTd8MjQ4NzgyMjN8MTY4MTgyOTQ4NjAwMA==/500x</fotoCapa>
+     </livro>
+     <livro>
+          <isbn>9789722365598</isbn>
+          <titulo>Harry Potter e a Pedra Filosofal</titulo>
+          <autor>J. K. Rowling</autor>
+          <editora>Editorial Presença</editora>
+          <preco>16.9</preco>
+          <quantidadePaginas>256</quantidadePaginas>
+          <anoEdicao>06-2020</anoEdicao>
+          <idioma>Português</idioma>
+          <encadernacao>Capa mole</encadernacao>
+          <fotoCapa>https://img.bertrand.pt/images/harry-potter-e-a-pedra-filosofal-j-k-rowling/NDV8MjQwNjY3OTh8MjAxMjQ0MzF8MTU5MDU5MzU3OTAwMA==/500x</fotoCapa>
+     </livro>
+     <livro>
+          <isbn>9782808685184</isbn>
+          <titulo>Une Place A Prendre - De J.K. Rowling</titulo>
+          <autor>Jeanine Berducat</autor>
+          <editora>LEPETITLITTERAIRE.FR</editora>
+          <preco>12.07</preco>
+          <quantidadePaginas>32</quantidadePaginas>
+          <anoEdicao>05-2023</anoEdicao>
+          <idioma>Francês</idioma>
+          <encadernacao>Sem Informacao</encadernacao>
+          <fotoCapa>https://img.bertrand.pt/images/une-place-a-prendre-de-jk-rowling-gibbons-cassandra/NDV8Mjg2MDIyNTB8MjQ5ODM4OTl8MTY4NDk2MjY0NzAwMA==/500x</fotoCapa>
+     </livro>
+     <livro>
+          <isbn>9789895662975</isbn>
+          <titulo>J. R. R. Tolkien – Construtor de Mundos - Volume I</titulo>
+          <autor>Angélica Varandas</autor>
+          <editora>Edições Colibri</editora>
+          <preco>13.5</preco>
+          <quantidadePaginas>208</quantidadePaginas>
+          <anoEdicao>04-2023</anoEdicao>
+          <idioma>Português</idioma>
+          <encadernacao>Capa mole</encadernacao>
+          <fotoCapa>https://img.bertrand.pt/images/j-r-r-tolkien-construtor-de-mundos-volume-i-angelica-varandas/NDV8Mjg1NTIwNTJ8MjQ5MzE1NjZ8MTY4NDc3MTIxMjAwMA==/500x</fotoCapa>
+     </livro>
+     <livro>
+          <isbn>9781614642886</isbn>
+          <titulo>George R.R. Martin: A Biography</titulo>
+          <autor>Sem Informacao</autor>
+          <editora>Hyperink</editora>
+          <preco>2.61</preco>
+          <quantidadePaginas>25</quantidadePaginas>
+          <anoEdicao>05-2012</anoEdicao>
+          <idioma>Inglês</idioma>
+          <encadernacao>Sem Informacao</encadernacao>
+          <fotoCapa>https://img.bertrand.pt/images/george-rr-martin-a-biography-lily-mcneil/NDV8MTQ4NzAzOTN8MTAzNTM0Nzl8MTU1NDY5ODYzOTAwMA==/500x</fotoCapa>
+     </livro>
+     <livro>
+          <isbn>9789896370268</isbn>
+          <titulo>A Fúria dos Reis</titulo>
+          <autor>George R. R. Martin</autor>
+          <editora>Saída de Emergência</editora>
+          <preco>19.03</preco>
+          <quantidadePaginas>-1</quantidadePaginas>
+          <anoEdicao>02-2008</anoEdicao>
+          <idioma>Português</idioma>
+          <encadernacao>Capa mole</encadernacao>
+          <fotoCapa>https://img.bertrand.pt/images/a-furia-dos-reis-george-r-r-martin/NDV8MjAwMjkzfDI1Nzg5NnwxMzgzNTkwMzkyMDAw/500x</fotoCapa>
+     </livro>
+</obras>

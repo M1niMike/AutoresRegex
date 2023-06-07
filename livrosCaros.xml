@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<obras>
+     <obra>
+          <titulo>Fernando Pessoa - O Ser Verbal</titulo>
+          <autor>Dionísio Vila Maior</autor>
+          <preco>27.0</preco>
+     </obra>
+     <obra>
+          <titulo>A Fúria dos Reis</titulo>
+          <autor>George R. R. Martin</autor>
+          <preco>19.03</preco>
+     </obra>
+     <obra>
+          <titulo>Memorial do Convento</titulo>
+          <autor>José Saramago</autor>
+          <preco>17.75</preco>
+     </obra>
+     <obra>
+          <titulo>Harry Potter e a Pedra Filosofal</titulo>
+          <autor>J. K. Rowling</autor>
+          <preco>16.9</preco>
+     </obra>
+     <obra>
+          <titulo>Harry Potter e a Pedra Filosofal</titulo>
+          <autor>J. K. Rowling</autor>
+          <preco>16.9</preco>
+     </obra>
+</obras>

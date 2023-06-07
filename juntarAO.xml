@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autores>
+   <autor>
+      <nome xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Fernando Pessoa</nome>
+      <dataNascimento xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">13 de junho 1888</dataNascimento>
+      <ocupacoes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+               <ocupacao>Poeta</ocupacao>
+               <ocupacao>escritor</ocupacao>
+               <ocupacao>tradutor</ocupacao>
+          </ocupacoes>
+      <livros/>
+   </autor>
+   <autor>
+      <nome xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">George R. R. Martin</nome>
+      <dataNascimento xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">20 de setembro 1948</dataNascimento>
+      <ocupacoes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+               <ocupacao>Escritor</ocupacao>
+               <ocupacao>roteirista</ocupacao>
+               <ocupacao>produtor de televisão</ocupacao>
+          </ocupacoes>
+      <livros>
+         <titulo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">A Fúria dos Reis</titulo>
+      </livros>
+   </autor>
+   <autor>
+      <nome xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">J. K. Rowling</nome>
+      <dataNascimento xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">31 de julho 1965</dataNascimento>
+      <ocupacoes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+               <ocupacao>escritora</ocupacao>
+      </ocupacoes>
+      <livros>
+         <titulo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Harry Potter e a Pedra Filosofal</titulo>
+         <titulo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Harry Potter e a Pedra Filosofal</titulo>
+      </livros>
+   </autor>
+   <autor>
+      <nome xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">J. R. R. Tolkien</nome>
+      <dataNascimento xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">3 de janeiro 1892</dataNascimento>
+      <ocupacoes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+               <ocupacao>Escritor</ocupacao>
+               <ocupacao>acadêmico</ocupacao>
+               <ocupacao>professor</ocupacao>
+          </ocupacoes>
+      <livros/>
+   </autor>
+   <autor>
+      <nome xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Nicholas Sparks</nome>
+      <dataNascimento xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">31 de dezembro 1965</dataNascimento>
+      <ocupacoes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+               <ocupacao>Escritor</ocupacao>
+               <ocupacao>roteirista</ocupacao>
+               <ocupacao>produtor</ocupacao>
+          </ocupacoes>
+      <livros/>
+   </autor>
+</autores>

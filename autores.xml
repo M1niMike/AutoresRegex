@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<autores xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="autores.xsd">
+     <autor id="15">
+          <nome>Nicholas Sparks</nome>
+          <dataNascimento>31 de dezembro 1965</dataNascimento>
+          <dataMorte>O Autor ainda esta vivo</dataMorte>
+          <nacionalidade>norte-americano</nacionalidade>
+          <generoLiterario>Sem informacao</generoLiterario>
+          <ocupacoes>
+               <ocupacao>Escritor</ocupacao>
+               <ocupacao>roteirista</ocupacao>
+               <ocupacao>produtor</ocupacao>
+          </ocupacoes>
+          <conjuge>Cathy Sparks (1989-2015)</conjuge>
+          <linkFoto>https://upload.wikimedia.org/wikipedia/commons/a/af/Nicholas-Sparks-Autograph-1-4-06.jpg</linkFoto>
+          <premios>
+               <premio>Nobel</premio>
+          </premios>
+     </autor>
+     <autor id="24">
+          <nome>Fernando Pessoa</nome>
+          <dataNascimento>13 de junho 1888</dataNascimento>
+          <dataMorte>30 de novembro 1935</dataMorte>
+          <nacionalidade>Português</nacionalidade>
+          <generoLiterario>Sem informacao</generoLiterario>
+          <ocupacoes>
+               <ocupacao>Poeta</ocupacao>
+               <ocupacao>escritor</ocupacao>
+               <ocupacao>tradutor</ocupacao>
+          </ocupacoes>
+          <premios>
+               <premio>Prémio Antero de Quental</premio>
+          </premios>
+          <conjuge>Sem informacao</conjuge>
+          <linkFoto>https://upload.wikimedia.org/wikipedia/commons/3/32/Pessoa_chapeu.jpg</linkFoto>
+     </autor>
+     <autor id="25">
+          <nome>J. K. Rowling</nome>
+          <dataNascimento>31 de julho 1965</dataNascimento>
+          <dataMorte>O Autor ainda esta vivo</dataMorte>
+          <nacionalidade>britânica</nacionalidade>
+          <generoLiterario>Fantasia</generoLiterario>
+          <ocupacoes>
+               <ocupacao>escritora</ocupacao>
+          </ocupacoes>
+          <premios />
+          <conjuge>Jorge Arantes</conjuge>
+          <linkFoto>https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/J._K._Rowling_2010.jpg/1200px-J._K._Rowling_2010.jpg</linkFoto>
+     </autor>
+     <autor id="18">
+          <nome>J. R. R. Tolkien</nome>
+          <dataNascimento>3 de janeiro 1892</dataNascimento>
+          <dataMorte>2 de setembro 1973</dataMorte>
+          <nacionalidade>britânico</nacionalidade>
+          <generoLiterario>Sem informacao</generoLiterario>
+          <ocupacoes>
+               <ocupacao>Escritor</ocupacao>
+               <ocupacao>acadêmico</ocupacao>
+               <ocupacao>professor</ocupacao>
+          </ocupacoes>
+          <premios />
+          <conjuge>Edith Mary Reuel Tolkien</conjuge>
+          <linkFoto>https://upload.wikimedia.org/wikipedia/commons/6/6f/Tolkien-color.png</linkFoto>
+     </autor>
+     <autor id="12">
+          <nome>George R. R. Martin</nome>
+          <dataNascimento>20 de setembro 1948</dataNascimento>
+          <dataMorte>O Autor ainda esta vivo</dataMorte>
+          <nacionalidade>norte-americano</nacionalidade>
+          <generoLiterario>Ficção científica</generoLiterario>
+          <ocupacoes>
+               <ocupacao>Escritor</ocupacao>
+               <ocupacao>roteirista</ocupacao>
+               <ocupacao>produtor de televisão</ocupacao>
+          </ocupacoes>
+          <premios />
+          <conjuge>Gale Burnick</conjuge>
+          <linkFoto>https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Portrait_photoshoot_at_Worldcon_75%2C_Helsinki%2C_before_the_Hugo_Awards_%E2%80%93_George_R._R._Martin.jpg/1200px-Portrait_photoshoot_at_Worldcon_75%2C_Helsinki%2C_before_the_Hugo_Awards_%E2%80%93_George_R._R._Martin.jpg</linkFoto>
+     </autor>
+</autores>

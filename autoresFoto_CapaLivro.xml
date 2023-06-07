@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autores>
+   <autor>
+      <linkFoto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">https://upload.wikimedia.org/wikipedia/commons/3/32/Pessoa_chapeu.jpg</linkFoto>
+      <livros/>
+   </autor>
+   <autor>
+      <linkFoto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Portrait_photoshoot_at_Worldcon_75%2C_Helsinki%2C_before_the_Hugo_Awards_%E2%80%93_George_R._R._Martin.jpg/1200px-Portrait_photoshoot_at_Worldcon_75%2C_Helsinki%2C_before_the_Hugo_Awards_%E2%80%93_George_R._R._Martin.jpg</linkFoto>
+      <livros>
+         <fotoCapa xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">https://img.bertrand.pt/images/a-furia-dos-reis-george-r-r-martin/NDV8MjAwMjkzfDI1Nzg5NnwxMzgzNTkwMzkyMDAw/500x</fotoCapa>
+      </livros>
+   </autor>
+   <autor>
+      <linkFoto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/J._K._Rowling_2010.jpg/1200px-J._K._Rowling_2010.jpg</linkFoto>
+      <livros>
+         <fotoCapa xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">https://img.bertrand.pt/images/harry-potter-e-a-pedra-filosofal-j-k-rowling/NDV8MjQwNjY3OTh8MjAxMjQ0MzF8MTU5MDU5MzU3OTAwMA==/500x</fotoCapa>
+      </livros>
+   </autor>
+   <autor>
+      <linkFoto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">https://upload.wikimedia.org/wikipedia/commons/6/6f/Tolkien-color.png</linkFoto>
+      <livros/>
+   </autor>
+   <autor>
+      <linkFoto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">https://upload.wikimedia.org/wikipedia/commons/a/af/Nicholas-Sparks-Autograph-1-4-06.jpg</linkFoto>
+      <livros/>
+   </autor>
+</autores>

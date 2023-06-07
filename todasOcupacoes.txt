@@ -1,0 +1,33 @@
+
+ Nome do Autor: Nicholas Sparks
+ Ocupacoes: 
+               Escritor
+               roteirista
+               produtor
+          
+ 
+ Nome do Autor: J. R. R. Tolkien
+ Ocupacoes: 
+               Escritor
+               acadêmico
+               professor
+          
+ 
+ Nome do Autor: George R. R. Martin
+ Ocupacoes: 
+               Escritor
+               roteirista
+               produtor de televisão
+          
+ 
+ Nome do Autor: J. K. Rowling
+ Ocupacoes: 
+               escritora
+          
+ 
+ Nome do Autor: Fernando Pessoa
+ Ocupacoes: 
+               Poeta
+               escritor
+               tradutor
+          
