@@ -9,7 +9,7 @@ declare namespace doc = "http://www.w3.org/2005/xpath-functions/doc";
     <autor>
       {
         "&#10;",
-        $autor/nome, $autor/dataNascimento, $autor/ocupacoes,
+        $autor/linkFoto,
         <livros>
         {
           for $l in doc("file:///C:/ID/TP_ID_22_23/TP_ID_22_23/obras.xml")//livro, $a in doc("file:///C:/ID/TP_ID_22_23/TP_ID_22_23/autores.xml")//autor
@@ -17,7 +17,7 @@ declare namespace doc = "http://www.w3.org/2005/xpath-functions/doc";
           order by $l/titulo
           return (
             "&#10;",
-            $l/titulo
+            $l/fotoCapa
           )
         }
         </livros>

@@ -10,43 +10,7 @@
           <anoEdicao />
           <encadernacao>Capa mole</encadernacao>
           <fotoCapa>https://img.bertrand.pt/images/memorial-do-convento-jose-saramago/NDV8MTU3NDc0NDR8MjM1NjIyNjF8MTY2MjA0MDgyMzAwMA==/500x</fotoCapa>
-     </livro>
-     <livro>
-          <isbn>9789722365598</isbn>
-          <titulo>Harry Potter e a Pedra Filosofal</titulo>
-          <autor>J. K. Rowling</autor>
-          <editora>Editorial Presença</editora>
-          <preco>16.9</preco>
-          <quantidadePaginas>256</quantidadePaginas>
-          <anoEdicao>06-2020</anoEdicao>
-          <idioma>Português</idioma>
-          <encadernacao>Capa mole</encadernacao>
-          <fotoCapa>https://img.bertrand.pt/images/harry-potter-e-a-pedra-filosofal-j-k-rowling/NDV8MjQwNjY3OTh8MjAxMjQ0MzF8MTU5MDU5MzU3OTAwMA==/500x</fotoCapa>
-     </livro>
-     <livro>
-          <isbn>978-972-0-04671-0</isbn>
-          <titulo>Memorial do Convento</titulo>
-          <autor>José Saramago</autor>
-          <editora>Porto Editora</editora>
-          <preco>14.2</preco>
-          <quantidadePaginas>402</quantidadePaginas>
-          <anoEdicao>09-2014</anoEdicao>
-          <idioma>Português</idioma>
-          <encadernacao>Capa mole</encadernacao>
-          <fotoCapa>https://img.bertrand.pt/images/memorial-do-convento-jose-saramago/NDV8MTU3NDc0NDR8MjM1NjIyNjF8MTY2MjA0MDgyMzAwMA==/500x</fotoCapa>
-     </livro>
-     <livro>
-          <isbn>9789897852169</isbn>
-          <titulo>duARTe - Uma Peça de Arte: Fernando Pessoa de Almada Negreiros - Volume 1</titulo>
-          <autor>Rita Seabra</autor>
-          <editora>Gradiva</editora>
-          <preco>13.41</preco>
-          <quantidadePaginas>32</quantidadePaginas>
-          <anoEdicao>05-2023</anoEdicao>
-          <idioma>Português</idioma>
-          <encadernacao>Capa dura</encadernacao>
-          <fotoCapa>https://img.bertrand.pt/images/duarte-uma-peca-de-arte-fernando-pessoa-de-almada-negreiros-volume-1-rita-seabra/NDV8Mjg1OTQ0OTR8MjQ5NzQ4Nzh8MTY4NDMyODE1ODAwMA==/500x</fotoCapa>
-     </livro>
+     </livro> 
      <livro>
           <isbn>9789897852169</isbn>
           <titulo>duARTe - Uma Peça de Arte: Fernando Pessoa de Almada Negreiros - Volume 1</titulo>
